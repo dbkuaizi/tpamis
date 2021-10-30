@@ -1,56 +1,16 @@
-ThinkPHP 6.0
+ThinkAmis
 ===============
+是基于 [ThinkPHP6.0](https://gitee.com/liu21st/thinkphp) 与 百度开源项目 [AMIS](https://gitee.com/baidu/amis) 构建的后端管理系统
 
-> 运行环境要求PHP7.1+，兼容PHP8.0。
+该项目可以通过纯 JSON 快速配置后台管理系统，无需前端参与，后端开发人员即可完成。
+严格来说依然属于 MVC 架构，并非前后端分离。
 
-[官方应用服务市场](https://market.topthink.com) | [`ThinkAPI`——官方统一API服务](https://docs.topthink.com/think-api)
-
-ThinkPHPV6.0版本由[亿速云](https://www.yisu.com/)独家赞助发布。
-
-## 主要新特性
-
-* 采用`PHP7`强类型（严格模式）
-* 支持更多的`PSR`规范
-* 原生多应用支持
-* 更强大和易用的查询
-* 全新的事件系统
-* 模型事件和数据库事件统一纳入事件系统
-* 模板引擎分离出核心
-* 内部功能中间件化
-* SESSION/Cookie机制改进
-* 对Swoole以及协程支持改进
-* 对IDE更加友好
-* 统一和精简大量用法
-
-## 安装
-
-~~~
-composer create-project topthink/think tp 6.0.*
-~~~
-
-如果需要更新框架使用
-~~~
-composer update topthink/framework
-~~~
-
-## 文档
-
-[完全开发手册](https://www.kancloud.cn/manual/thinkphp6_0/content)
-
-## 参与开发
-
-请参阅 [ThinkPHP 核心框架包](https://github.com/top-think/framework)。
-
-## 版权信息
-
-ThinkPHP遵循Apache2开源协议发布，并提供免费使用。
-
-本项目包含的第三方源码和二进制文件之版权信息另行标注。
-
-版权所有Copyright © 2006-2020 by ThinkPHP (http://thinkphp.cn)
-
-All rights reserved。
-
-ThinkPHP® 商标和著作权所有者为上海顶想信息科技有限公司。
-
-更多细节参阅 [LICENSE.txt](LICENSE.txt)
+## 功能
+- [] 组件管理，组件 JSON 管理，支持嵌套使用
+- [] 字典管理，枚举映射
+- [] 接口管理，使用SQL查询，代替大部分数据接口
+- [] 用户管理，后台用户管理
+- [] 角色管理，用户权限控制（目前仅菜单控制）
+- [] 菜单管理，对后台菜单进行配置
+- [] 主题切换，通过修改配置文件，即可使用 amis 提供的主题样式
+- [] 登录日志
