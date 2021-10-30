@@ -1,0 +1,66 @@
+{
+  "status": 0,
+  "msg": "",
+  "data": {
+    "pages": [
+      {
+        "children": [
+          {
+            "label": "控制台",
+            "icon": "ri-computer-line",
+            "url": "/admin/sys/index",
+            "schemaApi": "/admin/com/index"
+          },
+          {
+            "label": "系统管理",
+            "icon": "ri-settings-5-line",
+            "children": [
+              {
+                "label": "组件管理",
+                "icon": "ri-collage-fill",
+                "url": "/admin/sys/com",
+                "schemaApi": "/admin/com/com_setup"
+              },
+              {
+                "label": "组件管理 - 查看",
+                "url": "/admin/sys/admin_page",
+                "schemaApi": "/admin/com/admin_page",
+                "visible": false
+              },
+              {
+                "label": "字典管理",
+                "icon": "ri-book-read-fill",
+                "url": "/admin/sys/dictionary",
+                "schemaApi": "/admin/com/com_dictionary"
+              },
+              {
+                "label": "接口管理",
+                "icon": "ri-rocket-2-fill",
+                "url": "/admin/sys/api",
+                "schemaApi": "/admin/com/admin_sqldata"
+              },
+              {
+                "label": "菜单管理",
+                "icon": "ri-list-check",
+                "url": "/admin/sys/enum",
+                "schemaApi": "/admin/com/admin_menu"
+              },
+              {
+                "label": "用户管理",
+                "icon": "ri-admin-fill",
+                "url": "/admin/sys/admin_user",
+                "schemaApi": "/admin/com/admin_user"
+              },
+              {
+                "label": "角色管理",
+                "icon": "ri-contacts-fill",
+                "url": "/admin/sys/admin_role",
+                "schemaApi": "/admin/com/admin_role"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
