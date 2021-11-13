@@ -6,7 +6,8 @@ use think\facade\Config;
 use app\admin\BaseController;
 use think\facade\Db;
 use think\facade\View;
-
+use Tree;
+use think\facade\Log;
 /**
  * 后端通用数据接口
  * Class Index
@@ -17,23 +18,24 @@ class Api extends BaseController
     // 通用数据获取接口
     public function get($code)
     {
-        $res_data = ['status' => 0 ,'msg' => '数据获取成功','data' => []];
-        // 拿到数据接口的配置信息
-        $api_data = Db::table('sys_api')->where('v_Code',$code)->find();
 
+        $ret_data = ['status' => 0 ,'msg' => '数据获取成功','data' => []];
+        $api_data = Db::table('sys_api')->where('v_Code',$code)->find();
         switch ($api_data['v_Type']) {
             case 'find': // 单条数据
+                $ret_data['data'] = $this->getFindData($api_data);
                 break;
-            case 'list': // 多条数据
-                $res_data['data'] = $this->getListData($api_data);
+            case 'curd': // 多条数据
+                $ret_data['data'] = $this->getCurdData($api_data);
                 break;
             case 'tree':
+                $ret_data['data'] = $this->getTreeData($api_data);
                 break;
-
+            case 'list': // 多条数据
+                $ret_data['data'] = $this->getListData($api_data);
+                break;
         }
-
-
-        return $res_data;
+        return json($ret_data);
     }
 
     /**
@@ -46,7 +48,7 @@ class Api extends BaseController
         $table_name = explode(',',$com_data['v_Tables'])[0];
         $data = $request->post();
         if ($id){
-            $pri_key = $com_data['v_PriField'];
+            $pri_key = $com_data['v_PriField'] ?: 'i_Id';
             $res = Db::table($table_name)->where([$pri_key => $id])->update($data);
         } else {
             $res = Db::table($table_name)->insert($data);
@@ -58,25 +60,57 @@ class Api extends BaseController
 
     }
 
-    /**
-     * 列表获取接口
-     */
+    // 列表获取接口
+    public function getCurdData($api_data)
+    {
+        $sql = View::display($api_data['v_SQLString']);
+
+        if ($api_data['v_SQLTotal']) {
+            $total_sql = $api_data['v_SQLTotal'];
+        } else {
+            $total_sql = 'SELECT count(*) as total FROM ('.$api_data['v_SQLString'].') as total_table';
+        }
+        $total_sql = View::display($total_sql);
+
+        // 如果有传递分页 就拼接
+        if ($this->request->has('page','get'))
+        {
+            $page = $this->request->get('page');
+            $size = $this->request->get('perPage');
+            $start_index = (($page - 1) * $size);
+            $limit_sql = " LIMIT $start_index,$size";
+            $sql .= $limit_sql;
+        }
+
+        return [
+            'items' => Db::query($sql),
+            'total' => Db::query($total_sql)[0]['total'],
+        ];
+    }
 
     public function getListData($api_data)
     {
         $sql = View::display($api_data['v_SQLString']);
-        $total_sql = View::display($api_data['v_SQLTotal']);
-        return [
-            'items' => Db::query($sql),
-            'total' => Db::query($total_sql),
-        ];
+        return Db::query($sql);
     }
-
-    public function form_page(Request $request)
+    // 单条获取数据
+    public function getFindData($api_data)
     {
-        $data['name'] = '张三';
-        $data['email'] = 'zhangsan@qq.com';
-        return $this->success('数据获取成功',$data);
-
+        $sql = View::display($api_data['v_SQLString']);
+        return  Db::query($sql)[0]??[];
     }
+
+    // 获取树形数据
+    public function getTreeData($api_data)
+    {
+        $sql = View::display($api_data['v_SQLString']);
+        $tree_data = Db::query($sql);
+        $tree_config = json_decode($api_data['v_Config'],true);
+        $tree = Tree::makeTree($tree_data,$tree_config);
+        return ['options' => $tree];
+    }
+
+
+
+
 }

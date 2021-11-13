@@ -11,6 +11,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
 <!-- amis 部分代码 -->
 <link rel="stylesheet" href="/static/amis-sdk/{$Think.config.amis.amis_theme|default='sdk'}.css">
+<!--<link rel="stylesheet" href="https://baidu.gitee.io/amis/pkg/style_2907d6e.css">-->
 
 {load href="/static/amis-sdk/helper.css" /}
 {load href="/static/fonts/remixicon.css" /}
@@ -34,9 +35,9 @@
 
     const app = {
       type: 'app',
-      brandName: '{$Think.config.amis.amis_name}',
+      brandName: '{map:config name="SysConfig.AdminName" default="123"}',
       className: 'schema-wrapper',
-      logo: '/static/logo.png',
+      logo: '{$Think.config.amis.logo}',
       header: {include file='../app/admin/view/amis/amis_header.json' /},
       api: '/json/menu.json'
     };

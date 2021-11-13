@@ -9,7 +9,7 @@
     .header-menu .antd-DropDown-menu li>a{color: #666;text-align: center;}
     .header-menu .antd-Button,.header-menu .antd-Button:hover{border:#fff;}
     .antd-Layout-body{position: relative}
-    .antd-DropDown-menu{min-width: 100%;}
+    .amis-scope .antd-DropDown-menu{min-width: 100%;}
 {/case}
 
 {case ang}
@@ -23,10 +23,12 @@
 {/case}
 {/switch}
 /* 公共CSS 不管是什么主题 都会加载 */
-html,body,.app-wrapper{position: relative;width: 100%;height:100%;margin: 0;padding: 0;}
+html,body,.app-wrapper{position: relative;width: 100%;height:100%;margin: 0;padding: 0;touch-action: pan-y;}
 /* 修复滚动条问题 */
 .amis-scope{overflow-x: visible}
 .a-DropDown-menu{min-width: 100%;}
-
+:root{
+    --Layout--offscreen-width: 50%;
+}
 </style>
 

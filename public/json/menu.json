@@ -19,25 +19,31 @@
                 "label": "组件管理",
                 "icon": "ri-collage-fill",
                 "url": "/admin/sys/com",
-                "schemaApi": "/admin/com/com_setup"
+                "schemaApi": "/admin/com/com_list"
               },
               {
-                "label": "组件管理 - 查看",
-                "url": "/admin/sys/admin_page",
-                "schemaApi": "/admin/com/admin_page",
+                "label": "组件管理 - 编辑",
+                "url": "/admin/sys/com_save",
+                "schemaApi": "/admin/com/com_save",
                 "visible": false
               },
               {
                 "label": "字典管理",
                 "icon": "ri-book-read-fill",
-                "url": "/admin/sys/dictionary",
-                "schemaApi": "/admin/com/com_dictionary"
+                "url": "/admin/sys/map",
+                "schemaApi": "/admin/com/com_map"
               },
               {
                 "label": "接口管理",
                 "icon": "ri-rocket-2-fill",
                 "url": "/admin/sys/api",
                 "schemaApi": "/admin/com/admin_sqldata"
+              },
+              {
+                "label": "接口管理 - 编辑",
+                "url": "/admin/sys/admin_sqledit",
+                "schemaApi": "/admin/com/admin_sqledit",
+                "visible": false
               },
               {
                 "label": "菜单管理",
@@ -56,6 +62,12 @@
                 "icon": "ri-contacts-fill",
                 "url": "/admin/sys/admin_role",
                 "schemaApi": "/admin/com/admin_role"
+              },
+              {
+                "label": "测试页面",
+                "icon": "ri-contacts-fill",
+                "url": "/admin/sys/test",
+                "schemaApi": "/admin/com/test"
               }
             ]
           }
