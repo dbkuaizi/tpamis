@@ -24,4 +24,5 @@ ThinkAmis
 - [ ] 日志管理，后台用户的登录日志和操作日志
 
 ## 版权信息
-ThinkAmis 使用了与 ThinkPHP 和 amis 一致的的版权协议 Apache2，本项目可以免费商用但必须在代码中标注。
+ThinkAmis 使用了与 ThinkPHP 和 amis 一致的的版权协议 Apache2。
+本项目可以免费商用但必须在代码中标注。
