@@ -15,11 +15,11 @@ class Com extends BaseController
     // 获取组件配置
     public function getConfig($code)
     {
-        $result = Db::table('sys_instances')->where('v_Code',$code)->find();
+        $result = Db::table('sys_com')->where('v_Code',$code)->find();
 
         // 如果查询为空 就使用不存在的 实例
         if (empty($result)) {
-            $result = Db::table('sys_instances')->where('v_Code','com_ins_empty')->find();
+            $result = Db::table('sys_com')->where('v_Code','com_ins_empty')->find();
             $result['v_Body'] = str_replace('[code]',$code, $result['v_Body']);
         }
 
