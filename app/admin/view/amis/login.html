@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8" />
+    <title>amis demo</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    {load href="/static/amis-sdk/helper.css" /}
+    <link rel="stylesheet" href="/static/amis-sdk/sdk.css">
+    <link rel="stylesheet" href="/static/amis-sdk/{$Think.config.amis.amis_theme|default='sdk'}.css">
+    <style>
+        html,
+        body,
+        .app-wrapper {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        .amis-scope .cxd-Page-body{
+            padding: 0;}
+        .app-wrapper{
+            background: url("http://cn.bing.com/th?id=OHR.ChurchillBears_EN-US8757524982_1920x1080.jpg&rf=LaDigue_1920x1080.jpg&pid=hp");
+        }
+        .left-bg{
+            background: url("http://cdn.static.msvc.top/amis-admin/v2021-02-23-11-04-25/fonts/login-background.svg");
+        }
+    </style>
+</head>
+<body>
+<div id="root" class="app-wrapper"></div>
+{load href="/static/amis-sdk/sdk.js" /}
+<script type="text/javascript">
+    (function () {
+        let amis = amisRequire('amis/embed');
+        // 通过替换下面这个配置来生成不同页面
+        let amisJSON = {
+            type: 'page',
+            body: {
+                "type": "page",
+                "body": {
+                    "type": "grid",
+                    "className": " lter h-screen",
+                    "columns": [
+                        {
+                            "md": 3,
+                            "body": {
+                                "type": "wrapper",
+                                "className": "bg-light h-screen left-bg",
+                                "body": [
+                                    {
+                                        "type": "form",
+                                        "title": "水平模式",
+                                        "className":"mt-52 pc:w-4/6 mx-auto",
+                                        "wrapWithPanel": false,
+                                        "body": [
+                                            {
+                                              "type":"html",
+                                              "html":"<h1>Think Admin Login</h1>"
+                                            },
+                                            {
+                                                "type": "input-text",
+                                                "label": "用户名",
+                                                "name": "text"
+                                            },
+                                            {
+                                                "type": "input-password",
+                                                "label": "密码",
+                                                "name": "text"
+                                            },
+                                            {
+                                                "label": "登录",
+                                                "type": "button",
+                                                "className":"float-right w-full",
+                                                "actionType": "dialog",
+                                                "dialog": {
+                                                    "title": "弹框",
+                                                    "body": "这是个简单的弹框。"
+                                                }
+                                            }
+                                        ]
+                                    }
+
+                                ]
+                            }
+                        }
+                    ]
+                }
+            }
+        };
+        let amisScoped = amis.embed('#root', amisJSON);
+    })();
+</script>
+</body>
+</html>

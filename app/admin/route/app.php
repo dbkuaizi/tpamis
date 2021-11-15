@@ -3,11 +3,6 @@
 // Admin 路由
 use think\facade\Route;
 
-// 登录页面路由
-Route::get('login',function (){
-    return '登录';
-});
-
 Route::group(function(){
     // 组件通用接口
     Route::get('com/:code','/Com/getConfig');
