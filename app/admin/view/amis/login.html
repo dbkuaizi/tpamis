@@ -2,7 +2,7 @@
 <html lang="zh">
 <head>
     <meta charset="UTF-8" />
-    <title>amis demo</title>
+    <title>{$Think.config.amis.login.title} 登录</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta
             name="viewport"
@@ -21,80 +21,154 @@
             height: 100%;
             margin: 0;
             padding: 0;
+            touch-action: pan-y;
         }
-        .amis-scope .cxd-Page-body{
-            padding: 0;}
+        {if !$Request.isMobile}
         .app-wrapper{
-            background: url("http://cn.bing.com/th?id=OHR.ChurchillBears_EN-US8757524982_1920x1080.jpg&rf=LaDigue_1920x1080.jpg&pid=hp");
+            background: {$Think.config.amis.login.bg|raw};
         }
-        .left-bg{
-            background: url("http://cdn.static.msvc.top/amis-admin/v2021-02-23-11-04-25/fonts/login-background.svg");
+        {/if}
+        :root {
+            --Form-item-gap: 1.3rem;
+            --InputGroup-height: 2.5rem;
+            --Button-height: 2.5rem;
+            --InputGroup-paddingX: .6rem;
+            --InputGroup-addOn-bg: var(--Form-input-bg);
+            /*--fontSizeBase: .9rem;*/
+        }
+        .amis-scope .cxd-Icon{height: 1rem}
+        .amis-scope .cxd-TextControl-input input{height: auto;}
+        .amis-scope .cxd-TextControl-input:hover{border:var(--Form-input-borderWidth) solid var(--Form-input-borderColor)}
+        .amis-scope .cxd-InputGroup .cxd-TextControl-input{border-left-width: 0;padding-left: 0;}
+        .code_img{cursor: pointer;}
+            /* 配置样式 */
+        .login_layout{
+            {if !$Request.isMobile}
+                /* 仅 pc 生效 */
+                /* 宽度 默认 400px */
+                width: {$Think.config.amis.login.width|default='400px'};
+                /* 登录窗口靠左还是靠右 */
+                {if $Think.config.amis.login.align == 'left'} left:0;{else /}right:0;{/if}
+                /*  是否浮动  */
+                {if $Think.config.amis.login.float}
+                    border-radius:2px;
+                    margin:10rem 6rem !important;
+                    height:auto;
+                {else /}
+                    padding-top: 8rem !important;
+                    height:100vh;
+                {/if}
+
+            {/if}
         }
     </style>
 </head>
 <body>
 <div id="root" class="app-wrapper"></div>
 {load href="/static/amis-sdk/sdk.js" /}
+<script src="https://cdn.bootcdn.net/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
 <script type="text/javascript">
     (function () {
         let amis = amisRequire('amis/embed');
         // 通过替换下面这个配置来生成不同页面
         let amisJSON = {
-            type: 'page',
-            body: {
-                "type": "page",
-                "body": {
-                    "type": "grid",
-                    "className": " lter h-screen",
-                    "columns": [
-                        {
-                            "md": 3,
-                            "body": {
-                                "type": "wrapper",
-                                "className": "bg-light h-screen left-bg",
-                                "body": [
-                                    {
-                                        "type": "form",
-                                        "title": "水平模式",
-                                        "className":"mt-52 pc:w-4/6 mx-auto",
-                                        "wrapWithPanel": false,
-                                        "body": [
-                                            {
-                                              "type":"html",
-                                              "html":"<h1>Think Admin Login</h1>"
-                                            },
-                                            {
-                                                "type": "input-text",
-                                                "label": "用户名",
-                                                "name": "text"
-                                            },
-                                            {
-                                                "type": "input-password",
-                                                "label": "密码",
-                                                "name": "text"
-                                            },
-                                            {
-                                                "label": "登录",
-                                                "type": "button",
-                                                "className":"float-right w-full",
-                                                "actionType": "dialog",
-                                                "dialog": {
-                                                    "title": "弹框",
-                                                    "body": "这是个简单的弹框。"
-                                                }
-                                            }
-                                        ]
-                                    }
-
-                                ]
+            "type": "wrapper",
+            "className": "fixed login_layout m:h-screen m:w-full bg-gray-50",
+            "body": {
+                "type": "form",
+                "className": "h-full pc:p-9 m:p-4 m:pt-20",
+                "api": "/admin/login",
+                "redirect": "/admin",
+                "wrapWithPanel": false,
+                "body": [
+                    {
+                        "type":"html",
+                        "className":"text-center",
+                        "html":"<h1>{$Think.config.amis.login.title}</h1>"
+                    },
+                    {
+                        "type": "input-group",
+                        "label": "",
+                        "body": [
+                            {
+                                "type": "icon",
+                                "icon": "/static/icon/shield-user-line.svg"
+                            },
+                            {
+                                "type": "input-text",
+                                "label": false,
+                                "placeholder": "用户名",
+                                "name": "name",
+                                "required": true
                             }
-                        }
-                    ]
-                }
+                        ]
+                    },
+                    {
+                        "type": "input-group",
+                        "label": "",
+                        "body": [
+                            {
+                                "type": "icon",
+                                "icon": "/static/icon/lock-password-line.svg",
+                            },
+                            {
+                                "type": "input-password",
+                                "label": false,
+                                "placeholder": "密码",
+                                "name": "pwd",
+                                "required": true
+                            }
+                        ]
+                    },
+                    {
+                        "type": "input-group",
+                        "label": "",
+                        "body": [
+                            {
+                                "type": "icon",
+                                "icon": "/static/icon/shield-check-line.svg"
+                            },
+                            {
+                                "type": "input-text",
+                                "label": false,
+                                "placeholder": "验证码",
+                                "name": "code",
+                                "required": true
+                            },
+                            {
+                                "type": "image",
+                                "height": "38px",
+                                "width": "110px",
+                                "name":"codeUrl",
+                                "imageClassName":"code_img b-none",
+                                "imageMode":"original",
+                                "src": "/admin/login/verify",
+                            }
+                        ]
+                    },
+                    {
+                        "label": "登 录",
+                        "type": "action",
+                        "actionType": "submit",
+                        "level": "primary",
+                        "className":"w-full h-2.5",
+                    },
+                    {
+                        "type":"html",
+                        "className":"text-center",
+                        "html":"<p class='mt-10 text-gray-600'>{$Think.config.amis.login.footer}</p>"
+                    },
+                ]
+
             }
+
         };
         let amisScoped = amis.embed('#root', amisJSON);
     })();
+    // 刷新验证码
+    $('.code_img').click(()=>{
+        $('.code_img').attr("src","/admin/login/verify?" + Math.random())
+    });
 </script>
 </body>
 </html>
