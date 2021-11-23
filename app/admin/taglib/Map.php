@@ -23,10 +23,10 @@ class Map extends TagLib
     public function tagColnum($tag)
     {
         $map_code = $tag['code'];
-        $field = $tag['field'] ?? 'v_MapVal';
+        $field = $tag['field'] ?? 'map_val';
         $key = $tag['key']?? '';
 
-        $result = Db::table('sys_map')->where('v_MapCode',$map_code)->column($field,$key);
+        $result = Db::table('sys_map')->where('map_code',$map_code)->column($field,$key);
         return json_encode($result,JSON_UNESCAPED_UNICODE);
     }
 
@@ -36,9 +36,9 @@ class Map extends TagLib
     public function tagConfig($tag)
     {
         $map_arr = explode('.',$tag['name']);
-        $where['v_MapCode'] = $map_arr[0];
-        $where['v_MapVal'] = $map_arr[1];
-        $value = Db::table('sys_map')->where($where)->value('v_MapVal2');
+        $where['map_code'] = $map_arr[0];
+        $where['map_val'] = $map_arr[1];
+        $value = Db::table('sys_map')->where($where)->value('map_val2');
         // 如果没有字典值 与 默认值 就抛出错误
         if (!isset($value) && !isset($tag['default'])) {
             throw new Exception('字典配置项 ['. $tag['name'] .'] 不存在');
@@ -53,13 +53,13 @@ class Map extends TagLib
     public function tagOption($tag)
     {
         $map_code = $tag['code'];
-        $label_field = $tag['label'] ?? 'v_MapName';
-        $value_field = $tag['value'] ?? 'v_MapVal';
+        $label_field = $tag['label'] ?? 'map_name';
+        $value_field = $tag['value'] ?? 'map_val';
         $field = [
             $label_field => 'label',
             $value_field => 'value',
         ];
-        return Db::table('sys_map')->where('v_MapCode',$map_code)->field($field)->select();
+        return Db::table('sys_map')->where('map_code',$map_code)->field($field)->select();
 
     }
 

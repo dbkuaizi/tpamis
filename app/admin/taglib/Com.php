@@ -23,13 +23,13 @@ class Com extends TagLib
     public function tagSlot($tag)
     {
         $code = $tag['code'];
-        $result = Db::table('sys_com')->where('v_Code',$code)->find();
+        $result = Db::table('sys_com')->where('code',$code)->find();
         // 如果查询为空 就使用不存在的 实例
         if (empty($result)) {
-            $result = Db::table('sys_com')->where('v_Code','com_ins_empty')->find();
-            $result['v_Body'] = str_replace('[code]',$code, $result['v_Body']);
+            $result = Db::table('sys_com')->where('code','com_ins_empty')->find();
+            $result['body'] = str_replace('[code]',$code, $result['body']);
         }
-        return View::display($result['v_Body'],$result);
+        return View::display($result['body'],$result);
     }
 
 }
