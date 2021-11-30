@@ -8,7 +8,7 @@ return [
     // amis 使用模式、目前仅支持 app
     'amis_mode'     =>  'app',
     // amis 主题 antd、cxd、dark(夜间模式)、ang
-    'amis_theme'    =>  'cxd',
+    'amis_theme'    =>  'antd',
     // login (推荐 50px * 50px)
     "logo"  =>       "/static/logo.png",
     "login" =>      [
