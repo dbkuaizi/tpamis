@@ -103,7 +103,7 @@ abstract class BaseController
             $data = $msg;
             $msg = '';
         }
-        return ['status' => $status,'msg' => $msg,'data' => $data];
+        return json(['status' => $status,'msg' => $msg,'data' => $data]);
     }
 
     // 执行错误返回

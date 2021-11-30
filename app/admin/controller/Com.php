@@ -26,4 +26,33 @@ class Com extends BaseController
         $body = View::display($result['body'],$result);
         return response($body);
     }
+
+    /**
+     *  组件管理列表
+     */
+    public function list()
+    {
+        $ret_data = [];
+        $page = $this->request->get('page', 1);
+        $size = $this->request->get('perPage', 15);
+        // 查询条件
+        $where = [];
+        $without_field = 'body';
+        // 先查找第一层数据
+        $query = Db::table('sys_com')->where('parent_code', '')->where($where);
+        $com_list = $query->page($page, $size)->withoutField($without_field)->select()->toArray();
+        $com_total = $query->count();
+
+        // 查找第二层数据
+        $com_codes = array_column($com_list, 'code');
+        $com_sub_list = Db::table('sys_com')->whereIn('parent_code', $com_codes)->where($where)
+            ->withoutField($without_field)->select()->toArray();
+        $com_list = array_merge($com_list,$com_sub_list);
+
+        // 拼接树
+        $tree_config = ['parent_key' => 'parent_code','primary_key'=>'code','root_index' => ''];
+        $com_tree = \Tree::makeTree($com_list,$tree_config);
+        $ret_data = ['items' => $com_tree, 'total' => $com_total];
+        return $this->success('获取成功',$ret_data);
+    }
 }

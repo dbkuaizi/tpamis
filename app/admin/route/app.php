@@ -4,8 +4,8 @@
 use think\facade\Route;
 
 Route::group(function(){
-    // 组件通用接口
-    Route::get('com/:code','/Com/getConfig');
+    // 获取组件 Json
+    Route::get('com/get/:code','/Com/getConfig');
     // 数据增删改查接口
     Route::get('api/:code','/Api/get'); // 通用数据获取接口
     Route::post('api/sort/:code','/Api/sort'); // 保存排序
