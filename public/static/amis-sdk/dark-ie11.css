@@ -28663,6 +28663,7 @@ readers do not read off random characters that represent icons */
 }
 
 .amis-scope .dark-Card-avtarText {
+  flex-shrink: 0;
   background: #0983ff;
   color: #fff;
   width: 50px;

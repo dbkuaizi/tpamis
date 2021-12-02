@@ -29978,6 +29978,7 @@ readers do not read off random characters that represent icons */
 }
 
 .amis-scope .antd-Card-avtarText {
+  flex-shrink: 0;
   background: var(--primary);
   color: var(--white);
   width: 50px;

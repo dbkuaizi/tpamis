@@ -77,7 +77,17 @@
             "body": {
                 "type": "form",
                 "className": "h-full pc:p-9 m:p-4 m:pt-20",
-                "api": "/login",
+                "api": {
+                    "method":"post",
+                    "url":"/login",
+                    "adaptor": function (data) {
+                        if (data.code !== 0) {
+                            // 刷新验证码
+                            $('.code_img').attr("src","/login/verify?" + Math.random())
+                        }
+                        return data;
+                    },
+                },
                 "redirect": "/",
                 "wrapWithPanel": false,
                 "body": [

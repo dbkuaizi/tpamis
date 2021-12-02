@@ -26,6 +26,8 @@
             },
             {
               "type": "button",
+              "actionType": "url",
+              "url":"/login/out",
               "label": "退出登录"
             }
           ]
