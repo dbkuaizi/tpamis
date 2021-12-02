@@ -1,5 +1,5 @@
 <?php
-namespace app\admin\taglib;
+namespace app\taglib;
 
 use think\facade\Db;
 use think\facade\View;

@@ -1,8 +1,9 @@
 <?php
 declare (strict_types = 1);
 
-namespace app\Admin\controller;
+namespace app\controller;
 use think\captcha\facade\Captcha;
+use think\facade\Validate;
 use think\Request;
 class Login
 {
@@ -13,6 +14,21 @@ class Login
         if ($request->isGet()) {
             return view('amis/login');
         }
+
+        $data['username'] = $request->post('name');
+        $data['password'] = $request->post('pwd');
+
+        $validate = Validate::rule([
+            'username|用户名' => 'require',
+            'password|密码' => 'require',
+        ]);
+
+        // 验证
+        if (!$validate->check($data)) {
+            return $this->error($validate->getError());
+        }
+
+
 
         // 验证登录
        return $this->success('登录成功');

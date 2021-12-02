@@ -1,8 +1,8 @@
 <?php
 
-namespace app\admin\controller;
+namespace app\controller;
 use think\facade\Config;
-use app\admin\BaseController;
+use app\BaseController;
 use think\facade\Db;
 use think\facade\View;
 

@@ -77,8 +77,8 @@
             "body": {
                 "type": "form",
                 "className": "h-full pc:p-9 m:p-4 m:pt-20",
-                "api": "/admin/login",
-                "redirect": "/admin",
+                "api": "/login",
+                "redirect": "/",
                 "wrapWithPanel": false,
                 "body": [
                     {
@@ -142,7 +142,7 @@
                                 "name":"codeUrl",
                                 "imageClassName":"code_img b-none",
                                 "imageMode":"original",
-                                "src": "/admin/login/verify",
+                                "src": "/login/verify",
                             }
                         ]
                     },
@@ -167,7 +167,7 @@
     })();
     // 刷新验证码
     $('.code_img').click(()=>{
-        $('.code_img').attr("src","/admin/login/verify?" + Math.random())
+        $('.code_img').attr("src","/login/verify?" + Math.random())
     });
 </script>
 </body>

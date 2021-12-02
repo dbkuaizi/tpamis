@@ -13,6 +13,7 @@ return [
     // 模板后缀
     'view_suffix'   => 'html',
     'tpl_cache'     => false,
+    'display_cache' => false,
     // 模板文件名分隔符
     'view_depr'     => DIRECTORY_SEPARATOR,
     // 模板引擎普通标签开始标记
@@ -23,4 +24,6 @@ return [
     'taglib_begin'  => '{',
     // 标签库标签结束标记
     'taglib_end'    => '}',
+    // 引入自定义的标签库
+    'taglib_pre_load'     => 'app\taglib\Com,app\taglib\Map',
 ];

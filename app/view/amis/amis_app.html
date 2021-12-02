@@ -19,7 +19,7 @@
 {load href="/static/amis-sdk/vue@2.js" /}
 {load href="/static/amis-sdk/history.js" /}
 <!-- 引入CSS -->
-{include file='../app/admin/view/amis/amis_css.php' /}
+{include file='../app/view/amis/amis_css.php' /}
 </head>
 <body>
 <div id="root" class="app-wrapper"></div>
@@ -37,7 +37,7 @@
       brandName: '{map:config name="SysConfig.AdminName" default="123"}',
       className: 'schema-wrapper',
       logo: '{$Think.config.amis.logo}',
-      header: {include file='../app/admin/view/amis/amis_header.json' /},
+      header: {include file='../app/view/amis/amis_header.json' /},
       api: '/json/menu.json'
     };
 

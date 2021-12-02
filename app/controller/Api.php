@@ -1,9 +1,9 @@
 <?php
 
-namespace app\admin\controller;
+namespace app\controller;
 use app\Request;
 use think\facade\Config;
-use app\admin\BaseController;
+use app\BaseController;
 use think\facade\Db;
 use think\facade\View;
 use Tree;
