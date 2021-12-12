@@ -42,13 +42,14 @@ class Login
         }
 
         // 验证密码
-        if (!password_verify($data['password'],$admin_user['password']))
+        if (!password_verify($data['password'],$admin_user->passowrd))
         {
             return $this->error('登录密码错误');
         }
 
-        $admin_user_update['login_time'] = date('Y-m-d H:i:s');
-        $admin_user_update['login_ip'] = $request->ip();
+        $admin_user->login_time = date('Y-m-d H:i:s');
+        $admin_user->login_ip = $request->ip();
+        $admin_user->save();
 
         // 写入session
         Session::set('admin_user', $admin_user['id']);

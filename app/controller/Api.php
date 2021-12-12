@@ -15,7 +15,12 @@ use think\facade\Log;
  */
 class Api extends BaseController
 {
-    // 通用数据获取接口
+    /**
+     * 通用数据获取接口
+     *
+     * @param [type] $code
+     * @return void
+     */
     public function get($code)
     {
         $api_data = Db::table('sys_api')->where('code',$code)->find();

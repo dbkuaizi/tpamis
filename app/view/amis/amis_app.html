@@ -37,7 +37,7 @@
       brandName: '{map:config name="SysConfig.AdminName" default="123"}',
       className: 'schema-wrapper',
       logo: '{$Think.config.amis.logo}',
-      header: {include file='../app/view/amis/amis_header.json' /},
+      header: {com:slot code="sys_header_pc"},
       api: '/json/menu.json'
     };
 

@@ -13,7 +13,7 @@
           },
           {
             "label": "系统管理",
-            "icon": "ri-settings-5-line",
+            "icon": "ri-apps-line",
             "children": [
               {
                 "label": "组件管理",
