@@ -17,6 +17,7 @@ class Map extends TagLib
         'option' =>  ['attr' => 'code,label,value', 'close' => 0],
     ];
 
+
     /**
      * 字典列表,用法类似于 array_colnum()
      */

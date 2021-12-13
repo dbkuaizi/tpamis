@@ -25,5 +25,5 @@ return [
     // 标签库标签结束标记
     'taglib_end'    => '}',
     // 引入自定义的标签库
-    'taglib_pre_load'     => 'app\taglib\Com,app\taglib\Map',
+    'taglib_pre_load'     => 'app\taglib\Com,app\taglib\Map,app\taglib\Sys',
 ];

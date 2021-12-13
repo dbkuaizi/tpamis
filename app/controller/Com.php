@@ -19,7 +19,7 @@ class Com extends BaseController
 
         // 如果查询为空 就使用不存在的 实例
         if (empty($result)) {
-            $result = Db::table('sys_com')->where('code','com_ins_empty')->find();
+            $result = Db::table('sys_com')->where('code','sys_com_empty')->find();
             $result['body'] = str_replace('[code]',$code, $result['body']);
         }
 

@@ -41,18 +41,21 @@ class Login
             return $this->error('用户名不存在');
         }
 
+
+
         // 验证密码
-        if (!password_verify($data['password'],$admin_user->passowrd))
+        if (!password_verify($data['password'],$admin_user->password))
         {
             return $this->error('登录密码错误');
         }
-
+        
+        // 更新登录信息
         $admin_user->login_time = date('Y-m-d H:i:s');
         $admin_user->login_ip = $request->ip();
         $admin_user->save();
 
         // 写入session
-        Session::set('admin_user', $admin_user['id']);
+        Session::set('admin_user', $admin_user->toArray());
         // 验证登录
         return $this->success('登录成功');
 
