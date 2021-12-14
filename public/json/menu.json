@@ -12,6 +12,11 @@
             "schemaApi": "/com/get/index"
           },
           {
+            "label": "Baidu",
+            "icon": "ri-computer-line",
+            "redirect": "https://www.baidu.com"
+          },
+          {
             "label": "系统管理",
             "icon": "ri-apps-line",
             "children": [

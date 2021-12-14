@@ -19661,7 +19661,7 @@ readers do not read off random characters that represent icons */
   );
   --DatePicker-placeholderColor: var(--Form-input-placeholderColor);
   --LocationPicker-borderRadius: var(--Form-input-borderWidth);
-  --Divider-borderStyle: dashed;
+  --Divider-borderStyle: solid;
   --Drawer-bg: var(--background);
   --Drawer-body-padding: var(--gap-base);
   --Drawer-close-color: rgba(255, 255, 255, 0.8);
@@ -24301,6 +24301,10 @@ readers do not read off random characters that represent icons */
   line-height: var(--gap-xl);
 }
 
+.amis-scope .a-Toast-content .a-Toast-body .a-Html {
+  word-break: break-word;
+}
+
 .amis-scope .a-Toast-icon {
   display: inline-flex;
   text-rendering: auto;
@@ -26384,6 +26388,91 @@ readers do not read off random characters that represent icons */
   color: var(--text--muted-color);
   text-align: left;
   padding: var(--gap-sm);
+}
+
+.amis-scope .a-ScheduleCalendar-icon {
+  position: absolute;
+  bottom: var(--Calendar-icon-bottom);
+  left: 50%;
+  transform: translateX(-50%);
+  display: block;
+  width: var(--Calendar-icon-width);
+  height: var(--Calendar-icon-height);
+  border-radius: 50%;
+  z-index: 10;
+}
+
+.amis-scope .a-ScheduleCalendar-action {
+  display: block;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: transparent;
+  color: inherit;
+}
+
+.amis-scope .a-ScheduleCalendar-action:not(:disabled):not(.is-disabled):hover {
+  color: inherit;
+  background: transparent;
+  border-color: transparent;
+}
+
+.amis-scope .a-ScheduleCalendar .rdtDay {
+  position: relative;
+}
+
+.amis-scope .a-ScheduleCalendar-text-overflow {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  position: absolute;
+  width: 100%;
+}
+
+.amis-scope .a-ScheduleCalendar-large {
+  width: 100%;
+}
+
+.amis-scope .a-ScheduleCalendar-large .rdtPicker {
+  width: 100%;
+}
+
+.amis-scope .a-ScheduleCalendar-large .rdtPicker table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.amis-scope .a-ScheduleCalendar-large .rdtPicker table td {
+  border: var(--Calendar-borderWidth) solid var(--borderColor);
+}
+
+.amis-scope .a-ScheduleCalendar-large .rdtDay {
+  height: var(--Calendar-rdt-day);
+  vertical-align: top;
+}
+
+.amis-scope .a-ScheduleCalendar-large .a-ScheduleCalendar-large-day-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  height: 100%;
+}
+
+.amis-scope .a-ScheduleCalendar-large .a-ScheduleCalendar-large-day-wrap .a-ScheduleCalendar-large-schedule-content {
+  position: relative;
+  z-index: 10;
+  border-radius: var(--borderRadius);
+  text-align: left;
+  padding: var(--Calendar-schedule-content-padding);
+  height: var(--Calendar-schedule-content-height);
+  color: var(--Calendar-schedule-content-color);
+}
+
+.amis-scope .a-ScheduleCalendar-large .a-ScheduleCalendar-action {
+  z-index: 20;
+  position: relative;
 }
 
 .amis-scope .a-Collapse {

@@ -23032,6 +23032,10 @@ readers do not read off random characters that represent icons */
   line-height: 1.5rem;
 }
 
+.amis-scope .cxd-Toast-content .cxd-Toast-body .cxd-Html {
+  word-break: break-word;
+}
+
 .amis-scope .cxd-Toast-icon {
   display: inline-flex;
   text-rendering: auto;
@@ -25133,6 +25137,91 @@ readers do not read off random characters that represent icons */
   color: #b4b6ba;
   text-align: left;
   padding: 0.5rem;
+}
+
+.amis-scope .cxd-ScheduleCalendar-icon {
+  position: absolute;
+  bottom: -0.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: block;
+  width: 0.625rem;
+  height: 0.625rem;
+  border-radius: 50%;
+  z-index: 10;
+}
+
+.amis-scope .cxd-ScheduleCalendar-action {
+  display: block;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: transparent;
+  color: inherit;
+}
+
+.amis-scope .cxd-ScheduleCalendar-action:not(:disabled):not(.is-disabled):hover {
+  color: inherit;
+  background: transparent;
+  border-color: transparent;
+}
+
+.amis-scope .cxd-ScheduleCalendar .rdtDay {
+  position: relative;
+}
+
+.amis-scope .cxd-ScheduleCalendar-text-overflow {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  position: absolute;
+  width: 100%;
+}
+
+.amis-scope .cxd-ScheduleCalendar-large {
+  width: 100%;
+}
+
+.amis-scope .cxd-ScheduleCalendar-large .rdtPicker {
+  width: 100%;
+}
+
+.amis-scope .cxd-ScheduleCalendar-large .rdtPicker table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.amis-scope .cxd-ScheduleCalendar-large .rdtPicker table td {
+  border: 0.0625rem solid #eceff8;
+}
+
+.amis-scope .cxd-ScheduleCalendar-large .rdtDay {
+  height: 6.25rem;
+  vertical-align: top;
+}
+
+.amis-scope .cxd-ScheduleCalendar-large .cxd-ScheduleCalendar-large-day-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  height: 100%;
+}
+
+.amis-scope .cxd-ScheduleCalendar-large .cxd-ScheduleCalendar-large-day-wrap .cxd-ScheduleCalendar-large-schedule-content {
+  position: relative;
+  z-index: 10;
+  border-radius: 0.25rem;
+  text-align: left;
+  padding: 0 0.25rem;
+  height: 1.25rem;
+  color: #fff;
+}
+
+.amis-scope .cxd-ScheduleCalendar-large .cxd-ScheduleCalendar-action {
+  z-index: 20;
+  position: relative;
 }
 
 .amis-scope .cxd-Collapse {
@@ -29108,7 +29197,7 @@ readers do not read off random characters that represent icons */
 
 .amis-scope .cxd-Divider {
   margin: 0.75rem calc(0.75rem * -1);
-  border-bottom: 0.0625rem dashed #eceff8;
+  border-bottom: 0.0625rem solid #eceff8;
   height: 0.125rem;
   font-size: 0;
 }

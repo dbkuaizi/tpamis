@@ -23058,6 +23058,10 @@ readers do not read off random characters that represent icons */
   line-height: 1.5rem;
 }
 
+.amis-scope .dark-Toast-content .dark-Toast-body .dark-Html {
+  word-break: break-word;
+}
+
 .amis-scope .dark-Toast-icon {
   display: inline-flex;
   text-rendering: auto;
@@ -25161,6 +25165,91 @@ readers do not read off random characters that represent icons */
   color: white;
   text-align: left;
   padding: 0.5rem;
+}
+
+.amis-scope .dark-ScheduleCalendar-icon {
+  position: absolute;
+  bottom: var(--Calendar-icon-bottom);
+  left: 50%;
+  transform: translateX(-50%);
+  display: block;
+  width: var(--Calendar-icon-width);
+  height: var(--Calendar-icon-height);
+  border-radius: 50%;
+  z-index: 10;
+}
+
+.amis-scope .dark-ScheduleCalendar-action {
+  display: block;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: transparent;
+  color: inherit;
+}
+
+.amis-scope .dark-ScheduleCalendar-action:not(:disabled):not(.is-disabled):hover {
+  color: inherit;
+  background: transparent;
+  border-color: transparent;
+}
+
+.amis-scope .dark-ScheduleCalendar .rdtDay {
+  position: relative;
+}
+
+.amis-scope .dark-ScheduleCalendar-text-overflow {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  position: absolute;
+  width: 100%;
+}
+
+.amis-scope .dark-ScheduleCalendar-large {
+  width: 100%;
+}
+
+.amis-scope .dark-ScheduleCalendar-large .rdtPicker {
+  width: 100%;
+}
+
+.amis-scope .dark-ScheduleCalendar-large .rdtPicker table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.amis-scope .dark-ScheduleCalendar-large .rdtPicker table td {
+  border: var(--Calendar-borderWidth) solid #656565;
+}
+
+.amis-scope .dark-ScheduleCalendar-large .rdtDay {
+  height: var(--Calendar-rdt-day);
+  vertical-align: top;
+}
+
+.amis-scope .dark-ScheduleCalendar-large .dark-ScheduleCalendar-large-day-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  height: 100%;
+}
+
+.amis-scope .dark-ScheduleCalendar-large .dark-ScheduleCalendar-large-day-wrap .dark-ScheduleCalendar-large-schedule-content {
+  position: relative;
+  z-index: 10;
+  border-radius: 0.142rem;
+  text-align: left;
+  padding: var(--Calendar-schedule-content-padding);
+  height: var(--Calendar-schedule-content-height);
+  color: var(--Calendar-schedule-content-color);
+}
+
+.amis-scope .dark-ScheduleCalendar-large .dark-ScheduleCalendar-action {
+  z-index: 20;
+  position: relative;
 }
 
 .amis-scope .dark-Collapse {
@@ -29137,7 +29226,7 @@ readers do not read off random characters that represent icons */
 
 .amis-scope .dark-Divider {
   margin: 0.75rem calc(0.75rem * -1);
-  border-bottom: 0.0625rem dashed #656565;
+  border-bottom: 0.0625rem solid #656565;
   height: 0.125rem;
   font-size: 0;
 }
