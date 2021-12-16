@@ -3,6 +3,7 @@
 namespace app\controller;
 use think\facade\Config;
 use app\BaseController;
+use app\Request;
 use think\facade\Db;
 use think\facade\View;
 
@@ -30,13 +31,19 @@ class Com extends BaseController
     /**
      *  组件管理列表
      */
-    public function list()
+    public function list(Request $request)
     {
         $ret_data = [];
-        $page = $this->request->get('page', 1);
-        $size = $this->request->get('perPage', 15);
+        $page = $request->get('page', 1);
+        $size = $request->get('perPage', 15);
         // 查询条件
-        $where = [];
+        $where = ['delete_time'=>null];
+
+        // 如果有传递组件类型 就过滤组件类型
+        if($request->has('type')) {
+            $where['type'] = $request->get('type');
+        }
+
         $without_field = 'body';
         // 先查找第一层数据
         $query = Db::table('sys_com')->where('parent_code', '')->where($where);

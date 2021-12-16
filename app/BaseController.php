@@ -52,7 +52,12 @@ abstract class BaseController
 
     // 初始化
     protected function initialize()
-    {}
+    {
+        // 验证登录状态
+
+        // 验证权限
+        
+    }
 
     /**
      * 验证数据
