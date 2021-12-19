@@ -37,7 +37,13 @@ class Tree{
      */
     public static function makeTree($data,$options=array() ){
         $dataset = self::buildData($data,$options);
-        $index = $options['root_index'] ?? 0;
+        $index = 0;
+
+        // 如果第一条数据存在，且第一条数据的父字段为字符串
+        if(!empty($data[0]) && is_string($data[0][$options['parent_key']])) {
+            $index = '';
+        }
+
         $r = self::makeTreeCore($index,$dataset,'normal');
         return $r;
     }

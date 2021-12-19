@@ -24,6 +24,9 @@ class Api extends BaseController
     public function get($code)
     {
         $api_data = Db::table('sys_api')->where('code',$code)->find();
+        // 获取接口配置
+        $api_config = ['tree' => [],'curd' => [],'option'=> [],'find' => []];
+        $api_config = array_merge($api_config,json_decode($api_data['config'],true) ?: []);
 
         try {
             switch ($api_data['type']) {
@@ -31,13 +34,13 @@ class Api extends BaseController
                     $ret_data = $this->getFindData($api_data);
                     break;
                 case 'curd': // 多条数据
-                    $ret_data = $this->getCurdData($api_data);
+                    $ret_data = $this->getCurdData($api_data,$api_config['curd']);
                     break;
                 case 'tree':
-                    $ret_data = $this->getTreeData($api_data);
+                    $ret_data = $this->getTreeData($api_data,$api_config['tree']);
                     break;
-                case 'list': // 多条数据
-                    $ret_data = $this->getListData($api_data);
+                case 'option': // 多条数据
+                    $ret_data = $this->getOptionData($api_data);
                     break;
             }
         }catch (\Exception $e) {
@@ -54,9 +57,24 @@ class Api extends BaseController
     public function save(Request $request,$code,$id = '')
     {
         $ret_data = ['status' => 1 ,'msg' => '保存失败'];
+
+        // 如果没有通过路由传递id，但通过了 get 或 post 传递了 id
+        if(empty($id) && $request->has('id')) {
+            $id = $request->param('id');
+        }
+
         $com_data = Db::table('sys_com')->where('code',$code)->field('tables,pri_field')->find();
         $table_name = explode(',',$com_data['tables'])[0];
         $data = $request->post();
+
+        // 如果属性中存在数组则使用 JSON 编码
+        foreach($data as &$val)
+        {
+            if(is_array($val)) {
+                $val = json_encode($val,JSON_UNESCAPED_UNICODE);
+            }
+        }
+
         // 获取操作表字段
         $table_fields = array_column(DB::query("DESC ".$com_data['tables']),'Field');
         if ($id){
@@ -66,7 +84,7 @@ class Api extends BaseController
                 $data['update_time'] =  date('Y-m-d H:i:s');
             }
 
-            $res = Db::table($table_name)->where([$pri_key => $id])->update($data);
+            $res = Db::table($table_name)->where([$pri_key => $id])->strict(false)->update($data);
         } else {
 
             // 是否需要补上新增时间
@@ -75,7 +93,7 @@ class Api extends BaseController
                 $data['update_time'] =  date('Y-m-d H:i:s');
             }
 
-            $res = Db::table($table_name)->insert($data);
+            $res = Db::table($table_name)->strict(false)->insert($data);
         }
         if ($res) {
             $ret_data = ['status' => 0 ,'msg' => '保存成功'];
@@ -108,10 +126,9 @@ class Api extends BaseController
     }
 
     // 列表获取接口
-    public function getCurdData($api_data)
+    public function getCurdData($api_data,$config)
     {
         $sql = View::display($api_data['sql_string']);
-
         if ($api_data['sql_total']) {
             $total_sql = $api_data['sql_total'];
         } else {
@@ -129,16 +146,24 @@ class Api extends BaseController
             $sql .= $limit_sql;
         }
 
+        $curd_data = Db::query($sql);
+        // 如果有配置 JSON 转换，就调用转换
+        if(!empty($config['jsonto']))
+        {
+            $this->CurdToJson($curd_data,$config['jsonto']);
+        }
+
         return [
-            'items' => Db::query($sql),
+            'items' => $curd_data,
             'total' => Db::query($total_sql)[0]['total'],
         ];
     }
 
-    public function getListData($api_data)
+    public function getOptionData($api_data)
     {
         $sql = View::display($api_data['sql_string']);
-        return Db::query($sql);
+        $ret_data['options'] = Db::query($sql);
+        return $ret_data;
     }
     // 单条获取数据
     public function getFindData($api_data)
@@ -148,15 +173,32 @@ class Api extends BaseController
     }
 
     // 获取树形数据
-    public function getTreeData($api_data)
+    public function getTreeData($api_data,$config)
     {
         $sql = View::display($api_data['sql_string']);
         $tree_data = Db::query($sql);
-        $tree_config = json_decode($api_data['config'],true);
-        $tree = Tree::makeTree($tree_data,$tree_config);
+        $tree = Tree::makeTree($tree_data,$config);
         return ['options' => $tree];
     }
 
+    // 查询的数据进行JSON 转换
+    private function CurdToJson(&$curd_data,$json_to)
+    {
+        $json_to = explode(',',$json_to);
+        foreach ($curd_data as &$item)
+        {
+         
+            foreach ($item as $key => &$val)
+            {
+
+                if(in_array($key,$json_to))
+                {
+                    $val = json_decode($val,true);
+                }
+                
+            }
+        }
+    }
 
 
 
