@@ -27,7 +27,7 @@ class Map extends TagLib
         $field = $tag['field'] ?? 'map_val';
         $key = $tag['key']?? '';
 
-        $result = Db::table('sys_map')->where('map_code',$map_code)->column($field,$key);
+        $result = Db::table('sys_map')->where('map_code',$map_code)->order('sort')->column($field,$key);
         return json_encode($result,JSON_UNESCAPED_UNICODE);
     }
 
@@ -60,7 +60,7 @@ class Map extends TagLib
             $label_field => 'label',
             $value_field => 'value',
         ];
-        return Db::table('sys_map')->where('map_code',$map_code)->field($field)->select();
+        return Db::table('sys_map')->where('map_code',$map_code)->order('sort')->field($field)->select();
 
     }
 

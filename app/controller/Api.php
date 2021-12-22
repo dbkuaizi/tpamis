@@ -8,6 +8,7 @@ use think\facade\Db;
 use think\facade\View;
 use Tree;
 use think\facade\Log;
+
 /**
  * 后端通用数据接口
  * Class Index
@@ -64,7 +65,7 @@ class Api extends BaseController
         }
 
         $com_data = Db::table('sys_com')->where('code',$code)->field('tables,pri_field')->find();
-        $table_name = explode(',',$com_data['tables'])[0];
+        $table_name = $com_data['tables'];
         $data = $request->post();
 
         // 如果属性中存在数组则使用 JSON 编码
@@ -84,7 +85,7 @@ class Api extends BaseController
                 $data['update_time'] =  date('Y-m-d H:i:s');
             }
 
-            $res = Db::table($table_name)->where([$pri_key => $id])->strict(false)->update($data);
+            $res = Db::table($table_name)->where([$pri_key => $id])->update($data);
         } else {
 
             // 是否需要补上新增时间
@@ -93,7 +94,7 @@ class Api extends BaseController
                 $data['update_time'] =  date('Y-m-d H:i:s');
             }
 
-            $res = Db::table($table_name)->strict(false)->insert($data);
+            $res = Db::table($table_name)->insert($data);
         }
         if ($res) {
             $ret_data = ['status' => 0 ,'msg' => '保存成功'];
@@ -108,11 +109,11 @@ class Api extends BaseController
         $com_data = Db::table('sys_com')->where('code',$code)->field('tables,pri_field')->find();
         // 如果组件不存在
         if (!isset($com_data)) return $this->error('组件不存在');
-        if (empty($com_data['tables'])) return $this->error('主键数据表不能为空');
+        if (empty($com_data['tables'])) return $this->error('组件数据表不能为空');
 
         // 判断是否存在软删除字段
        $table_fields = array_column(DB::query("DESC ".$com_data['tables']),'Field');
-       $pri_key = $com_data['pri_field'] ?: 'i_Id';
+       $pri_key = $com_data['pri_field'] ?: 'id';
        // 如果存在软删除字段，就走软删除
         $del_where[$pri_key] = $id;
 
@@ -123,6 +124,35 @@ class Api extends BaseController
           $ret = Db::table($com_data['tables'])->where($del_where)->delete();
        }
         return $ret ? $this->success('删除成功') : $this->error('删除失败');
+    }
+
+    // 通用排序接口
+    public function sort(Request $request, $code)
+    {
+        $com_data = Db::table('sys_com')->where('code',$code)->field('tables,pri_field')->find();
+        // 如果组件不存在
+        if (!isset($com_data)) return $this->error('组件不存在');
+        if (empty($com_data['tables'])) return $this->error('组件数据表不能为空');
+
+        $sort_arr = explode(',',$request->post('ids'));
+        $sort_field = $request->post('sort_field','sort');
+        $pri_key = $com_data['pri_field'] ?: 'id';
+
+        try {
+            Db::startTrans();
+            foreach($sort_arr as $key => $val)
+            {
+                Db::table($com_data['tables'])->where([$pri_key => $val])->update([$sort_field =>$key]);
+            }
+            Db::commit();
+        }catch (\Exception $e) {
+            // 回滚事务
+            Db::rollback();
+            return $this->error('保存失败');
+        }
+
+        return $this->success('保存成功');
+
     }
 
     // 列表获取接口
@@ -159,12 +189,14 @@ class Api extends BaseController
         ];
     }
 
+    // 获取选项数据
     public function getOptionData($api_data)
     {
         $sql = View::display($api_data['sql_string']);
         $ret_data['options'] = Db::query($sql);
         return $ret_data;
     }
+
     // 单条获取数据
     public function getFindData($api_data)
     {

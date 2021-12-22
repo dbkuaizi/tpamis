@@ -1,7 +1,7 @@
 <?php
 
 namespace app\controller;
-use think\facade\Config;
+
 use app\BaseController;
 use app\Request;
 use think\facade\Db;
@@ -13,6 +13,7 @@ use think\facade\View;
  */
 class Com extends BaseController
 {
+
     // 获取组件配置
     public function getConfig($code)
     {
