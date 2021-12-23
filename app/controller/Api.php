@@ -210,7 +210,8 @@ class Api extends BaseController
         $sql = View::display($api_data['sql_string']);
         $tree_data = Db::query($sql);
         $tree = Tree::makeTree($tree_data,$config);
-        return ['options' => $tree];
+        $ret_field = request()->get('response_key','options');
+        return [$ret_field => $tree];
     }
 
     // 查询的数据进行JSON 转换
