@@ -46,7 +46,7 @@ class Com extends BaseController
         }
 
         $without_field = 'body';
-        $field = ['*',' CONCAT("/com/",code)' => 'path'];
+        $field = ['*',' CONCAT("/com/get/",code)' => 'path'];
         // 先查找第一层数据
         $query = Db::table('sys_com')->field($field)->where('parent_code', '')->where($where);
         $com_list = $query->page($page, $size)->withoutField($without_field)->select()->toArray();
