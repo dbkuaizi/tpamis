@@ -17,7 +17,6 @@ class Map extends TagLib
         'option' =>  ['attr' => 'code,label,value', 'close' => 0],
     ];
 
-
     /**
      * 字典列表,用法类似于 array_colnum()
      */
@@ -26,9 +25,8 @@ class Map extends TagLib
         $map_code = $tag['code'];
         $field = $tag['field'] ?? 'map_val';
         $key = $tag['key']?? '';
-
         $result = Db::table('sys_map')->where('map_code',$map_code)->order('sort')->column($field,$key);
-        return json_encode($result,JSON_UNESCAPED_UNICODE);
+        return json_encode($result,JSON_FORCE_OBJECT);
     }
 
     /**
