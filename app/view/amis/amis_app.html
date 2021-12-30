@@ -2,12 +2,13 @@
 <html>
 <head>
   <meta charset="UTF-8" />
-  <title>ThinkAdmin</title>
+  <title>Tpamis</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta
           name="viewport"
           content="width=device-width, initial-scale=1, maximum-scale=1"
   />
+  <link rel="icon" type="image/x-ico" href="{$Think.config.amis.logo}"/>
   <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
 <!-- amis 部分代码 -->
 <link rel="stylesheet" href="/static/amis-sdk/{$Think.config.amis.amis_theme|default='sdk'}.css">
@@ -38,11 +39,11 @@
 
     const app = {
       type: 'app',
-      brandName: '{map:config name="SysConfig.AdminName" default="123"}',
+      brandName: '{$Think.config.amis.amis_name}',
       className: 'schema-wrapper',
       logo: '{$Think.config.amis.logo}',
       header: {com:slot code="sys_header_pc"},
-      api: '/json/menu.json'
+      api: '/sys/menu'
     };
 
     function normalizeLink(to, location = history.location) {

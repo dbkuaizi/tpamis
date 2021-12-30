@@ -1,7 +1,8 @@
-ThinkAmis
+Tpamis
 ===============
 <p align="center">
  <img src="https://img.shields.io/badge/PHP-7.2%2B-blue" alt="Build Status">
+ <img src="https://img.shields.io/badge/MySQL-5.7%2B-orange" alt="Build Status">
  <img src="https://img.shields.io/badge/ThinkPHP-6.0.9-green.svg" alt="Build Status">
  <img src="https://img.shields.io/badge/AMIS-1.5.3-blue.svg" alt="Build Status">
  <img src="https://img.shields.io/badge/license-Apache--2.0-red" alt="Build Status">
@@ -18,7 +19,7 @@ ThinkAmis
 - [x] 接口管理，使用SQL可直接查询列表、单条、树形、option 四种数据结构
 - [x] 通用CURD, 使用通用接口快速对数据进行简单的增删改查操作 (仅支持单表，多表或复杂操作仍需要编写接口代码)
 - [x] 通用排序, 通用排序接口开发
-- [x] 扩展模板，扩展 ThinkAmis 特有的模板标签，这些标签可以帮我们更好的构建页面 JSON
+- [x] 扩展模板，扩展 Tpamis 特有的模板标签，这些标签可以帮我们更好的构建页面 JSON
 - [x] 用户管理，后端的用户管理功能
 - [ ] 角色管理，用户权限控制
 - [ ] 菜单管理，对后台菜单进行配置
@@ -26,5 +27,5 @@ ThinkAmis
 - [ ] 日志管理，后台用户的登录日志和操作日志
 
 ## 版权信息
-ThinkAmis 使用了与 ThinkPHP 和 amis 一致的的版权协议 Apache2。
+Tpamis 使用了与 ThinkPHP 和 amis 一致的的版权协议 Apache2。
 本项目可以免费商用但必须在代码中标注。

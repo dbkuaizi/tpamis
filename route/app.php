@@ -13,10 +13,10 @@ Route::group(function(){
     Route::delete('api/:code/[:id]','/Api/del'); // 通用删除接口
 
     // 组件路由，根据 code 返回组件编码
-    Route::view('sys/[:code]','amis/amis_app');
+    Route::view('view/[:code]','amis/amis_app');
     // 根目录 跳转到 后台首页
     Route::get('/',function(){
-        return redirect('/sys/index');
+        return redirect('/view/index');
     });
 
 

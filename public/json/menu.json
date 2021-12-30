@@ -8,13 +8,13 @@
           {
             "label": "控制台",
             "icon": "ri-computer-line",
-            "url": "/sys/index",
+            "url": "/view/index",
             "schemaApi": "/com/get/index"
           },
           {
             "label": "Baidu",
             "icon": "ri-computer-line",
-            "redirect": "https://www.baidu.com"
+            "link": "https://www.baidu.com"
           },
           {
             "label": "系统管理",
@@ -23,55 +23,55 @@
               {
                 "label": "组件管理",
                 "icon": "ri-collage-fill",
-                "url": "/sys/com",
+                "url": "/view/com",
                 "schemaApi": "/com/get/com_list"
               },
               {
                 "label": "组件管理 - 编辑",
-                "url": "/sys/com_save",
+                "url": "/view/com_save",
                 "schemaApi": "/com/get/com_save",
                 "visible": false
               },
               {
                 "label": "字典管理",
                 "icon": "ri-book-read-fill",
-                "url": "/sys/map",
+                "url": "/view/map",
                 "schemaApi": "/com/get/com_map"
               },
               {
                 "label": "接口管理",
                 "icon": "ri-rocket-2-fill",
-                "url": "/sys/api",
+                "url": "/view/api",
                 "schemaApi": "/com/get/admin_sqldata"
               },
               {
                 "label": "接口管理 - 编辑",
-                "url": "/sys/admin_sqledit",
+                "url": "/view/admin_sqledit",
                 "schemaApi": "/com/get/admin_sqledit",
                 "visible": false
               },
               {
                 "label": "菜单管理",
                 "icon": "ri-list-check",
-                "url": "/sys/enum",
+                "url": "/view/enum",
                 "schemaApi": "/com/get/admin_menu"
               },
               {
                 "label": "用户管理",
                 "icon": "ri-admin-fill",
-                "url": "/sys/admin_user",
+                "url": "/view/admin_user",
                 "schemaApi": "/com/get/admin_user"
               },
               {
                 "label": "角色管理",
                 "icon": "ri-contacts-fill",
-                "url": "/sys/admin_role",
+                "url": "/view/admin_role",
                 "schemaApi": "/com/get/admin_role"
               },
               {
                 "label": "测试页面",
                 "icon": "ri-contacts-fill",
-                "url": "/sys/test",
+                "url": "/view/test",
                 "schemaApi": "/com/get/test"
               }
             ]

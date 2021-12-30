@@ -223,10 +223,10 @@ class Api extends BaseController
          
             foreach ($item as $key => &$val)
             {
-
+                // 如果转换失败
                 if(in_array($key,$json_to))
                 {
-                    $val = json_decode($val,true);
+                    $val = json_decode($val,true)?: [];
                 }
                 
             }

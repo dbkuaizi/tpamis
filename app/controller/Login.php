@@ -5,6 +5,7 @@ namespace app\controller;
 
 use app\model\AdminUser;
 use think\captcha\facade\Captcha;
+use think\facade\Config;
 use think\facade\Validate;
 use think\Request;
 use think\facade\Session;
@@ -30,11 +31,15 @@ class Login
         ]);
 
         // 验证
-        if (!$validate->check($data)) {
-            return $this->error($validate->getError());
+        // if (!$validate->check($data)) {
+        //     return $this->error($validate->getError());
+        // }
+        $login_field = Config::get('amis.login_mode') ?: 'username';
+        if(is_array($login_field)) {
+            $login_field = implode('|',$login_field);
         }
-
-        $admin_user = AdminUser::where('username', $data['username'])->find();
+dd($login_field);
+        $admin_user = AdminUser::where($login_field, $data['username'])->find();
         // 如果用户名不存在
         if (empty($admin_user))
         {
