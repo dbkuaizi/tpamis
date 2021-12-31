@@ -1,14 +1,30 @@
-Tpamis
-===============
+<img src="./public/static/logo.png" align="center">
+
+  <h1 align="center">
+    Tpamis
+  </h1>
+  <h4 align="center">
+    基于 ThinkPHP6.0 与 amis 构建的低代码开发框架
+  </h4> 
 <p align="center">
- <img src="https://img.shields.io/badge/PHP-7.2%2B-blue" alt="Build Status">
- <img src="https://img.shields.io/badge/MySQL-5.7%2B-orange" alt="Build Status">
- <img src="https://img.shields.io/badge/ThinkPHP-6.0.10-green.svg" alt="Build Status">
- <img src="https://img.shields.io/badge/AMIS-1.6.0-blue.svg" alt="Build Status">
+ <a href="#">
+    <img src="https://img.shields.io/badge/PHP-7.2%2B-blue" alt="Build Status">
+ </a>
+ <a href="#">
+    <img src="https://img.shields.io/badge/MySQL-5.7%2B-orange" alt="Build Status">
+ </a>
+ <a href="#">
+    <img src="https://img.shields.io/badge/ThinkPHP-6.0.10-green.svg" alt="Build Status">
+ </a>
+ <a href="#">
+    <img src="https://img.shields.io/badge/AMIS-1.6.0-blue.svg" alt="Build Status">
+ </a>
+ <a href="#">
  <img src="https://img.shields.io/badge/license-Apache--2.0-red" alt="Build Status">
+ </a>
 </p>
 
-是基于 [ThinkPHP6.0](https://gitee.com/liu21st/thinkphp) 与 [amis](https://gitee.com/baidu/amis) 构建的低代码开发框架
+
 
 该项目可以通过纯 JSON 快速配置后台管理系统，无需前端参与，后端开发人员即可完成。
 严格来说依然属于 MVC 架构，并非前后端分离。
