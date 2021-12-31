@@ -16,7 +16,7 @@ title: 背景色
 | bg-primary | background: #007bff |
 | bg-secondary | background: #6c757d |
 | bg-success | background: #28a745 |
-| bg-info | background: #17a2b8 |
+| bg-info | background: #007bff |
 | bg-warning | background: #28a745 |
 | bg-danger | background: #dc3545 |
 | bg-light | background: #f8f9fa |
@@ -170,7 +170,7 @@ title: 背景色
 }
 
 .bg-info {
-  background-color: #17a2b8;
+  background-color: #007bff;
 }
 
 .bg-warning {
@@ -658,7 +658,7 @@ title: 背景色
 }
 
 .hover\:bg-info:hover {
-  background-color: #17a2b8;
+  background-color: #007bff;
 }
 
 .hover\:bg-warning:hover {
@@ -1152,7 +1152,7 @@ title: 背景色
 
 .active\:bg-info.is-active,
 .active\:bg-info:active {
-  background-color: #17a2b8;
+  background-color: #007bff;
 }
 
 .active\:bg-warning.is-active,
@@ -1734,7 +1734,7 @@ title: 背景色
 }
 
 .focus\:bg-info:focus {
-  background-color: #17a2b8;
+  background-color: #007bff;
 }
 
 .focus\:bg-warning:focus {
@@ -2228,7 +2228,7 @@ title: 背景色
 
 .disabled\:bg-info.is-disabled,
 .disabled\:bg-info:disabled {
-  background-color: #17a2b8;
+  background-color: #007bff;
 }
 
 .disabled\:bg-warning.is-disabled,
@@ -2810,7 +2810,7 @@ title: 背景色
 }
 
 .group:hover .group-hover\:bg-info {
-  background-color: #17a2b8;
+  background-color: #007bff;
 }
 
 .group:hover .group-hover\:bg-warning {
@@ -3299,7 +3299,7 @@ title: 背景色
   }
 
   .m\:bg-info {
-    background-color: #17a2b8;
+    background-color: #007bff;
   }
 
   .m\:bg-warning {
@@ -3787,7 +3787,7 @@ title: 背景色
   }
 
   .m\:hover\:bg-info:hover {
-    background-color: #17a2b8;
+    background-color: #007bff;
   }
 
   .m\:hover\:bg-warning:hover {
@@ -4281,7 +4281,7 @@ title: 背景色
 
   .m\:active\:bg-info.is-active,
 .m\:active\:bg-info:active {
-    background-color: #17a2b8;
+    background-color: #007bff;
   }
 
   .m\:active\:bg-warning.is-active,
@@ -4863,7 +4863,7 @@ title: 背景色
   }
 
   .m\:focus\:bg-info:focus {
-    background-color: #17a2b8;
+    background-color: #007bff;
   }
 
   .m\:focus\:bg-warning:focus {
@@ -5357,7 +5357,7 @@ title: 背景色
 
   .m\:disabled\:bg-info.is-disabled,
 .m\:disabled\:bg-info:disabled {
-    background-color: #17a2b8;
+    background-color: #007bff;
   }
 
   .m\:disabled\:bg-warning.is-disabled,
@@ -5939,7 +5939,7 @@ title: 背景色
   }
 
   .group:hover .m\:group-hover\:bg-info {
-    background-color: #17a2b8;
+    background-color: #007bff;
   }
 
   .group:hover .m\:group-hover\:bg-warning {
@@ -6428,7 +6428,7 @@ title: 背景色
   }
 
   .pc\:bg-info {
-    background-color: #17a2b8;
+    background-color: #007bff;
   }
 
   .pc\:bg-warning {
@@ -6916,7 +6916,7 @@ title: 背景色
   }
 
   .pc\:hover\:bg-info:hover {
-    background-color: #17a2b8;
+    background-color: #007bff;
   }
 
   .pc\:hover\:bg-warning:hover {
@@ -7410,7 +7410,7 @@ title: 背景色
 
   .pc\:active\:bg-info.is-active,
 .pc\:active\:bg-info:active {
-    background-color: #17a2b8;
+    background-color: #007bff;
   }
 
   .pc\:active\:bg-warning.is-active,
@@ -7992,7 +7992,7 @@ title: 背景色
   }
 
   .pc\:focus\:bg-info:focus {
-    background-color: #17a2b8;
+    background-color: #007bff;
   }
 
   .pc\:focus\:bg-warning:focus {
@@ -8486,7 +8486,7 @@ title: 背景色
 
   .pc\:disabled\:bg-info.is-disabled,
 .pc\:disabled\:bg-info:disabled {
-    background-color: #17a2b8;
+    background-color: #007bff;
   }
 
   .pc\:disabled\:bg-warning.is-disabled,
@@ -9068,7 +9068,7 @@ title: 背景色
   }
 
   .group:hover .pc\:group-hover\:bg-info {
-    background-color: #17a2b8;
+    background-color: #007bff;
   }
 
   .group:hover .pc\:group-hover\:bg-warning {
@@ -9532,7 +9532,7 @@ title: 边框颜色
 | border-primary | border-color: #007bff |
 | border-secondary | border-color: #6c757d |
 | border-success | border-color: #28a745 |
-| border-info | border-color: #17a2b8 |
+| border-info | border-color: #007bff |
 | border-warning | border-color: #28a745 |
 | border-danger | border-color: #dc3545 |
 | border-light | border-color: #f8f9fa |
@@ -9653,7 +9653,7 @@ title: 边框颜色
 }
 
 .border-info {
-  border-color: #17a2b8;
+  border-color: #007bff;
 }
 
 .border-warning {
@@ -10053,7 +10053,7 @@ title: 边框颜色
 }
 
 .hover\:border-info:hover {
-  border-color: #17a2b8;
+  border-color: #007bff;
 }
 
 .hover\:border-warning:hover {
@@ -10459,7 +10459,7 @@ title: 边框颜色
 
 .active\:border-info.is-active,
 .active\:border-info:active {
-  border-color: #17a2b8;
+  border-color: #007bff;
 }
 
 .active\:border-warning.is-active,
@@ -10953,7 +10953,7 @@ title: 边框颜色
 }
 
 .focus\:border-info:focus {
-  border-color: #17a2b8;
+  border-color: #007bff;
 }
 
 .focus\:border-warning:focus {
@@ -11359,7 +11359,7 @@ title: 边框颜色
 
 .disabled\:border-info.is-disabled,
 .disabled\:border-info:disabled {
-  border-color: #17a2b8;
+  border-color: #007bff;
 }
 
 .disabled\:border-warning.is-disabled,
@@ -11853,7 +11853,7 @@ title: 边框颜色
 }
 
 .group:hover .group-hover\:border-info {
-  border-color: #17a2b8;
+  border-color: #007bff;
 }
 
 .group:hover .group-hover\:border-warning {
@@ -12254,7 +12254,7 @@ title: 边框颜色
   }
 
   .m\:border-info {
-    border-color: #17a2b8;
+    border-color: #007bff;
   }
 
   .m\:border-warning {
@@ -12654,7 +12654,7 @@ title: 边框颜色
   }
 
   .m\:hover\:border-info:hover {
-    border-color: #17a2b8;
+    border-color: #007bff;
   }
 
   .m\:hover\:border-warning:hover {
@@ -13060,7 +13060,7 @@ title: 边框颜色
 
   .m\:active\:border-info.is-active,
 .m\:active\:border-info:active {
-    border-color: #17a2b8;
+    border-color: #007bff;
   }
 
   .m\:active\:border-warning.is-active,
@@ -13554,7 +13554,7 @@ title: 边框颜色
   }
 
   .m\:focus\:border-info:focus {
-    border-color: #17a2b8;
+    border-color: #007bff;
   }
 
   .m\:focus\:border-warning:focus {
@@ -13960,7 +13960,7 @@ title: 边框颜色
 
   .m\:disabled\:border-info.is-disabled,
 .m\:disabled\:border-info:disabled {
-    border-color: #17a2b8;
+    border-color: #007bff;
   }
 
   .m\:disabled\:border-warning.is-disabled,
@@ -14454,7 +14454,7 @@ title: 边框颜色
   }
 
   .group:hover .m\:group-hover\:border-info {
-    border-color: #17a2b8;
+    border-color: #007bff;
   }
 
   .group:hover .m\:group-hover\:border-warning {
@@ -14855,7 +14855,7 @@ title: 边框颜色
   }
 
   .pc\:border-info {
-    border-color: #17a2b8;
+    border-color: #007bff;
   }
 
   .pc\:border-warning {
@@ -15255,7 +15255,7 @@ title: 边框颜色
   }
 
   .pc\:hover\:border-info:hover {
-    border-color: #17a2b8;
+    border-color: #007bff;
   }
 
   .pc\:hover\:border-warning:hover {
@@ -15661,7 +15661,7 @@ title: 边框颜色
 
   .pc\:active\:border-info.is-active,
 .pc\:active\:border-info:active {
-    border-color: #17a2b8;
+    border-color: #007bff;
   }
 
   .pc\:active\:border-warning.is-active,
@@ -16155,7 +16155,7 @@ title: 边框颜色
   }
 
   .pc\:focus\:border-info:focus {
-    border-color: #17a2b8;
+    border-color: #007bff;
   }
 
   .pc\:focus\:border-warning:focus {
@@ -16561,7 +16561,7 @@ title: 边框颜色
 
   .pc\:disabled\:border-info.is-disabled,
 .pc\:disabled\:border-info:disabled {
-    border-color: #17a2b8;
+    border-color: #007bff;
   }
 
   .pc\:disabled\:border-warning.is-disabled,
@@ -17055,7 +17055,7 @@ title: 边框颜色
   }
 
   .group:hover .pc\:group-hover\:border-info {
-    border-color: #17a2b8;
+    border-color: #007bff;
   }
 
   .group:hover .pc\:group-hover\:border-warning {
@@ -49731,7 +49731,7 @@ title: Text Color
 | text-primary | color: #007bff |
 | text-secondary | color: #6c757d |
 | text-success | color: #28a745 |
-| text-info | color: #17a2b8 |
+| text-info | color: #007bff |
 | text-warning | color: #fad733 |
 | text-danger | color: #dc3545 |
 | text-light | color: #f8f9fa |
@@ -49859,7 +49859,7 @@ title: Text Color
 }
 
 .text-info {
-  color: #17a2b8;
+  color: #007bff;
 }
 
 .text-warning {
@@ -50267,7 +50267,7 @@ title: Text Color
 }
 
 .hover\:text-info:hover {
-  color: #17a2b8;
+  color: #007bff;
 }
 
 .hover\:text-warning:hover {
@@ -50681,7 +50681,7 @@ title: Text Color
 
 .active\:text-info.is-active,
 .active\:text-info:active {
-  color: #17a2b8;
+  color: #007bff;
 }
 
 .active\:text-warning.is-active,
@@ -51183,7 +51183,7 @@ title: Text Color
 }
 
 .focus\:text-info:focus {
-  color: #17a2b8;
+  color: #007bff;
 }
 
 .focus\:text-warning:focus {
@@ -51597,7 +51597,7 @@ title: Text Color
 
 .disabled\:text-info.is-disabled,
 .disabled\:text-info:disabled {
-  color: #17a2b8;
+  color: #007bff;
 }
 
 .disabled\:text-warning.is-disabled,
@@ -52099,7 +52099,7 @@ title: Text Color
 }
 
 .group:hover .group-hover\:text-info {
-  color: #17a2b8;
+  color: #007bff;
 }
 
 .group:hover .group-hover\:text-warning {
@@ -52508,7 +52508,7 @@ title: Text Color
   }
 
   .m\:text-info {
-    color: #17a2b8;
+    color: #007bff;
   }
 
   .m\:text-warning {
@@ -52916,7 +52916,7 @@ title: Text Color
   }
 
   .m\:hover\:text-info:hover {
-    color: #17a2b8;
+    color: #007bff;
   }
 
   .m\:hover\:text-warning:hover {
@@ -53330,7 +53330,7 @@ title: Text Color
 
   .m\:active\:text-info.is-active,
 .m\:active\:text-info:active {
-    color: #17a2b8;
+    color: #007bff;
   }
 
   .m\:active\:text-warning.is-active,
@@ -53832,7 +53832,7 @@ title: Text Color
   }
 
   .m\:focus\:text-info:focus {
-    color: #17a2b8;
+    color: #007bff;
   }
 
   .m\:focus\:text-warning:focus {
@@ -54246,7 +54246,7 @@ title: Text Color
 
   .m\:disabled\:text-info.is-disabled,
 .m\:disabled\:text-info:disabled {
-    color: #17a2b8;
+    color: #007bff;
   }
 
   .m\:disabled\:text-warning.is-disabled,
@@ -54748,7 +54748,7 @@ title: Text Color
   }
 
   .group:hover .m\:group-hover\:text-info {
-    color: #17a2b8;
+    color: #007bff;
   }
 
   .group:hover .m\:group-hover\:text-warning {
@@ -55157,7 +55157,7 @@ title: Text Color
   }
 
   .pc\:text-info {
-    color: #17a2b8;
+    color: #007bff;
   }
 
   .pc\:text-warning {
@@ -55565,7 +55565,7 @@ title: Text Color
   }
 
   .pc\:hover\:text-info:hover {
-    color: #17a2b8;
+    color: #007bff;
   }
 
   .pc\:hover\:text-warning:hover {
@@ -55979,7 +55979,7 @@ title: Text Color
 
   .pc\:active\:text-info.is-active,
 .pc\:active\:text-info:active {
-    color: #17a2b8;
+    color: #007bff;
   }
 
   .pc\:active\:text-warning.is-active,
@@ -56481,7 +56481,7 @@ title: Text Color
   }
 
   .pc\:focus\:text-info:focus {
-    color: #17a2b8;
+    color: #007bff;
   }
 
   .pc\:focus\:text-warning:focus {
@@ -56895,7 +56895,7 @@ title: Text Color
 
   .pc\:disabled\:text-info.is-disabled,
 .pc\:disabled\:text-info:disabled {
-    color: #17a2b8;
+    color: #007bff;
   }
 
   .pc\:disabled\:text-warning.is-disabled,
@@ -57397,7 +57397,7 @@ title: Text Color
   }
 
   .group:hover .pc\:group-hover\:text-info {
-    color: #17a2b8;
+    color: #007bff;
   }
 
   .group:hover .pc\:group-hover\:text-warning {

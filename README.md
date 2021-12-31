@@ -3,8 +3,8 @@ Tpamis
 <p align="center">
  <img src="https://img.shields.io/badge/PHP-7.2%2B-blue" alt="Build Status">
  <img src="https://img.shields.io/badge/MySQL-5.7%2B-orange" alt="Build Status">
- <img src="https://img.shields.io/badge/ThinkPHP-6.0.9-green.svg" alt="Build Status">
- <img src="https://img.shields.io/badge/AMIS-1.5.3-blue.svg" alt="Build Status">
+ <img src="https://img.shields.io/badge/ThinkPHP-6.0.10-green.svg" alt="Build Status">
+ <img src="https://img.shields.io/badge/AMIS-1.6.0-blue.svg" alt="Build Status">
  <img src="https://img.shields.io/badge/license-Apache--2.0-red" alt="Build Status">
 </p>
 
