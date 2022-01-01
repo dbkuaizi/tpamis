@@ -58,6 +58,7 @@ class Sys extends BaseController
                         'label' => $menu_item['label'],
                         'icon' => $menu_item['icon'],
                         'link' => $menu_item['path'],
+                        'visible' => ($menu_item['visible'] == 0) || ($menu_item['visible'] == 1 && $is_mobile) || (!$menu_item['visible'] == 2)
                     ];
                     break;
             }
@@ -65,20 +66,4 @@ class Sys extends BaseController
         return $ret_list;
     }
 
-
-    // 判断是否可见
-    private function menuIsVisible($visible,$is_mobile)
-    {
-        switch ($visible) {
-            case '0':
-                return true;
-                break;
-            case '1':
-                return $is_mobile;
-                break;
-            case '2':
-                return false;
-                break;
-        }
-    }
 }

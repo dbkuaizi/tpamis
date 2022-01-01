@@ -4,10 +4,8 @@
     <meta charset="UTF-8" />
     <title>{$Think.config.amis.login.title} 登录</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1, maximum-scale=1"
-    />
+    <link rel="icon" type="image/x-ico" href="{$Think.config.amis.logo}"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     {load href="/static/amis-sdk/helper.css" /}
     <link rel="stylesheet" href="/static/amis-sdk/sdk.css">
@@ -34,10 +32,10 @@
             --Button-height: 2.5rem;
             --InputGroup-paddingX: .6rem;
             --InputGroup-addOn-bg: var(--Form-input-bg);
-            /*--fontSizeBase: .9rem;*/
+            /* --fontSizeBase: .9rem; */
         }
         .amis-scope .cxd-Icon{height: 1rem}
-        .amis-scope .cxd-TextControl-input input{height: auto;}
+        .amis-scope .cxd-TextControl-input input{height: 100% !important;}
         .amis-scope .cxd-TextControl-input:hover{border:var(--Form-input-borderWidth) solid var(--Form-input-borderColor)}
         .amis-scope .cxd-InputGroup .cxd-TextControl-input{border-left-width: 0;padding-left: 0;}
         .code_img{cursor: pointer;}

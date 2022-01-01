@@ -159,10 +159,16 @@ class Api extends BaseController
     public function getCurdData($api_data,$config)
     {
         $sql = View::display($api_data['sql_string']);
+        // 拼接查询条件
+        if(!empty($config['search'])) {
+            $this->CurdSearchSQL($sql,$config['search']);
+        }
+
+        // 获取统计SQL
         if ($api_data['sql_total']) {
             $total_sql = $api_data['sql_total'];
         } else {
-            $total_sql = 'SELECT count(*) as total FROM ('.$api_data['sql_string'].') as total_table';
+            $total_sql = 'SELECT count(*) as total FROM ('.$sql.') as total_table';
         }
         $total_sql = View::display($total_sql);
 
@@ -174,6 +180,14 @@ class Api extends BaseController
             $start_index = (($page - 1) * $size);
             $limit_sql = " LIMIT $start_index,$size";
             $sql .= $limit_sql;
+        }
+
+        // 如果是调试模式且传递了debug，则输出SQL
+        if(env('app_debug') && request()->has('debug'))
+        {
+            echo "<h4>Query SQL: </h4><pre>{$sql}</pre>";
+            echo "<h4>Total SQL: </h4><pre>{$total_sql}</pre>";
+            exit;
         }
 
         $curd_data = Db::query($sql);
@@ -233,6 +247,50 @@ class Api extends BaseController
         }
     }
 
+    // 查询条件 SQL 拼装
+    private function CurdSearchSQL(&$sql,$search_config)
+    {
+        // 初始化返回条件
+        $where_str = '1';
+        $search_arr = array_column($search_config,'type','field');
+        $get_data = request()->get();
+
+        // 遍历请求参数
+        foreach($get_data as $field => $val)
+        {
+            // 如果本次循环参数没有在查询条件中就跳过
+            if(!array_key_exists($field,$search_arr)) continue;
+
+            // 根据不同的类型 拼接不同的传参
+            switch ($search_arr[$field]) {
+                case 'like': // 模糊查询
+                    $where_str .= " AND `{$field}` LIKE '%{$val}%'";
+                    break;
+                case 'in': // in查询
+                    $where_str .= " AND `{$field}` IN ({$val})";
+                    break;
+                default: // 如无需特殊处理 走默认即可
+                    $where_str .= " AND `{$field}` {$search_arr[$field]} " . (is_numeric($val) ? $val : "'".$val."'");
+                    break;
+            }
+        }
+
+        $where_str = '('.$where_str.') AND ';
+
+        // 查找占位符,如果存在就替换
+        if(strpos($sql,'[curd_where]'))
+        {
+            $sql = str_replace('[curd_where]',$where_str,$sql);
+            // 替换完成就返回
+            return;
+        }
+
+        // 没找到替换字段就找最后一个 where
+        $where_index = strripos($sql,'where');
+        $start_sql = substr($sql,0, $where_index);
+        $end_sql = substr($sql,$where_index + 6);
+        $sql = $start_sql .'WHERE '. $where_str . $end_sql;
+    }
 
 
 }

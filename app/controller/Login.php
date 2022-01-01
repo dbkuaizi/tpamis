@@ -31,14 +31,16 @@ class Login
         ]);
 
         // 验证
-        // if (!$validate->check($data)) {
-        //     return $this->error($validate->getError());
-        // }
+        if (!$validate->check($data)) {
+            return $this->error($validate->getError());
+        }
+
+        // 获取校验字段
         $login_field = Config::get('amis.login_mode') ?: 'username';
         if(is_array($login_field)) {
             $login_field = implode('|',$login_field);
         }
-dd($login_field);
+        
         $admin_user = AdminUser::where($login_field, $data['username'])->find();
         // 如果用户名不存在
         if (empty($admin_user))

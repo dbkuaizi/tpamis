@@ -4,7 +4,7 @@
 // +----------------------------------------------------------------------
 return [
     // AMIS 配置信息
-    'amis_name'     =>  "TpAmis Admin",
+    'amis_name'     =>  "Tpamis Admin",
     // amis 使用模式、目前仅支持 app
     'amis_mode'     =>  'app',
     // amis 主题 antd、cxd、dark(夜间模式)、ang
