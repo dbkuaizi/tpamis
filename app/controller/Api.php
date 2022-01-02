@@ -267,7 +267,15 @@ class Api extends BaseController
                     $where_str .= " AND `{$field}` LIKE '%{$val}%'";
                     break;
                 case 'in': // in查询
-                    $where_str .= " AND `{$field}` IN ({$val})";
+                    $in_str = str_replace(',','',$val);
+                    if(is_numeric($in_str))
+                    {
+                        $where_str .= " AND `{$field}` IN ({$val})";
+                    } else {
+                        $in_arr = implode("','",explode(',',$val));
+                        $where_str .= " AND `{$field}` IN ('{$in_arr}')";
+                    }
+                    
                     break;
                 default: // 如无需特殊处理 走默认即可
                     $where_str .= " AND `{$field}` {$search_arr[$field]} " . (is_numeric($val) ? $val : "'".$val."'");
