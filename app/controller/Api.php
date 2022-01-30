@@ -55,18 +55,18 @@ class Api extends BaseController
     /**
      * 数据保存接口
      */
-    public function save(Request $request,$code,$id = '')
+    public function save(Request $request,$code)
     {
         $ret_data = ['status' => 1 ,'msg' => '保存失败'];
 
-        // 如果没有通过路由传递id，但通过了 get 或 post 传递了 id
-        if(empty($id) && $request->has('id')) {
-            $id = $request->param('id');
-        }
-
         $com_data = Db::table('sys_com')->where('code',$code)->field('tables,pri_field')->find();
-        $table_name = $com_data['tables'];
-        $data = $request->post();
+
+        // 获取主键字段名
+        $pri_key = $com_data['pri_field'] ?: 'id';
+        
+        $id = $request->post($pri_key);     // 获取 id
+        $table_name = $com_data['tables'];  // 获取组件表名
+        $data = $request->post();           // 获取请求数据
 
         // 如果属性中存在数组则使用 JSON 编码
         foreach($data as &$val)
@@ -78,14 +78,17 @@ class Api extends BaseController
 
         // 获取操作表字段
         $table_fields = array_column(DB::query("DESC ".$com_data['tables']),'Field');
-        if ($id){
-            $pri_key = $com_data['pri_field'] ?: 'id';
+
+        // 如果id不为空 则表示修改数据, 如果不存在就表示新增数据
+        if (!empty($id)){
+
             // 是否需要补上修改时间
             if (in_array('update_time',$table_fields)) {
                 $data['update_time'] =  date('Y-m-d H:i:s');
             }
-
+            
             $res = Db::table($table_name)->where([$pri_key => $id])->update($data);
+            $res_msg = '编辑成功';
         } else {
 
             // 是否需要补上新增时间
@@ -93,11 +96,11 @@ class Api extends BaseController
                 $data['create_time'] =  date('Y-m-d H:i:s');
                 $data['update_time'] =  date('Y-m-d H:i:s');
             }
-
+            $res_msg = '添加成功';
             $res = Db::table($table_name)->insert($data);
         }
         if ($res) {
-            $ret_data = ['status' => 0 ,'msg' => '保存成功'];
+            $ret_data = ['status' => 0 ,'msg' => $res_msg];
         }
         return $ret_data;
 
@@ -275,7 +278,6 @@ class Api extends BaseController
                         $in_arr = implode("','",explode(',',$val));
                         $where_str .= " AND `{$field}` IN ('{$in_arr}')";
                     }
-                    
                     break;
                 default: // 如无需特殊处理 走默认即可
                     $where_str .= " AND `{$field}` {$search_arr[$field]} " . (is_numeric($val) ? $val : "'".$val."'");

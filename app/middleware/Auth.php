@@ -21,7 +21,7 @@ class Auth
             '/login',
             '/login/verify'
         ];
-
+        // dd($request->baseUrl());
         // 如果没有登陆 并且不是白名单
         if (!Session::has('admin_user') && !in_array($request->baseUrl(),$auth_white))
         {
