@@ -15,9 +15,9 @@ return [
     "login_mode" => ['username','phone','email'],
     "login" =>      [
         // 登录窗口是否浮动 （默认高度 100%）
-        'float'     => true,
+        'float'     => false,
         // 登录窗口位置（left、right）
-        'align'     => 'left',
+        'align'     => 'right',
         // 登录窗口标题
         'title'     =>  "TpAmis Admin",
         // 登录窗口版权

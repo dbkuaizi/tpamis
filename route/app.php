@@ -14,6 +14,7 @@ Route::group(function(){
 
     // 组件路由，根据 code 返回组件编码
     Route::view('view/[:code]','amis/amis_app');
+    
     // 根目录 跳转到 后台首页
     Route::get('/',function(){
         return redirect('view/index');
