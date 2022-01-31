@@ -9465,6 +9465,7 @@ readers do not read off random characters that represent icons */
   outline: none;
   /* Prevent dragging from highlighting the element */
   position: relative;
+  z-index: 0;
 }
 
 .amis-scope .CodeMirror-sizer {
@@ -18491,7 +18492,7 @@ readers do not read off random characters that represent icons */
   right: 0;
 }
 
-.amis-scope .video-react button {
+.amis-scope .video-react .video-react-button {
   background: none;
   border: none;
   color: inherit;
@@ -21995,7 +21996,7 @@ readers do not read off random characters that represent icons */
 }
 
 .amis-scope .cxd-Button--xs.cxd-Button--iconOnly {
-  min-width: calc( 1.375rem * 4 / 3);
+  min-width: calc( 1.375rem * 4 / 3 );
 }
 
 .amis-scope .cxd-Button--sm {
@@ -22039,7 +22040,7 @@ readers do not read off random characters that represent icons */
 }
 
 .amis-scope .cxd-Button--sm.cxd-Button--iconOnly {
-  min-width: calc( 1.875rem * 4 / 3);
+  min-width: calc( 1.875rem * 4 / 3 );
 }
 
 .amis-scope .cxd-Button--md {
@@ -22083,7 +22084,7 @@ readers do not read off random characters that represent icons */
 }
 
 .amis-scope .cxd-Button--md.cxd-Button--iconOnly {
-  min-width: calc( 2rem * 4 / 3);
+  min-width: calc( 2rem * 4 / 3 );
 }
 
 .amis-scope .cxd-Button--lg {
@@ -22127,7 +22128,7 @@ readers do not read off random characters that represent icons */
 }
 
 .amis-scope .cxd-Button--lg.cxd-Button--iconOnly {
-  min-width: calc( 2.5rem * 4 / 3);
+  min-width: calc( 2.5rem * 4 / 3 );
 }
 
 .amis-scope .cxd-Button--iconOnly {
@@ -22592,39 +22593,39 @@ readers do not read off random characters that represent icons */
 }
 
 .amis-scope .cxd-Modal--2th .cxd-Modal-content {
-  margin-top: calc( 3.75rem + 1 * 1.875rem);
+  margin-top: calc( 3.75rem + 1 * 1.875rem );
 }
 
 .amis-scope .cxd-Modal--3th .cxd-Modal-content {
-  margin-top: calc( 3.75rem + 2 * 1.875rem);
+  margin-top: calc( 3.75rem + 2 * 1.875rem );
 }
 
 .amis-scope .cxd-Modal--4th .cxd-Modal-content {
-  margin-top: calc( 3.75rem + 3 * 1.875rem);
+  margin-top: calc( 3.75rem + 3 * 1.875rem );
 }
 
 .amis-scope .cxd-Modal--5th .cxd-Modal-content {
-  margin-top: calc( 3.75rem + 4 * 1.875rem);
+  margin-top: calc( 3.75rem + 4 * 1.875rem );
 }
 
 .amis-scope .cxd-Modal--6th .cxd-Modal-content {
-  margin-top: calc( 3.75rem + 5 * 1.875rem);
+  margin-top: calc( 3.75rem + 5 * 1.875rem );
 }
 
 .amis-scope .cxd-Modal--7th .cxd-Modal-content {
-  margin-top: calc( 3.75rem + 6 * 1.875rem);
+  margin-top: calc( 3.75rem + 6 * 1.875rem );
 }
 
 .amis-scope .cxd-Modal--8th .cxd-Modal-content {
-  margin-top: calc( 3.75rem + 7 * 1.875rem);
+  margin-top: calc( 3.75rem + 7 * 1.875rem );
 }
 
 .amis-scope .cxd-Modal--9th .cxd-Modal-content {
-  margin-top: calc( 3.75rem + 8 * 1.875rem);
+  margin-top: calc( 3.75rem + 8 * 1.875rem );
 }
 
 .amis-scope .cxd-Modal--10th .cxd-Modal-content {
-  margin-top: calc( 3.75rem + 9 * 1.875rem);
+  margin-top: calc( 3.75rem + 9 * 1.875rem );
 }
 
 @media (min-width: 576px) {
@@ -23191,8 +23192,8 @@ readers do not read off random characters that represent icons */
   color: #333;
   background: #f7f7f7;
   border-bottom: 0.0625rem solid #ebebeb;
-  border-top-left-radius: calc( 0.428rem - 0.0625rem);
-  border-top-right-radius: calc( 0.428rem - 0.0625rem);
+  border-top-left-radius: calc( 0.428rem - 0.0625rem );
+  border-top-right-radius: calc( 0.428rem - 0.0625rem );
 }
 
 .amis-scope .cxd-Tooltip-title:empty {
@@ -23837,7 +23838,7 @@ readers do not read off random characters that represent icons */
 .amis-scope .cxd-Toast-wrap--topCenter {
   top: 0.75rem;
   left: 50%;
-  margin-left: calc(18.75rem / -2);
+  transform: translate(-50%, 0);
 }
 
 .amis-scope .cxd-Toast-wrap--topLeft {
@@ -23852,7 +23853,7 @@ readers do not read off random characters that represent icons */
 
 .amis-scope .cxd-Toast-wrap--bottomCenter {
   left: 50%;
-  margin-left: calc(18.75rem / -2);
+  transform: translate(-50%, 0);
   bottom: 0.75rem;
 }
 
@@ -26009,6 +26010,15 @@ readers do not read off random characters that represent icons */
   width: 100%;
 }
 
+.amis-scope .cxd-ScheduleCalendar .rdt .rdtPicker td.rdtActive {
+  background: transparent;
+  color: #151a26;
+}
+
+.amis-scope .cxd-ScheduleCalendar .rdt .rdtPicker td.rdtActive:hover {
+  background: #ededed;
+}
+
 .amis-scope .cxd-ScheduleCalendar-large {
   width: 100%;
 }
@@ -26486,6 +26496,10 @@ readers do not read off random characters that represent icons */
   float: right;
 }
 
+.amis-scope .cxd-CollapseGroup.icon-position-right .cxd-Collapse-header .cxd-Collapse-icon-tranform {
+  float: right;
+}
+
 .amis-scope .cxd-ColorField {
   display: inline-block;
 }
@@ -26540,7 +26554,6 @@ readers do not read off random characters that represent icons */
   transition: opacity 0s;
   display: flex;
   align-items: center;
-  margin-left: 0.75rem;
 }
 
 .amis-scope .cxd-CBGroup-toolbar .cxd-CBGroup-toolbarConditionAdd .cxd-CBDelete {
@@ -26632,6 +26645,10 @@ readers do not read off random characters that represent icons */
 
 .amis-scope .cxd-CBGroup-placeholder.simple:after {
   display: none;
+}
+
+.amis-scope .cxd-CBGroup-toolbarCondition {
+  margin-right: 0.75rem;
 }
 
 .amis-scope .cxd-CBDelete {
@@ -26741,6 +26758,10 @@ readers do not read off random characters that represent icons */
 
 .amis-scope .cxd-CBGroupOrItem:last-child:after {
   display: none;
+}
+
+.amis-scope .cxd-CBGroupOrItem-simple {
+  margin-bottom: 0.5rem;
 }
 
 .amis-scope .cxd-CBInputSwitch {
@@ -28746,17 +28767,17 @@ readers do not read off random characters that represent icons */
 }
 
 .amis-scope .cxd-Table-table > thead > tr > th.cxd-TableCell--sortable {
-  padding-right: calc( 0.625rem + 0.875rem);
+  padding-right: calc( 0.625rem + 0.875rem );
   position: relative;
 }
 
 .amis-scope .cxd-Table-table > thead > tr > th.cxd-TableCell--searchable {
-  padding-right: calc( 0.625rem + 1rem);
+  padding-right: calc( 0.625rem + 1rem );
   position: relative;
 }
 
 .amis-scope .cxd-Table-table > thead > tr > th.cxd-TableCell--filterable {
-  padding-right: calc( 0.625rem + 1rem);
+  padding-right: calc( 0.625rem + 1rem );
   position: relative;
 }
 
@@ -31437,17 +31458,22 @@ readers do not read off random characters that represent icons */
   align-items: center;
   justify-content: center;
   margin-left: auto;
+  text-decoration: none;
 }
 
 .amis-scope .cxd-InputBox-clear svg {
-  fill: #999;
+  fill: #cecfd1;
   top: 0;
-  width: 0.625rem;
-  height: 0.625rem;
+  width: 0.875rem;
+  height: 0.875rem;
 }
 
 .amis-scope .cxd-InputBox-clear:hover svg {
-  fill: #1f2329;
+  fill: #5e626a;
+}
+
+.amis-scope .cxd-InputBox-clear:active svg {
+  fill: #2d323c;
 }
 
 .amis-scope .cxd-InputBox > svg {
@@ -31561,30 +31587,22 @@ readers do not read off random characters that represent icons */
   align-items: center;
   justify-content: center;
   margin-left: auto;
-  width: 1.625rem;
-  height: 1.625rem;
-  margin: 0 -0.125rem;
-  margin-left: auto;
+  text-decoration: none;
 }
 
 .amis-scope .cxd-ResultBox-clear svg {
-  fill: #999;
+  fill: #cecfd1;
   top: 0;
-  width: 0.625rem;
-  height: 0.625rem;
+  width: 0.875rem;
+  height: 0.875rem;
 }
 
 .amis-scope .cxd-ResultBox-clear:hover svg {
-  fill: #1f2329;
+  fill: #5e626a;
 }
 
-.amis-scope .cxd-ResultBox-clear:hover {
-  background: #f5f5f5;
-}
-
-.amis-scope .cxd-ResultBox-clear > svg {
-  width: 0.75rem;
-  height: 0.75rem;
+.amis-scope .cxd-ResultBox-clear:active svg {
+  fill: #2d323c;
 }
 
 .amis-scope .cxd-ResultBox > svg {
@@ -32660,13 +32678,13 @@ readers do not read off random characters that represent icons */
 }
 
 .amis-scope .cxd-InputGroup-btn:first-child .cxd-Button {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
+  border-top-left-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem;
 }
 
 .amis-scope .cxd-InputGroup-btn:last-child .cxd-Button {
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
+  border-top-right-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
 }
 
 .amis-scope .cxd-InputGroup .cxd-TextControl-input {
@@ -32830,7 +32848,7 @@ readers do not read off random characters that represent icons */
 }
 
 .amis-scope .cxd-TextControl-spinner {
-  line-height: calc( 1.4285714286 * 0.875rem);
+  line-height: calc( 1.4285714286 * 0.875rem );
 }
 
 .amis-scope .cxd-TextControl-clear {
@@ -32840,17 +32858,22 @@ readers do not read off random characters that represent icons */
   align-items: center;
   justify-content: center;
   margin-left: auto;
+  text-decoration: none;
 }
 
 .amis-scope .cxd-TextControl-clear svg {
-  fill: #999;
+  fill: #cecfd1;
   top: 0;
-  width: 0.625rem;
-  height: 0.625rem;
+  width: 0.875rem;
+  height: 0.875rem;
 }
 
 .amis-scope .cxd-TextControl-clear:hover svg {
-  fill: #1f2329;
+  fill: #5e626a;
+}
+
+.amis-scope .cxd-TextControl-clear:active svg {
+  fill: #2d323c;
 }
 
 @media (min-width: 576px) {
@@ -32951,13 +32974,13 @@ readers do not read off random characters that represent icons */
 }
 
 .amis-scope .cxd-TextControl--withAddOn > .cxd-TextControl-button:first-child .cxd-Button {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
+  border-top-left-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem;
 }
 
 .amis-scope .cxd-TextControl--withAddOn > .cxd-TextControl-button:last-child .cxd-Button {
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
+  border-top-right-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
 }
 
 .amis-scope .cxd-TextControl--withAddOn.is-focused > .cxd-TextControl-button .cxd-Button {
@@ -33035,7 +33058,7 @@ readers do not read off random characters that represent icons */
 
 .amis-scope .cxd-TextControl-value {
   user-select: none;
-  line-height: calc( 1.4285714286 * 0.875rem);
+  line-height: calc( 1.4285714286 * 0.875rem );
   vertical-align: middle;
   display: inline-block;
 }
@@ -33110,6 +33133,7 @@ readers do not read off random characters that represent icons */
 }
 
 .amis-scope .cxd-TextareaControl {
+  --Form-input-clearBtn-padding: 0.125rem;
   position: relative;
 }
 
@@ -33191,8 +33215,45 @@ readers do not read off random characters that represent icons */
   background: rgba(0, 0, 0, 0.4);
 }
 
+.amis-scope .cxd-TextareaControl-counter.is-clearable {
+  right: calc( 0.625rem + 0.875rem + 0.1875rem * 2 + 0.3125rem );
+}
+
 .amis-scope .has-error--maxLength .cxd-TextareaControl-counter {
   background: #e8684a;
+}
+
+.amis-scope .cxd-TextareaControl-clear {
+  padding: 0.1875rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  text-decoration: none;
+  position: absolute;
+  right: 0.625rem;
+  bottom: calc(
+    (
+        2rem - 1.4285714286 *
+          0.875rem - 0.125rem
+      ) / 2
+  );
+}
+
+.amis-scope .cxd-TextareaControl-clear svg {
+  fill: #cecfd1;
+  top: 0;
+  width: 0.875rem;
+  height: 0.875rem;
+}
+
+.amis-scope .cxd-TextareaControl-clear:hover svg {
+  fill: #5e626a;
+}
+
+.amis-scope .cxd-TextareaControl-clear:active svg {
+  fill: #2d323c;
 }
 
 .amis-scope .cxd-Checkbox {
@@ -34212,7 +34273,7 @@ readers do not read off random characters that represent icons */
 }
 
 .amis-scope .cxd-Select-value {
-  line-height: calc( 1.4285714286 * 0.875rem);
+  line-height: calc( 1.4285714286 * 0.875rem );
   white-space: nowrap;
   max-width: 100%;
   overflow: hidden;
@@ -34441,7 +34502,7 @@ readers do not read off random characters that represent icons */
 }
 
 .amis-scope .cxd-Select-spinner {
-  line-height: calc( 1.4285714286 * 0.875rem);
+  line-height: calc( 1.4285714286 * 0.875rem );
 }
 
 .amis-scope .cxd-Select-clear {
@@ -34716,7 +34777,8 @@ readers do not read off random characters that represent icons */
     (
         2rem - 1.4285714286 *
           0.875rem
-      ) / 2 - 0.0625rem) 0.75rem;
+      ) / 2 - 0.0625rem
+  ) 0.75rem;
   height: 2rem;
   outline: none;
   white-space: nowrap;
@@ -34776,26 +34838,30 @@ readers do not read off random characters that represent icons */
 }
 
 .amis-scope .cxd-LocationPicker-clear {
-  display: inline-block;
   padding: 0.1875rem;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-left: auto;
+  text-decoration: none;
   line-height: 1;
   margin-right: 0.25rem;
 }
 
 .amis-scope .cxd-LocationPicker-clear svg {
-  fill: #999;
+  fill: #cecfd1;
   top: 0;
-  width: 0.625rem;
-  height: 0.625rem;
+  width: 0.875rem;
+  height: 0.875rem;
 }
 
 .amis-scope .cxd-LocationPicker-clear:hover svg {
-  fill: #1f2329;
+  fill: #5e626a;
+}
+
+.amis-scope .cxd-LocationPicker-clear:active svg {
+  fill: #2d323c;
 }
 
 .amis-scope .cxd-LocationControl {
@@ -34875,7 +34941,8 @@ readers do not read off random characters that represent icons */
     (
         2rem - 1.4285714286 *
           0.875rem
-      ) / 2 - 0.0625rem) 0.75rem;
+      ) / 2 - 0.0625rem
+  ) 0.75rem;
   background: #fff;
   color: #000;
   border-radius: 0.25rem;
@@ -34950,19 +35017,22 @@ readers do not read off random characters that represent icons */
   align-items: center;
   justify-content: center;
   margin-left: auto;
-  display: inline-block;
-  line-height: 1;
+  text-decoration: none;
 }
 
 .amis-scope .cxd-ColorPicker-clear svg {
-  fill: #999;
+  fill: #cecfd1;
   top: 0;
-  width: 0.625rem;
-  height: 0.625rem;
+  width: 0.875rem;
+  height: 0.875rem;
 }
 
 .amis-scope .cxd-ColorPicker-clear:hover svg {
-  fill: #1f2329;
+  fill: #5e626a;
+}
+
+.amis-scope .cxd-ColorPicker-clear:active svg {
+  fill: #2d323c;
 }
 
 .amis-scope .cxd-ColorPicker-arrow {
@@ -35013,7 +35083,8 @@ readers do not read off random characters that represent icons */
     (
         2rem - 1.4285714286 *
           0.875rem
-      ) / 2 - 0.0625rem) 0.75rem;
+      ) / 2 - 0.0625rem
+  ) 0.75rem;
   height: 2rem;
   outline: none;
   white-space: nowrap;
@@ -35074,37 +35145,66 @@ readers do not read off random characters that represent icons */
 }
 
 .amis-scope .cxd-DatePicker-toggler {
-  cursor: pointer;
-  color: #666;
-  display: inline-flex;
-  align-items: center;
-}
-
-.amis-scope .cxd-DatePicker-toggler:hover {
-  color: #2468f2;
-}
-
-.amis-scope .cxd-DatePicker-clear {
-  display: inline-block;
   padding: 0.1875rem;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-left: auto;
+  text-decoration: none;
+  line-height: 1;
+}
+
+.amis-scope .cxd-DatePicker-toggler svg {
+  fill: #cecfd1;
+  top: 0;
+  width: 0.875rem;
+  height: 0.875rem;
+}
+
+.amis-scope .cxd-DatePicker-toggler:hover svg {
+  fill: #5e626a;
+}
+
+.amis-scope .cxd-DatePicker-toggler:active svg {
+  fill: #2d323c;
+}
+
+.amis-scope .cxd-DatePicker-toggler svg polyline,
+.amis-scope .cxd-DatePicker-toggler svg circle {
+  stroke: #666;
+}
+
+.amis-scope .cxd-DatePicker-toggler:hover svg polyline,
+.amis-scope .cxd-DatePicker-toggler:hover svg circle {
+  stroke: #2468f2;
+}
+
+.amis-scope .cxd-DatePicker-clear {
+  padding: 0.1875rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  text-decoration: none;
   line-height: 1;
   margin-right: 0.25rem;
 }
 
 .amis-scope .cxd-DatePicker-clear svg {
-  fill: #999;
+  fill: #cecfd1;
   top: 0;
-  width: 0.625rem;
-  height: 0.625rem;
+  width: 0.875rem;
+  height: 0.875rem;
 }
 
 .amis-scope .cxd-DatePicker-clear:hover svg {
-  fill: #1f2329;
+  fill: #5e626a;
+}
+
+.amis-scope .cxd-DatePicker-clear:active svg {
+  fill: #2d323c;
 }
 
 .amis-scope .cxd-DateControl:not(.is-inline) > .cxd-DatePicker {
@@ -35596,7 +35696,8 @@ readers do not read off random characters that represent icons */
     (
         2rem - 1.4285714286 *
           0.875rem
-      ) / 2 - 0.0625rem) 0.75rem;
+      ) / 2 - 0.0625rem
+  ) 0.75rem;
   height: 2rem;
   outline: none;
   border-radius: 0.25rem;
@@ -35655,14 +35756,39 @@ readers do not read off random characters that represent icons */
 }
 
 .amis-scope .cxd-DateRangePicker-toggler {
+  padding: 0.1875rem;
   cursor: pointer;
-  color: #666;
-  display: inline-flex;
+  display: flex;
   align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  text-decoration: none;
+  line-height: 1;
 }
 
-.amis-scope .cxd-DateRangePicker-toggler:hover {
-  color: #2468f2;
+.amis-scope .cxd-DateRangePicker-toggler svg {
+  fill: #cecfd1;
+  top: 0;
+  width: 0.875rem;
+  height: 0.875rem;
+}
+
+.amis-scope .cxd-DateRangePicker-toggler:hover svg {
+  fill: #5e626a;
+}
+
+.amis-scope .cxd-DateRangePicker-toggler:active svg {
+  fill: #2d323c;
+}
+
+.amis-scope .cxd-DateRangePicker-toggler svg polyline,
+.amis-scope .cxd-DateRangePicker-toggler svg circle {
+  stroke: #666;
+}
+
+.amis-scope .cxd-DateRangePicker-toggler:hover svg polyline,
+.amis-scope .cxd-DateRangePicker-toggler:hover svg circle {
+  stroke: #2468f2;
 }
 
 .amis-scope .cxd-DateRangePicker-clear {
@@ -35672,20 +35798,24 @@ readers do not read off random characters that represent icons */
   align-items: center;
   justify-content: center;
   margin-left: auto;
-  display: inline-block;
+  text-decoration: none;
   line-height: 1;
   margin-right: 0.25rem;
 }
 
 .amis-scope .cxd-DateRangePicker-clear svg {
-  fill: #999;
+  fill: #cecfd1;
   top: 0;
-  width: 0.625rem;
-  height: 0.625rem;
+  width: 0.875rem;
+  height: 0.875rem;
 }
 
 .amis-scope .cxd-DateRangePicker-clear:hover svg {
-  fill: #1f2329;
+  fill: #5e626a;
+}
+
+.amis-scope .cxd-DateRangePicker-clear:active svg {
+  fill: #2d323c;
 }
 
 .amis-scope .cxd-DateRangePicker-wrap {
@@ -37080,7 +37210,7 @@ readers do not read off random characters that represent icons */
 }
 
 .amis-scope .cxd-TreeSelect-spinner {
-  line-height: calc( 1.4285714286 * 0.875rem);
+  line-height: calc( 1.4285714286 * 0.875rem );
 }
 
 .amis-scope .cxd-TreeSelect-clear {
@@ -37090,17 +37220,22 @@ readers do not read off random characters that represent icons */
   align-items: center;
   justify-content: center;
   margin-left: auto;
+  text-decoration: none;
 }
 
 .amis-scope .cxd-TreeSelect-clear svg {
-  fill: #999;
+  fill: #cecfd1;
   top: 0;
-  width: 0.625rem;
-  height: 0.625rem;
+  width: 0.875rem;
+  height: 0.875rem;
 }
 
 .amis-scope .cxd-TreeSelect-clear:hover svg {
-  fill: #1f2329;
+  fill: #5e626a;
+}
+
+.amis-scope .cxd-TreeSelect-clear:active svg {
+  fill: #2d323c;
 }
 
 @media (min-width: 576px) {
@@ -37693,7 +37828,7 @@ readers do not read off random characters that represent icons */
 }
 
 .amis-scope .cxd-Picker-spinner {
-  line-height: calc( 1.4285714286 * 0.875rem);
+  line-height: calc( 1.4285714286 * 0.875rem );
 }
 
 .amis-scope .cxd-Picker-clear {
@@ -37703,17 +37838,22 @@ readers do not read off random characters that represent icons */
   align-items: center;
   justify-content: center;
   margin-left: auto;
+  text-decoration: none;
 }
 
 .amis-scope .cxd-Picker-clear svg {
-  fill: #999;
+  fill: #cecfd1;
   top: 0;
-  width: 0.625rem;
-  height: 0.625rem;
+  width: 0.875rem;
+  height: 0.875rem;
 }
 
 .amis-scope .cxd-Picker-clear:hover svg {
-  fill: #1f2329;
+  fill: #5e626a;
+}
+
+.amis-scope .cxd-Picker-clear:active svg {
+  fill: #2d323c;
 }
 
 @media (min-width: 576px) {
@@ -37808,26 +37948,30 @@ readers do not read off random characters that represent icons */
 }
 
 .amis-scope .cxd-Picker-clear {
-  display: inline-block;
   padding: 0.1875rem;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-left: auto;
+  text-decoration: none;
   line-height: 1;
   margin-right: 0.25rem;
 }
 
 .amis-scope .cxd-Picker-clear svg {
-  fill: #999;
+  fill: #cecfd1;
   top: 0;
-  width: 0.625rem;
-  height: 0.625rem;
+  width: 0.875rem;
+  height: 0.875rem;
 }
 
 .amis-scope .cxd-Picker-clear:hover svg {
-  fill: #1f2329;
+  fill: #5e626a;
+}
+
+.amis-scope .cxd-Picker-clear:active svg {
+  fill: #2d323c;
 }
 
 .amis-scope .cxd-PickerControl.is-inline .cxd-Picker {
@@ -37861,7 +38005,7 @@ readers do not read off random characters that represent icons */
   padding: 0;
   border: none;
   width: 100%;
-  margin-top: calc( 0.25rem - 0);
+  margin-top: calc( 0.25rem - 0 );
 }
 
 .amis-scope .cxd-TagControl > .cxd-TagControl-popover.cxd-PopOver--leftBottomLeftTop {
@@ -38094,6 +38238,10 @@ readers do not read off random characters that represent icons */
   position: relative;
 }
 
+.amis-scope .cxd-Transfer-select > .cxd-Transfer-selection.cxd-AssociatedSelection {
+  overflow: initial;
+}
+
 .amis-scope .cxd-Transfer-search + .cxd-Transfer-selection {
   border-top: 1px solid #eceff8;
 }
@@ -38268,6 +38416,7 @@ readers do not read off random characters that represent icons */
 
 .amis-scope .cxd-TransferDropDown-content {
   min-height: 12.5rem;
+  min-width: 25rem;
   display: flex;
   flex-direction: column;
 }
@@ -38578,7 +38727,7 @@ readers do not read off random characters that represent icons */
 }
 
 .amis-scope .cxd-IconPickerControl-spinner {
-  line-height: calc( 1.4285714286 * 0.875rem);
+  line-height: calc( 1.4285714286 * 0.875rem );
 }
 
 .amis-scope .cxd-IconPickerControl-clear {
@@ -38588,17 +38737,22 @@ readers do not read off random characters that represent icons */
   align-items: center;
   justify-content: center;
   margin-left: auto;
+  text-decoration: none;
 }
 
 .amis-scope .cxd-IconPickerControl-clear svg {
-  fill: #999;
+  fill: #cecfd1;
   top: 0;
-  width: 0.625rem;
-  height: 0.625rem;
+  width: 0.875rem;
+  height: 0.875rem;
 }
 
 .amis-scope .cxd-IconPickerControl-clear:hover svg {
-  fill: #1f2329;
+  fill: #5e626a;
+}
+
+.amis-scope .cxd-IconPickerControl-clear:active svg {
+  fill: #2d323c;
 }
 
 @media (min-width: 576px) {
@@ -38627,6 +38781,8 @@ readers do not read off random characters that represent icons */
 }
 
 .amis-scope .cxd-IconPickerControl-valueWrap {
+  display: flex;
+  justify-content: space-between;
   flex-grow: 1;
   line-height: 1;
   white-space: nowrap;
@@ -38705,7 +38861,7 @@ readers do not read off random characters that represent icons */
 
 .amis-scope .cxd-IconPickerControl-value {
   user-select: none;
-  line-height: calc( 1.4285714286 * 0.875rem);
+  line-height: calc( 1.4285714286 * 0.875rem );
   vertical-align: middle;
   display: inline-block;
 }
@@ -39180,6 +39336,7 @@ readers do not read off random characters that represent icons */
 }
 
 .amis-scope .cxd-Form--column > .cxd-Form-item {
+  flex-shrink: 0;
   flex-grow: 1;
   padding-left: calc(1rem / 2);
   padding-right: calc(1rem / 2);
@@ -39782,6 +39939,8 @@ readers do not read off random characters that represent icons */
   overflow: visible;
   max-width: 100%;
   box-sizing: content-box;
+  /* 变量列表 */
+  /* 函数列表 */
 }
 
 .amis-scope .cxd-FormulaEditor-content {
@@ -39795,18 +39954,31 @@ readers do not read off random characters that represent icons */
   line-height: 1.875rem;
   padding: 0 0.625rem;
   box-sizing: border-box;
-  background: #f2f2f4;
+  background: #fafafa;
   border-radius: 0.25rem 0.25rem 0 0;
   border-bottom: 0.0625rem solid #dadbdd;
   font-weight: 500;
 }
 
 .amis-scope .cxd-FormulaEditor-editor {
-  min-height: 14.875rem;
-  max-height: 20rem;
-  height: auto;
-  padding: 0.625rem;
+  height: 12.5rem;
+  padding: 0.3125rem;
   padding-right: 0;
+}
+
+.amis-scope .cxd-FormulaEditor-editor::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.amis-scope .cxd-FormulaEditor-editor::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.amis-scope .cxd-FormulaEditor-editor .CodeMirror {
+  width: 100%;
+  height: 100%;
 }
 
 .amis-scope .cxd-FormulaEditor.is-error .cxd-FormulaEditor-editor {
@@ -39819,37 +39991,256 @@ readers do not read off random characters that represent icons */
 
 .amis-scope .cxd-FormulaEditor-settings {
   display: flex;
-  flex-direction: row;
+  flex-flow: row nowrap;
   align-items: stretch;
   justify-content: space-between;
-  max-height: 21.875rem;
-  margin: 0 -5px;
+  height: 15.625rem;
+  margin-top: 0.625rem;
 }
 
-.amis-scope .cxd-FormulaEditor-settings > div {
-  flex: 1;
-  padding: 0 5px;
+.amis-scope .cxd-FormulaEditor-panel {
   display: flex;
-  flex-direction: column;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: stretch;
+  height: 15.625rem;
+  width: 13.75rem;
+  border-radius: 0.25rem;
+  border: 0.0625rem solid #dadbdd;
 }
 
-.amis-scope .cxd-FormulaEditor-settings > div > h3 {
-  padding: 10px 0;
-  margin: 0;
-  flex-shrink: 0;
+.amis-scope .cxd-FormulaEditor-panel:not(:last-child) {
+  margin-right: 0.625rem;
 }
 
-.amis-scope .cxd-FormulaEditor-settings > div > div {
+.amis-scope .cxd-FormulaEditor-panel:last-child {
   flex: 1;
-  min-height: 0;
+}
+
+.amis-scope .cxd-FormulaEditor-panel-header {
+  width: 100%;
+  height: 1.875rem;
+  line-height: 1.875rem;
+  padding: 0 0.625rem;
+  box-sizing: border-box;
+  background: #fafafa;
+  border-radius: 0.25rem 0.25rem 0 0;
+  border-bottom: 0.0625rem solid #dadbdd;
+  font-weight: 500;
+}
+
+.amis-scope .cxd-FormulaEditor-panel-body {
+  flex: 1;
+  display: flex;
+  flex-flow: column nowrap;
+  max-height: 13.75rem;
+}
+
+.amis-scope .cxd-FormulaEditor-VariableList-root {
+  max-height: 13.75rem;
+}
+
+.amis-scope .cxd-FormulaEditor-VariableList-root.is-scrollable {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.amis-scope .cxd-FormulaEditor-VariableList-root.is-scrollable::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.amis-scope .cxd-FormulaEditor-VariableList-root.is-scrollable::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.amis-scope .cxd-FormulaEditor-VariableList-base {
+  --Form-input-fontSize: var(--fontSizeSm);
+  max-width: inherit;
+  overflow: hidden;
+}
+
+.amis-scope .cxd-FormulaEditor-VariableList-tabs {
+  --Tabs-linkFontSize: var(--fontSizeSm);
+  --Tabs--card-linkPadding: 0.3125rem;
+  max-height: 13.75rem;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+}
+
+.amis-scope .cxd-FormulaEditor-VariableList-tabs > ul {
+  border-top: none;
+}
+
+.amis-scope .cxd-FormulaEditor-VariableList-tabs > div {
+  overflow-x: hidden;
+  overflow-y: auto;
+  flex: 1;
+  border-radius: 0.25rem;
+}
+
+.amis-scope .cxd-FormulaEditor-VariableList-tabs > div::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.amis-scope .cxd-FormulaEditor-VariableList-tabs > div::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.amis-scope .cxd-FormulaEditor-VariableList-tab {
+  padding: 0;
+}
+
+.amis-scope .cxd-FormulaEditor-VariableList-item {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  white-space: nowrap;
+}
+
+.amis-scope .cxd-FormulaEditor-VariableList-item > label {
+  white-space: nowrap;
+}
+
+.amis-scope .cxd-FormulaEditor-VariableList-item-tag {
+  vertical-align: middle;
+  text-align: center;
+  padding: 0 0.5rem;
+  line-height: 17px;
+  border-radius: 0.25rem;
+  background: #f5f5f5;
+  color: #000;
+}
+
+.amis-scope .cxd-FormulaEditor-FuncList {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: stretch;
+  flex: 1;
+}
+
+.amis-scope .cxd-FormulaEditor-FuncList:not(:last-child) {
+  margin-right: 0.625rem;
+}
+
+.amis-scope .cxd-FormulaEditor-FuncList-searchBox {
+  display: flex;
+  width: auto;
+  flex-shrink: 0;
+  padding: 0.5rem;
+}
+
+.amis-scope .cxd-FormulaEditor-FuncList-searchBox > div {
+  flex: 1;
+  font-size: 0.75rem;
+  height: 1.5rem;
+}
+
+.amis-scope .cxd-FormulaEditor-FuncList-body {
+  flex: 1;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.amis-scope .cxd-FormulaEditor-FuncList-body::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.amis-scope .cxd-FormulaEditor-FuncList-body::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.amis-scope .cxd-FormulaEditor-FuncList-collapseGroup .cxd-FormulaEditor-FuncList-collapse {
+  border: none;
+}
+
+.amis-scope .cxd-FormulaEditor-FuncList-collapseGroup .cxd-FormulaEditor-FuncList-collapse .cxd-FormulaEditor-FuncList-expandIcon {
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  transform-origin: 0.4375rem 0.5625rem;
+  transition: transform 0.2s;
+}
+
+.amis-scope .cxd-FormulaEditor-FuncList-groupTitle {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: unset;
+  padding: 0.3125rem 0.625rem;
+  background: transparent;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+.amis-scope .cxd-FormulaEditor-FuncList-groupBody > div {
+  padding: 5px 0;
+}
+
+.amis-scope .cxd-FormulaEditor-FuncList-item {
+  cursor: pointer;
+  padding: 0 1.25rem;
+  height: 1.5rem;
+  line-height: 1.5rem;
+}
+
+.amis-scope .cxd-FormulaEditor-FuncList-item.is-active {
+  background: rgba(0, 126, 255, 0.08);
+}
+
+.amis-scope .cxd-FormulaEditor-FuncList-doc {
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 0.625rem;
+  max-height: 12.5rem;
+}
+
+.amis-scope .cxd-FormulaEditor-FuncList-doc pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  background: #f2f2f4;
+  padding: 0.3125rem 0.625rem;
+  border-radius: 0.25rem;
+  margin-top: 0;
+}
+
+.amis-scope .cxd-FormulaEditor-FuncList-doc pre code {
+  color: #2468f2;
+}
+
+.amis-scope .cxd-FormulaEditor-FuncList-doc-desc {
+  color: #333;
+  overflow-x: hidden;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.amis-scope .cxd-FormulaEditor-FuncList-doc-desc::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.amis-scope .cxd-FormulaEditor-FuncList-doc-desc::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background: rgba(0, 0, 0, 0.3);
 }
 
 .amis-scope .cxd-FormulaEditor .cm-field,
 .amis-scope .cxd-FormulaEditor .cm-func {
-  border-radius: 2px;
+  border-radius: 3px;
   color: #fff;
   margin: 0 1px;
   padding: 0 2px;
+}
+
+.amis-scope .cxd-FormulaEditor .cm-field {
+  padding: 3px 5px;
 }
 
 .amis-scope .cxd-FormulaEditor .cm-field {
@@ -39857,73 +40248,41 @@ readers do not read off random characters that represent icons */
 }
 
 .amis-scope .cxd-FormulaEditor .cm-func {
-  background: #17a2b8;
+  color: #ae4597;
+  font-weight: bold;
+  line-height: 14px;
 }
 
-.amis-scope .cxd-FormulaFuncList {
+.amis-scope .cxd-FormulaPicker {
   display: flex;
-  flex-direction: column;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.amis-scope .cxd-FormulaFuncList > .cxd-FormulaFuncList-searchBox {
-  display: flex;
-  width: auto;
-  flex-shrink: 0;
-  margin-bottom: 0.5rem;
-}
-
-.amis-scope .cxd-FormulaFuncList-columns {
+.amis-scope .cxd-FormulaPicker-input {
   flex: 1;
-  min-height: 0;
-  overflow: auto;
+  margin-right: 0.625rem;
+}
+
+.amis-scope .cxd-FormulaPicker-action {
   display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-}
-
-.amis-scope .cxd-FormulaFuncList-columns > div:first-child {
-  min-width: 200px;
-  flex-shrink: 0;
-}
-
-.amis-scope .cxd-FormulaFuncList-funcItem {
-  padding: 0 10px;
-  cursor: pointer;
-}
-
-.amis-scope .cxd-FormulaFuncList-funcItem.is-active {
-  background: #eaf6fe;
-}
-
-.amis-scope .cxd-FormulaFuncList-groupTitle {
-  padding: 5px 0;
-  background: transparent;
-}
-
-.amis-scope .cxd-FormulaFuncList-groupBody > div {
-  padding: 5px 0;
-}
-
-.amis-scope .cxd-FormulaFuncList-funcDetail {
-  padding: 10px 20px;
-}
-
-.amis-scope .cxd-FormulaFuncList-funcDetail pre {
-  white-space: pre-wrap;
-  word-wrap: break-word;
-  background: #f2f2f4;
-  padding: 0.625rem;
-  border-radius: 0.25rem;
-  margin-top: 0;
-}
-
-.amis-scope .cxd-FormulaFuncList-funcDetail div {
-  color: #333;
+  justify-content: center;
+  align-items: center;
 }
 
 .amis-scope .cxd-FormulaPicker-icon {
-  margin-left: auto;
-  margin-right: 0.3125rem;
+  top: 0 !important;
+  font-size: 1.5rem;
+}
+
+.amis-scope .cxd-FormulaPicker-icon:not(:last-child) {
+  margin-right: 0.75rem;
+}
+
+.amis-scope .cxd-FormulaPicker-icon.is-filled {
+  fill: #2468f2;
+  color: #2468f2;
 }
 
 .amis-scope .cxd-Timeline-vertical {
@@ -39991,7 +40350,7 @@ readers do not read off random characters that represent icons */
 
 .amis-scope .cxd-Timeline-vertical .cxd-TimelineItem-content {
   padding-bottom: 1rem;
-  margin-left: 0.5rem;
+  margin-left: 0.75rem;
 }
 
 .amis-scope .cxd-Timeline-vertical .cxd-TimelineItem-content .cxd-TimelineItem-time {
@@ -40012,7 +40371,7 @@ readers do not read off random characters that represent icons */
   align-items: center;
   font-size: var(--Timeline--font-size);
   color: #2468f2;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
 }
 
 .amis-scope .cxd-Timeline-vertical .cxd-TimelineItem-content .cxd-TimelineItem-detail .cxd-TimelineItem-detail-arrow {
@@ -40116,11 +40475,16 @@ readers do not read off random characters that represent icons */
   border-radius: 50%;
 }
 
+.amis-scope .cxd-BarCode > svg {
+  display: block;
+  margin: 0 auto;
+}
+
 /**
  * Debug 模块的 UI，由于没法使用任何主题，所以这里使用独立配色风格
  */
 
-.amis-scope .AMISDebug {
+.AMISDebug {
   position: fixed;
   z-index: 4000;
   top: 0;
@@ -40129,37 +40493,37 @@ readers do not read off random characters that represent icons */
   width: 24px;
 }
 
-.amis-scope .AMISDebug h3 {
+.AMISDebug h3 {
   color: inherit;
 }
 
-.amis-scope .AMISDebug .primary {
+.AMISDebug .primary {
   color: #009fff;
 }
 
-.amis-scope .AMISDebug-header {
+.AMISDebug-header {
   padding: 1rem 1.5rem;
   background: #fff;
   border-bottom: 0.0625rem solid #dfe2e6;
 }
 
-.amis-scope .AMISDebug-hoverBox {
+.AMISDebug-hoverBox {
   pointer-events: none;
   position: absolute;
   outline: 1px dashed #1c76c4;
 }
 
-.amis-scope .AMISDebug-activeBox {
+.AMISDebug-activeBox {
   pointer-events: none;
   position: absolute;
   outline: 1px #1c76c4;
 }
 
-.amis-scope .AMISDebug-tab {
+.AMISDebug-tab {
   overflow: hidden;
 }
 
-.amis-scope .AMISDebug-tab > button {
+.AMISDebug-tab > button {
   color: inherit;
   background: inherit;
   float: left;
@@ -40171,16 +40535,16 @@ readers do not read off random characters that represent icons */
   border-bottom: 1px solid transparent;
 }
 
-.amis-scope .AMISDebug-tab > button:hover {
+.AMISDebug-tab > button:hover {
   color: #e7e7e7;
 }
 
-.amis-scope .AMISDebug-tab > button.active {
+.AMISDebug-tab > button.active {
   color: #e7e7e7;
   border-bottom-color: #e7e7e7;
 }
 
-.amis-scope .AMISDebug-toggle {
+.AMISDebug-toggle {
   background: #ffffff;
   position: fixed;
   top: 50%;
@@ -40195,19 +40559,19 @@ readers do not read off random characters that represent icons */
   cursor: pointer;
 }
 
-.amis-scope .AMISDebug-toggle i {
+.AMISDebug-toggle i {
   color: #151a26;
 }
 
-.amis-scope .AMISDebug-toggle:hover i {
+.AMISDebug-toggle:hover i {
   color: #2468f2;
 }
 
-.amis-scope .AMISDebug-content {
+.AMISDebug-content {
   display: none;
 }
 
-.amis-scope .AMISDebug-resize {
+.AMISDebug-resize {
   position: absolute;
   width: 4px;
   top: 0;
@@ -40216,11 +40580,11 @@ readers do not read off random characters that represent icons */
   cursor: col-resize;
 }
 
-.amis-scope .AMISDebug-resize:hover {
+.AMISDebug-resize:hover {
   background: #75715e;
 }
 
-.amis-scope .AMISDebug-changePosition {
+.AMISDebug-changePosition {
   position: absolute;
   font-size: 18px;
   right: 40px;
@@ -40228,7 +40592,7 @@ readers do not read off random characters that represent icons */
   cursor: pointer;
 }
 
-.amis-scope .AMISDebug-close {
+.AMISDebug-close {
   position: absolute;
   font-size: 18px;
   right: 0.5rem;
@@ -40236,7 +40600,7 @@ readers do not read off random characters that represent icons */
   cursor: pointer;
 }
 
-.amis-scope .AMISDebug.is-expanded {
+.AMISDebug.is-expanded {
   width: 420px;
   overflow: auto;
   background: #272821;
@@ -40244,28 +40608,28 @@ readers do not read off random characters that represent icons */
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
-.amis-scope .AMISDebug.is-expanded .AMISDebug-toggle {
+.AMISDebug.is-expanded .AMISDebug-toggle {
   display: none;
 }
 
-.amis-scope .AMISDebug.is-expanded .AMISDebug-content {
+.AMISDebug.is-expanded .AMISDebug-content {
   display: block;
 }
 
-.amis-scope .AMISDebug.is-left {
+.AMISDebug.is-left {
   left: 0;
 }
 
-.amis-scope .AMISDebug.is-left .AMISDebug-resize {
+.AMISDebug.is-left .AMISDebug-resize {
   left: unset;
   right: 0;
 }
 
-.amis-scope .AMISDebug-log {
+.AMISDebug-log {
   padding: 0.5rem;
 }
 
-.amis-scope .AMISDebug-log button {
+.AMISDebug-log button {
   cursor: pointer;
   background: #0e639c;
   flex-grow: 1;
@@ -40281,11 +40645,11 @@ readers do not read off random characters that represent icons */
   border: none;
 }
 
-.amis-scope .AMISDebug-log button:hover {
+.AMISDebug-log button:hover {
   background: #1177bb;
 }
 
-.amis-scope .AMISDebug-inspect {
+.AMISDebug-inspect {
   padding: 0.5rem;
 }
 
@@ -42721,15 +43085,6 @@ readers do not read off random characters that represent icons */
 .amis-scope .cxd-Toast .cxd-Toast-close {
   margin-left: 0.5rem;
   cursor: pointer;
-}
-
-.amis-scope .cxd-InputGroup .cxd-InputGroup-btn .cxd-Button {
-  border-radius: 0.1875rem;
-}
-
-.amis-scope .cxd-InputGroup .cxd-InputGroup-btn:last-child .cxd-Button {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
 }
 
 .amis-scope .cxd-Button--iconOnly {

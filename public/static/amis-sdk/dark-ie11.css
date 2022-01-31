@@ -9465,6 +9465,7 @@ readers do not read off random characters that represent icons */
   outline: none;
   /* Prevent dragging from highlighting the element */
   position: relative;
+  z-index: 0;
 }
 
 .amis-scope .CodeMirror-sizer {
@@ -18491,7 +18492,7 @@ readers do not read off random characters that represent icons */
   right: 0;
 }
 
-.amis-scope .video-react button {
+.amis-scope .video-react .video-react-button {
   background: none;
   border: none;
   color: inherit;
@@ -22016,7 +22017,7 @@ readers do not read off random characters that represent icons */
 }
 
 .amis-scope .dark-Button--xs.dark-Button--iconOnly {
-  min-width: calc( 1.375rem * 4 / 3);
+  min-width: calc( 1.375rem * 4 / 3 );
 }
 
 .amis-scope .dark-Button--sm {
@@ -22060,7 +22061,7 @@ readers do not read off random characters that represent icons */
 }
 
 .amis-scope .dark-Button--sm.dark-Button--iconOnly {
-  min-width: calc( 1.875rem * 4 / 3);
+  min-width: calc( 1.875rem * 4 / 3 );
 }
 
 .amis-scope .dark-Button--md {
@@ -22104,7 +22105,7 @@ readers do not read off random characters that represent icons */
 }
 
 .amis-scope .dark-Button--md.dark-Button--iconOnly {
-  min-width: calc( 1.875rem * 4 / 3);
+  min-width: calc( 1.875rem * 4 / 3 );
 }
 
 .amis-scope .dark-Button--lg {
@@ -22148,7 +22149,7 @@ readers do not read off random characters that represent icons */
 }
 
 .amis-scope .dark-Button--lg.dark-Button--iconOnly {
-  min-width: calc( 2.875rem * 4 / 3);
+  min-width: calc( 2.875rem * 4 / 3 );
 }
 
 .amis-scope .dark-Button--iconOnly {
@@ -22618,39 +22619,39 @@ readers do not read off random characters that represent icons */
 }
 
 .amis-scope .dark-Modal--2th .dark-Modal-content {
-  margin-top: calc( 3.75rem + 1 * 1.875rem);
+  margin-top: calc( 3.75rem + 1 * 1.875rem );
 }
 
 .amis-scope .dark-Modal--3th .dark-Modal-content {
-  margin-top: calc( 3.75rem + 2 * 1.875rem);
+  margin-top: calc( 3.75rem + 2 * 1.875rem );
 }
 
 .amis-scope .dark-Modal--4th .dark-Modal-content {
-  margin-top: calc( 3.75rem + 3 * 1.875rem);
+  margin-top: calc( 3.75rem + 3 * 1.875rem );
 }
 
 .amis-scope .dark-Modal--5th .dark-Modal-content {
-  margin-top: calc( 3.75rem + 4 * 1.875rem);
+  margin-top: calc( 3.75rem + 4 * 1.875rem );
 }
 
 .amis-scope .dark-Modal--6th .dark-Modal-content {
-  margin-top: calc( 3.75rem + 5 * 1.875rem);
+  margin-top: calc( 3.75rem + 5 * 1.875rem );
 }
 
 .amis-scope .dark-Modal--7th .dark-Modal-content {
-  margin-top: calc( 3.75rem + 6 * 1.875rem);
+  margin-top: calc( 3.75rem + 6 * 1.875rem );
 }
 
 .amis-scope .dark-Modal--8th .dark-Modal-content {
-  margin-top: calc( 3.75rem + 7 * 1.875rem);
+  margin-top: calc( 3.75rem + 7 * 1.875rem );
 }
 
 .amis-scope .dark-Modal--9th .dark-Modal-content {
-  margin-top: calc( 3.75rem + 8 * 1.875rem);
+  margin-top: calc( 3.75rem + 8 * 1.875rem );
 }
 
 .amis-scope .dark-Modal--10th .dark-Modal-content {
-  margin-top: calc( 3.75rem + 9 * 1.875rem);
+  margin-top: calc( 3.75rem + 9 * 1.875rem );
 }
 
 @media (min-width: 576px) {
@@ -23217,8 +23218,8 @@ readers do not read off random characters that represent icons */
   color: #dbd6d6;
   background: #f7f7f7;
   border-bottom: 0.0625rem solid #ebebeb;
-  border-top-left-radius: calc( 0.428rem - 0.0625rem);
-  border-top-right-radius: calc( 0.428rem - 0.0625rem);
+  border-top-left-radius: calc( 0.428rem - 0.0625rem );
+  border-top-right-radius: calc( 0.428rem - 0.0625rem );
 }
 
 .amis-scope .dark-Tooltip-title:empty {
@@ -23863,7 +23864,7 @@ readers do not read off random characters that represent icons */
 .amis-scope .dark-Toast-wrap--topCenter {
   top: 0.75rem;
   left: 50%;
-  margin-left: calc(18.75rem / -2);
+  transform: translate(-50%, 0);
 }
 
 .amis-scope .dark-Toast-wrap--topLeft {
@@ -23878,7 +23879,7 @@ readers do not read off random characters that represent icons */
 
 .amis-scope .dark-Toast-wrap--bottomCenter {
   left: 50%;
-  margin-left: calc(18.75rem / -2);
+  transform: translate(-50%, 0);
   bottom: 0.75rem;
 }
 
@@ -26037,6 +26038,15 @@ readers do not read off random characters that represent icons */
   width: 100%;
 }
 
+.amis-scope .dark-ScheduleCalendar .rdt .rdtPicker td.rdtActive {
+  background: transparent;
+  color: #f3f1f1;
+}
+
+.amis-scope .dark-ScheduleCalendar .rdt .rdtPicker td.rdtActive:hover {
+  background: #ededed;
+}
+
 .amis-scope .dark-ScheduleCalendar-large {
   width: 100%;
 }
@@ -26515,6 +26525,10 @@ readers do not read off random characters that represent icons */
   float: right;
 }
 
+.amis-scope .dark-CollapseGroup.icon-position-right .dark-Collapse-header .dark-Collapse-icon-tranform {
+  float: right;
+}
+
 .amis-scope .dark-ColorField {
   display: inline-block;
 }
@@ -26569,7 +26583,6 @@ readers do not read off random characters that represent icons */
   transition: opacity 0s;
   display: flex;
   align-items: center;
-  margin-left: 0.75rem;
 }
 
 .amis-scope .dark-CBGroup-toolbar .dark-CBGroup-toolbarConditionAdd .dark-CBDelete {
@@ -26661,6 +26674,10 @@ readers do not read off random characters that represent icons */
 
 .amis-scope .dark-CBGroup-placeholder.simple:after {
   display: none;
+}
+
+.amis-scope .dark-CBGroup-toolbarCondition {
+  margin-right: 0.75rem;
 }
 
 .amis-scope .dark-CBDelete {
@@ -26770,6 +26787,10 @@ readers do not read off random characters that represent icons */
 
 .amis-scope .dark-CBGroupOrItem:last-child:after {
   display: none;
+}
+
+.amis-scope .dark-CBGroupOrItem-simple {
+  margin-bottom: 0.5rem;
 }
 
 .amis-scope .dark-CBInputSwitch {
@@ -28775,17 +28796,17 @@ readers do not read off random characters that represent icons */
 }
 
 .amis-scope .dark-Table-table > thead > tr > th.dark-TableCell--sortable {
-  padding-right: calc( 0.5rem + 0.5rem);
+  padding-right: calc( 0.5rem + 0.5rem );
   position: relative;
 }
 
 .amis-scope .dark-Table-table > thead > tr > th.dark-TableCell--searchable {
-  padding-right: calc( 0.5rem + 1rem);
+  padding-right: calc( 0.5rem + 1rem );
   position: relative;
 }
 
 .amis-scope .dark-Table-table > thead > tr > th.dark-TableCell--filterable {
-  padding-right: calc( 0.5rem + 1rem);
+  padding-right: calc( 0.5rem + 1rem );
   position: relative;
 }
 
@@ -31466,17 +31487,22 @@ readers do not read off random characters that represent icons */
   align-items: center;
   justify-content: center;
   margin-left: auto;
+  text-decoration: none;
 }
 
 .amis-scope .dark-InputBox-clear svg {
-  fill: #4b5563;
+  fill: #cecfd1;
   top: 0;
-  width: 0.625rem;
-  height: 0.625rem;
+  width: 0.875rem;
+  height: 0.875rem;
 }
 
 .amis-scope .dark-InputBox-clear:hover svg {
-  fill: #1f2329;
+  fill: #5e626a;
+}
+
+.amis-scope .dark-InputBox-clear:active svg {
+  fill: #2d323c;
 }
 
 .amis-scope .dark-InputBox > svg {
@@ -31590,30 +31616,22 @@ readers do not read off random characters that represent icons */
   align-items: center;
   justify-content: center;
   margin-left: auto;
-  width: 1.625rem;
-  height: 1.625rem;
-  margin: 0 -0.125rem;
-  margin-left: auto;
+  text-decoration: none;
 }
 
 .amis-scope .dark-ResultBox-clear svg {
-  fill: #4b5563;
+  fill: #cecfd1;
   top: 0;
-  width: 0.625rem;
-  height: 0.625rem;
+  width: 0.875rem;
+  height: 0.875rem;
 }
 
 .amis-scope .dark-ResultBox-clear:hover svg {
-  fill: #1f2329;
+  fill: #5e626a;
 }
 
-.amis-scope .dark-ResultBox-clear:hover {
-  background: #f5f5f5;
-}
-
-.amis-scope .dark-ResultBox-clear > svg {
-  width: 0.75rem;
-  height: 0.75rem;
+.amis-scope .dark-ResultBox-clear:active svg {
+  fill: #2d323c;
 }
 
 .amis-scope .dark-ResultBox > svg {
@@ -32859,7 +32877,7 @@ readers do not read off random characters that represent icons */
 }
 
 .amis-scope .dark-TextControl-spinner {
-  line-height: calc( 1.4285714286 * 0.875rem);
+  line-height: calc( 1.4285714286 * 0.875rem );
 }
 
 .amis-scope .dark-TextControl-clear {
@@ -32869,17 +32887,22 @@ readers do not read off random characters that represent icons */
   align-items: center;
   justify-content: center;
   margin-left: auto;
+  text-decoration: none;
 }
 
 .amis-scope .dark-TextControl-clear svg {
-  fill: #4b5563;
+  fill: #cecfd1;
   top: 0;
-  width: 0.625rem;
-  height: 0.625rem;
+  width: 0.875rem;
+  height: 0.875rem;
 }
 
 .amis-scope .dark-TextControl-clear:hover svg {
-  fill: #1f2329;
+  fill: #5e626a;
+}
+
+.amis-scope .dark-TextControl-clear:active svg {
+  fill: #2d323c;
 }
 
 @media (min-width: 576px) {
@@ -33064,7 +33087,7 @@ readers do not read off random characters that represent icons */
 
 .amis-scope .dark-TextControl-value {
   user-select: none;
-  line-height: calc( 1.4285714286 * 0.875rem);
+  line-height: calc( 1.4285714286 * 0.875rem );
   vertical-align: middle;
   display: inline-block;
 }
@@ -33139,6 +33162,7 @@ readers do not read off random characters that represent icons */
 }
 
 .amis-scope .dark-TextareaControl {
+  --Form-input-clearBtn-padding: 0.125rem;
   position: relative;
 }
 
@@ -33220,8 +33244,45 @@ readers do not read off random characters that represent icons */
   background: rgba(0, 0, 0, 0.4);
 }
 
+.amis-scope .dark-TextareaControl-counter.is-clearable {
+  right: calc( 0.5rem + 0.875rem + 0.1875rem * 2 + 0.3125rem );
+}
+
 .amis-scope .has-error--maxLength .dark-TextareaControl-counter {
   background: #dc3545;
+}
+
+.amis-scope .dark-TextareaControl-clear {
+  padding: 0.1875rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  text-decoration: none;
+  position: absolute;
+  right: 0.5rem;
+  bottom: calc(
+    (
+        1.875rem - 1.4285714286 *
+          0.875rem - 0.125rem
+      ) / 2
+  );
+}
+
+.amis-scope .dark-TextareaControl-clear svg {
+  fill: #cecfd1;
+  top: 0;
+  width: 0.875rem;
+  height: 0.875rem;
+}
+
+.amis-scope .dark-TextareaControl-clear:hover svg {
+  fill: #5e626a;
+}
+
+.amis-scope .dark-TextareaControl-clear:active svg {
+  fill: #2d323c;
 }
 
 .amis-scope .dark-Checkbox {
@@ -34241,7 +34302,7 @@ readers do not read off random characters that represent icons */
 }
 
 .amis-scope .dark-Select-value {
-  line-height: calc( 1.4285714286 * 0.875rem);
+  line-height: calc( 1.4285714286 * 0.875rem );
   white-space: nowrap;
   max-width: 100%;
   overflow: hidden;
@@ -34470,7 +34531,7 @@ readers do not read off random characters that represent icons */
 }
 
 .amis-scope .dark-Select-spinner {
-  line-height: calc( 1.4285714286 * 0.875rem);
+  line-height: calc( 1.4285714286 * 0.875rem );
 }
 
 .amis-scope .dark-Select-clear {
@@ -34745,7 +34806,8 @@ readers do not read off random characters that represent icons */
     (
         1.875rem - 1.4285714286 *
           0.875rem
-      ) / 2 - 0.0625rem) 0.75rem;
+      ) / 2 - 0.0625rem
+  ) 0.75rem;
   height: 1.875rem;
   outline: none;
   white-space: nowrap;
@@ -34805,26 +34867,30 @@ readers do not read off random characters that represent icons */
 }
 
 .amis-scope .dark-LocationPicker-clear {
-  display: inline-block;
   padding: 0.1875rem;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-left: auto;
+  text-decoration: none;
   line-height: 1;
   margin-right: 0.25rem;
 }
 
 .amis-scope .dark-LocationPicker-clear svg {
-  fill: #4b5563;
+  fill: #cecfd1;
   top: 0;
-  width: 0.625rem;
-  height: 0.625rem;
+  width: 0.875rem;
+  height: 0.875rem;
 }
 
 .amis-scope .dark-LocationPicker-clear:hover svg {
-  fill: #1f2329;
+  fill: #5e626a;
+}
+
+.amis-scope .dark-LocationPicker-clear:active svg {
+  fill: #2d323c;
 }
 
 .amis-scope .dark-LocationControl {
@@ -34904,7 +34970,8 @@ readers do not read off random characters that represent icons */
     (
         1.875rem - 1.4285714286 *
           0.875rem
-      ) / 2 - 0.0625rem) 0.75rem;
+      ) / 2 - 0.0625rem
+  ) 0.75rem;
   background: #333538;
   color: #f3f1f1;
   border-radius: 0.142rem;
@@ -34979,19 +35046,22 @@ readers do not read off random characters that represent icons */
   align-items: center;
   justify-content: center;
   margin-left: auto;
-  display: inline-block;
-  line-height: 1;
+  text-decoration: none;
 }
 
 .amis-scope .dark-ColorPicker-clear svg {
-  fill: #4b5563;
+  fill: #cecfd1;
   top: 0;
-  width: 0.625rem;
-  height: 0.625rem;
+  width: 0.875rem;
+  height: 0.875rem;
 }
 
 .amis-scope .dark-ColorPicker-clear:hover svg {
-  fill: #1f2329;
+  fill: #5e626a;
+}
+
+.amis-scope .dark-ColorPicker-clear:active svg {
+  fill: #2d323c;
 }
 
 .amis-scope .dark-ColorPicker-arrow {
@@ -35042,7 +35112,8 @@ readers do not read off random characters that represent icons */
     (
         1.875rem - 1.4285714286 *
           0.875rem
-      ) / 2 - 0.0625rem) 0.75rem;
+      ) / 2 - 0.0625rem
+  ) 0.75rem;
   height: 1.875rem;
   outline: none;
   white-space: nowrap;
@@ -35103,37 +35174,66 @@ readers do not read off random characters that represent icons */
 }
 
 .amis-scope .dark-DatePicker-toggler {
-  cursor: pointer;
-  color: #4b5563;
-  display: inline-flex;
-  align-items: center;
-}
-
-.amis-scope .dark-DatePicker-toggler:hover {
-  color: #111827;
-}
-
-.amis-scope .dark-DatePicker-clear {
-  display: inline-block;
   padding: 0.1875rem;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-left: auto;
+  text-decoration: none;
+  line-height: 1;
+}
+
+.amis-scope .dark-DatePicker-toggler svg {
+  fill: #cecfd1;
+  top: 0;
+  width: 0.875rem;
+  height: 0.875rem;
+}
+
+.amis-scope .dark-DatePicker-toggler:hover svg {
+  fill: #5e626a;
+}
+
+.amis-scope .dark-DatePicker-toggler:active svg {
+  fill: #2d323c;
+}
+
+.amis-scope .dark-DatePicker-toggler svg polyline,
+.amis-scope .dark-DatePicker-toggler svg circle {
+  stroke: #4b5563;
+}
+
+.amis-scope .dark-DatePicker-toggler:hover svg polyline,
+.amis-scope .dark-DatePicker-toggler:hover svg circle {
+  stroke: #111827;
+}
+
+.amis-scope .dark-DatePicker-clear {
+  padding: 0.1875rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  text-decoration: none;
   line-height: 1;
   margin-right: 0.25rem;
 }
 
 .amis-scope .dark-DatePicker-clear svg {
-  fill: #4b5563;
+  fill: #cecfd1;
   top: 0;
-  width: 0.625rem;
-  height: 0.625rem;
+  width: 0.875rem;
+  height: 0.875rem;
 }
 
 .amis-scope .dark-DatePicker-clear:hover svg {
-  fill: #1f2329;
+  fill: #5e626a;
+}
+
+.amis-scope .dark-DatePicker-clear:active svg {
+  fill: #2d323c;
 }
 
 .amis-scope .dark-DateControl:not(.is-inline) > .dark-DatePicker {
@@ -35629,7 +35729,8 @@ readers do not read off random characters that represent icons */
     (
         1.875rem - 1.4285714286 *
           0.875rem
-      ) / 2 - 0.0625rem) 0.75rem;
+      ) / 2 - 0.0625rem
+  ) 0.75rem;
   height: 1.875rem;
   outline: none;
   border-radius: 0.142rem;
@@ -35688,14 +35789,39 @@ readers do not read off random characters that represent icons */
 }
 
 .amis-scope .dark-DateRangePicker-toggler {
+  padding: 0.1875rem;
   cursor: pointer;
-  color: #4b5563;
-  display: inline-flex;
+  display: flex;
   align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  text-decoration: none;
+  line-height: 1;
 }
 
-.amis-scope .dark-DateRangePicker-toggler:hover {
-  color: #111827;
+.amis-scope .dark-DateRangePicker-toggler svg {
+  fill: #cecfd1;
+  top: 0;
+  width: 0.875rem;
+  height: 0.875rem;
+}
+
+.amis-scope .dark-DateRangePicker-toggler:hover svg {
+  fill: #5e626a;
+}
+
+.amis-scope .dark-DateRangePicker-toggler:active svg {
+  fill: #2d323c;
+}
+
+.amis-scope .dark-DateRangePicker-toggler svg polyline,
+.amis-scope .dark-DateRangePicker-toggler svg circle {
+  stroke: #4b5563;
+}
+
+.amis-scope .dark-DateRangePicker-toggler:hover svg polyline,
+.amis-scope .dark-DateRangePicker-toggler:hover svg circle {
+  stroke: #111827;
 }
 
 .amis-scope .dark-DateRangePicker-clear {
@@ -35705,20 +35831,24 @@ readers do not read off random characters that represent icons */
   align-items: center;
   justify-content: center;
   margin-left: auto;
-  display: inline-block;
+  text-decoration: none;
   line-height: 1;
   margin-right: 0.25rem;
 }
 
 .amis-scope .dark-DateRangePicker-clear svg {
-  fill: #4b5563;
+  fill: #cecfd1;
   top: 0;
-  width: 0.625rem;
-  height: 0.625rem;
+  width: 0.875rem;
+  height: 0.875rem;
 }
 
 .amis-scope .dark-DateRangePicker-clear:hover svg {
-  fill: #1f2329;
+  fill: #5e626a;
+}
+
+.amis-scope .dark-DateRangePicker-clear:active svg {
+  fill: #2d323c;
 }
 
 .amis-scope .dark-DateRangePicker-wrap {
@@ -37115,7 +37245,7 @@ readers do not read off random characters that represent icons */
 }
 
 .amis-scope .dark-TreeSelect-spinner {
-  line-height: calc( 1.4285714286 * 0.875rem);
+  line-height: calc( 1.4285714286 * 0.875rem );
 }
 
 .amis-scope .dark-TreeSelect-clear {
@@ -37125,17 +37255,22 @@ readers do not read off random characters that represent icons */
   align-items: center;
   justify-content: center;
   margin-left: auto;
+  text-decoration: none;
 }
 
 .amis-scope .dark-TreeSelect-clear svg {
-  fill: #4b5563;
+  fill: #cecfd1;
   top: 0;
-  width: 0.625rem;
-  height: 0.625rem;
+  width: 0.875rem;
+  height: 0.875rem;
 }
 
 .amis-scope .dark-TreeSelect-clear:hover svg {
-  fill: #1f2329;
+  fill: #5e626a;
+}
+
+.amis-scope .dark-TreeSelect-clear:active svg {
+  fill: #2d323c;
 }
 
 @media (min-width: 576px) {
@@ -37740,7 +37875,7 @@ readers do not read off random characters that represent icons */
 }
 
 .amis-scope .dark-Picker-spinner {
-  line-height: calc( 1.4285714286 * 0.875rem);
+  line-height: calc( 1.4285714286 * 0.875rem );
 }
 
 .amis-scope .dark-Picker-clear {
@@ -37750,17 +37885,22 @@ readers do not read off random characters that represent icons */
   align-items: center;
   justify-content: center;
   margin-left: auto;
+  text-decoration: none;
 }
 
 .amis-scope .dark-Picker-clear svg {
-  fill: #4b5563;
+  fill: #cecfd1;
   top: 0;
-  width: 0.625rem;
-  height: 0.625rem;
+  width: 0.875rem;
+  height: 0.875rem;
 }
 
 .amis-scope .dark-Picker-clear:hover svg {
-  fill: #1f2329;
+  fill: #5e626a;
+}
+
+.amis-scope .dark-Picker-clear:active svg {
+  fill: #2d323c;
 }
 
 @media (min-width: 576px) {
@@ -37855,26 +37995,30 @@ readers do not read off random characters that represent icons */
 }
 
 .amis-scope .dark-Picker-clear {
-  display: inline-block;
   padding: 0.1875rem;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-left: auto;
+  text-decoration: none;
   line-height: 1;
   margin-right: 0.25rem;
 }
 
 .amis-scope .dark-Picker-clear svg {
-  fill: #4b5563;
+  fill: #cecfd1;
   top: 0;
-  width: 0.625rem;
-  height: 0.625rem;
+  width: 0.875rem;
+  height: 0.875rem;
 }
 
 .amis-scope .dark-Picker-clear:hover svg {
-  fill: #1f2329;
+  fill: #5e626a;
+}
+
+.amis-scope .dark-Picker-clear:active svg {
+  fill: #2d323c;
 }
 
 .amis-scope .dark-PickerControl.is-inline .dark-Picker {
@@ -37908,7 +38052,7 @@ readers do not read off random characters that represent icons */
   padding: 0;
   border: none;
   width: 100%;
-  margin-top: calc( 0 - 0.0625rem);
+  margin-top: calc( 0 - 0.0625rem );
 }
 
 .amis-scope .dark-TagControl > .dark-TagControl-popover.dark-PopOver--leftBottomLeftTop {
@@ -38143,6 +38287,10 @@ readers do not read off random characters that represent icons */
   position: relative;
 }
 
+.amis-scope .dark-Transfer-select > .dark-Transfer-selection.dark-AssociatedSelection {
+  overflow: initial;
+}
+
 .amis-scope .dark-Transfer-search + .dark-Transfer-selection {
   border-top: 1px solid #656565;
 }
@@ -38317,6 +38465,7 @@ readers do not read off random characters that represent icons */
 
 .amis-scope .dark-TransferDropDown-content {
   min-height: 12.5rem;
+  min-width: 25rem;
   display: flex;
   flex-direction: column;
 }
@@ -38627,7 +38776,7 @@ readers do not read off random characters that represent icons */
 }
 
 .amis-scope .dark-IconPickerControl-spinner {
-  line-height: calc( 1.4285714286 * 0.875rem);
+  line-height: calc( 1.4285714286 * 0.875rem );
 }
 
 .amis-scope .dark-IconPickerControl-clear {
@@ -38637,17 +38786,22 @@ readers do not read off random characters that represent icons */
   align-items: center;
   justify-content: center;
   margin-left: auto;
+  text-decoration: none;
 }
 
 .amis-scope .dark-IconPickerControl-clear svg {
-  fill: #4b5563;
+  fill: #cecfd1;
   top: 0;
-  width: 0.625rem;
-  height: 0.625rem;
+  width: 0.875rem;
+  height: 0.875rem;
 }
 
 .amis-scope .dark-IconPickerControl-clear:hover svg {
-  fill: #1f2329;
+  fill: #5e626a;
+}
+
+.amis-scope .dark-IconPickerControl-clear:active svg {
+  fill: #2d323c;
 }
 
 @media (min-width: 576px) {
@@ -38676,6 +38830,8 @@ readers do not read off random characters that represent icons */
 }
 
 .amis-scope .dark-IconPickerControl-valueWrap {
+  display: flex;
+  justify-content: space-between;
   flex-grow: 1;
   line-height: 1;
   white-space: nowrap;
@@ -38754,7 +38910,7 @@ readers do not read off random characters that represent icons */
 
 .amis-scope .dark-IconPickerControl-value {
   user-select: none;
-  line-height: calc( 1.4285714286 * 0.875rem);
+  line-height: calc( 1.4285714286 * 0.875rem );
   vertical-align: middle;
   display: inline-block;
 }
@@ -39229,6 +39385,7 @@ readers do not read off random characters that represent icons */
 }
 
 .amis-scope .dark-Form--column > .dark-Form-item {
+  flex-shrink: 0;
   flex-grow: 1;
   padding-left: calc(1rem / 2);
   padding-right: calc(1rem / 2);
@@ -39831,6 +39988,8 @@ readers do not read off random characters that represent icons */
   overflow: visible;
   max-width: 100%;
   box-sizing: content-box;
+  /* 变量列表 */
+  /* 函数列表 */
 }
 
 .amis-scope .dark-FormulaEditor-content {
@@ -39844,18 +40003,31 @@ readers do not read off random characters that represent icons */
   line-height: 1.875rem;
   padding: 0 0.625rem;
   box-sizing: border-box;
-  background: var(--Formula-header-bgColor);
+  background: #fafafa;
   border-radius: 0.142rem 0.142rem 0 0;
   border-bottom: 0.0625rem solid #656565;
   font-weight: 500;
 }
 
 .amis-scope .dark-FormulaEditor-editor {
-  min-height: 14.875rem;
-  max-height: 20rem;
-  height: auto;
-  padding: 0.625rem;
+  height: 12.5rem;
+  padding: 0.3125rem;
   padding-right: 0;
+}
+
+.amis-scope .dark-FormulaEditor-editor::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.amis-scope .dark-FormulaEditor-editor::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.amis-scope .dark-FormulaEditor-editor .CodeMirror {
+  width: 100%;
+  height: 100%;
 }
 
 .amis-scope .dark-FormulaEditor.is-error .dark-FormulaEditor-editor {
@@ -39868,37 +40040,256 @@ readers do not read off random characters that represent icons */
 
 .amis-scope .dark-FormulaEditor-settings {
   display: flex;
-  flex-direction: row;
+  flex-flow: row nowrap;
   align-items: stretch;
   justify-content: space-between;
-  max-height: 21.875rem;
-  margin: 0 -5px;
+  height: 15.625rem;
+  margin-top: 0.625rem;
 }
 
-.amis-scope .dark-FormulaEditor-settings > div {
-  flex: 1;
-  padding: 0 5px;
+.amis-scope .dark-FormulaEditor-panel {
   display: flex;
-  flex-direction: column;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: stretch;
+  height: 15.625rem;
+  width: 13.75rem;
+  border-radius: 0.142rem;
+  border: 0.0625rem solid #656565;
 }
 
-.amis-scope .dark-FormulaEditor-settings > div > h3 {
-  padding: 10px 0;
-  margin: 0;
-  flex-shrink: 0;
+.amis-scope .dark-FormulaEditor-panel:not(:last-child) {
+  margin-right: 0.625rem;
 }
 
-.amis-scope .dark-FormulaEditor-settings > div > div {
+.amis-scope .dark-FormulaEditor-panel:last-child {
   flex: 1;
-  min-height: 0;
+}
+
+.amis-scope .dark-FormulaEditor-panel-header {
+  width: 100%;
+  height: 1.875rem;
+  line-height: 1.875rem;
+  padding: 0 0.625rem;
+  box-sizing: border-box;
+  background: #fafafa;
+  border-radius: 0.142rem 0.142rem 0 0;
+  border-bottom: 0.0625rem solid #656565;
+  font-weight: 500;
+}
+
+.amis-scope .dark-FormulaEditor-panel-body {
+  flex: 1;
+  display: flex;
+  flex-flow: column nowrap;
+  max-height: 13.75rem;
+}
+
+.amis-scope .dark-FormulaEditor-VariableList-root {
+  max-height: 13.75rem;
+}
+
+.amis-scope .dark-FormulaEditor-VariableList-root.is-scrollable {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.amis-scope .dark-FormulaEditor-VariableList-root.is-scrollable::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.amis-scope .dark-FormulaEditor-VariableList-root.is-scrollable::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.amis-scope .dark-FormulaEditor-VariableList-base {
+  --Form-input-fontSize: var(--fontSizeSm);
+  max-width: inherit;
+  overflow: hidden;
+}
+
+.amis-scope .dark-FormulaEditor-VariableList-tabs {
+  --Tabs-linkFontSize: var(--fontSizeSm);
+  --Tabs--card-linkPadding: 0.3125rem;
+  max-height: 13.75rem;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+}
+
+.amis-scope .dark-FormulaEditor-VariableList-tabs > ul {
+  border-top: none;
+}
+
+.amis-scope .dark-FormulaEditor-VariableList-tabs > div {
+  overflow-x: hidden;
+  overflow-y: auto;
+  flex: 1;
+  border-radius: 0.142rem;
+}
+
+.amis-scope .dark-FormulaEditor-VariableList-tabs > div::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.amis-scope .dark-FormulaEditor-VariableList-tabs > div::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.amis-scope .dark-FormulaEditor-VariableList-tab {
+  padding: 0;
+}
+
+.amis-scope .dark-FormulaEditor-VariableList-item {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  white-space: nowrap;
+}
+
+.amis-scope .dark-FormulaEditor-VariableList-item > label {
+  white-space: nowrap;
+}
+
+.amis-scope .dark-FormulaEditor-VariableList-item-tag {
+  vertical-align: middle;
+  text-align: center;
+  padding: 0 0.5rem;
+  line-height: 17px;
+  border-radius: 0.142rem;
+  background: #f5f5f5;
+  color: #141316;
+}
+
+.amis-scope .dark-FormulaEditor-FuncList {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: stretch;
+  flex: 1;
+}
+
+.amis-scope .dark-FormulaEditor-FuncList:not(:last-child) {
+  margin-right: 0.625rem;
+}
+
+.amis-scope .dark-FormulaEditor-FuncList-searchBox {
+  display: flex;
+  width: auto;
+  flex-shrink: 0;
+  padding: 0.5rem;
+}
+
+.amis-scope .dark-FormulaEditor-FuncList-searchBox > div {
+  flex: 1;
+  font-size: 0.75rem;
+  height: 1.5rem;
+}
+
+.amis-scope .dark-FormulaEditor-FuncList-body {
+  flex: 1;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.amis-scope .dark-FormulaEditor-FuncList-body::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.amis-scope .dark-FormulaEditor-FuncList-body::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.amis-scope .dark-FormulaEditor-FuncList-collapseGroup .dark-FormulaEditor-FuncList-collapse {
+  border: none;
+}
+
+.amis-scope .dark-FormulaEditor-FuncList-collapseGroup .dark-FormulaEditor-FuncList-collapse .dark-FormulaEditor-FuncList-expandIcon {
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  transform-origin: 0.4375rem 0.5625rem;
+  transition: transform 0.2s;
+}
+
+.amis-scope .dark-FormulaEditor-FuncList-groupTitle {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: unset;
+  padding: 0.3125rem 0.625rem;
+  background: transparent;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+.amis-scope .dark-FormulaEditor-FuncList-groupBody > div {
+  padding: 5px 0;
+}
+
+.amis-scope .dark-FormulaEditor-FuncList-item {
+  cursor: pointer;
+  padding: 0 1.25rem;
+  height: 1.5rem;
+  line-height: 1.5rem;
+}
+
+.amis-scope .dark-FormulaEditor-FuncList-item.is-active {
+  background: rgba(0, 126, 255, 0.08);
+}
+
+.amis-scope .dark-FormulaEditor-FuncList-doc {
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 0.625rem;
+  max-height: 12.5rem;
+}
+
+.amis-scope .dark-FormulaEditor-FuncList-doc pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  background: #f2f2f4;
+  padding: 0.3125rem 0.625rem;
+  border-radius: 0.142rem;
+  margin-top: 0;
+}
+
+.amis-scope .dark-FormulaEditor-FuncList-doc pre code {
+  color: #2468f2;
+}
+
+.amis-scope .dark-FormulaEditor-FuncList-doc-desc {
+  color: #dbd6d6;
+  overflow-x: hidden;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.amis-scope .dark-FormulaEditor-FuncList-doc-desc::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.amis-scope .dark-FormulaEditor-FuncList-doc-desc::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background: rgba(0, 0, 0, 0.3);
 }
 
 .amis-scope .dark-FormulaEditor .cm-field,
 .amis-scope .dark-FormulaEditor .cm-func {
-  border-radius: 2px;
+  border-radius: 3px;
   color: #fff;
   margin: 0 1px;
   padding: 0 2px;
+}
+
+.amis-scope .dark-FormulaEditor .cm-field {
+  padding: 3px 5px;
 }
 
 .amis-scope .dark-FormulaEditor .cm-field {
@@ -39906,73 +40297,41 @@ readers do not read off random characters that represent icons */
 }
 
 .amis-scope .dark-FormulaEditor .cm-func {
-  background: #17a2b8;
+  color: #ae4597;
+  font-weight: bold;
+  line-height: 14px;
 }
 
-.amis-scope .dark-FormulaFuncList {
+.amis-scope .dark-FormulaPicker {
   display: flex;
-  flex-direction: column;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.amis-scope .dark-FormulaFuncList > .dark-FormulaFuncList-searchBox {
-  display: flex;
-  width: auto;
-  flex-shrink: 0;
-  margin-bottom: 0.5rem;
-}
-
-.amis-scope .dark-FormulaFuncList-columns {
+.amis-scope .dark-FormulaPicker-input {
   flex: 1;
-  min-height: 0;
-  overflow: auto;
+  margin-right: 0.625rem;
+}
+
+.amis-scope .dark-FormulaPicker-action {
   display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-}
-
-.amis-scope .dark-FormulaFuncList-columns > div:first-child {
-  min-width: 200px;
-  flex-shrink: 0;
-}
-
-.amis-scope .dark-FormulaFuncList-funcItem {
-  padding: 0 10px;
-  cursor: pointer;
-}
-
-.amis-scope .dark-FormulaFuncList-funcItem.is-active {
-  background: var(--Formula-funcItem-bgColor-onActive);
-}
-
-.amis-scope .dark-FormulaFuncList-groupTitle {
-  padding: 5px 0;
-  background: transparent;
-}
-
-.amis-scope .dark-FormulaFuncList-groupBody > div {
-  padding: 5px 0;
-}
-
-.amis-scope .dark-FormulaFuncList-funcDetail {
-  padding: 10px 20px;
-}
-
-.amis-scope .dark-FormulaFuncList-funcDetail pre {
-  white-space: pre-wrap;
-  word-wrap: break-word;
-  background: var(--Formula-header-bgColor);
-  padding: 0.625rem;
-  border-radius: 0.142rem;
-  margin-top: 0;
-}
-
-.amis-scope .dark-FormulaFuncList-funcDetail div {
-  color: #dbd6d6;
+  justify-content: center;
+  align-items: center;
 }
 
 .amis-scope .dark-FormulaPicker-icon {
-  margin-left: auto;
-  margin-right: 0.3125rem;
+  top: 0 !important;
+  font-size: 1.5rem;
+}
+
+.amis-scope .dark-FormulaPicker-icon:not(:last-child) {
+  margin-right: 0.75rem;
+}
+
+.amis-scope .dark-FormulaPicker-icon.is-filled {
+  fill: #0983ff;
+  color: #0983ff;
 }
 
 .amis-scope .dark-Timeline-vertical {
@@ -39992,67 +40351,67 @@ readers do not read off random characters that represent icons */
 
 .amis-scope .dark-Timeline-vertical .dark-TimelineItem-axle {
   position: relative;
-  flex: var(--TimelineItem--axle-flex);
+  flex: 0 0 1.5rem;
 }
 
 .amis-scope .dark-Timeline-vertical .dark-TimelineItem-axle .dark-TimelineItem-line {
   position: absolute;
-  height: calc(100% - var(--TimelineItem--left-line-top));
-  width: var(--TimelineItem--left-line-width);
-  left: var(--TimelineItem--left-line-left);
-  top: var(--TimelineItem--left-line-top);
-  background-color: var(--TimelineItem--line-bg);
+  height: calc(100% - 1.25rem);
+  width: 0.125rem;
+  left: 0.8125rem;
+  top: 1.25rem;
+  background-color: #e6e6e8;
 }
 
 .amis-scope .dark-Timeline-vertical .dark-TimelineItem-axle .dark-TimelineItem-round {
   position: absolute;
-  width: var(--TimelineItem--round-width);
-  height: var(--TimelineItem--round-height);
-  left: var(--TimelineItem--round-left);
-  top: var(--TimelineItem--round-top);
-  background: var(--TimelineItem-round-bg);
-  border-radius: var(--TimelineItem--round-radius);
+  width: 0.5rem;
+  height: 0.5rem;
+  left: 0.625rem;
+  top: 0.5rem;
+  background: #dadbdd;
+  border-radius: 50%;
 }
 
 .amis-scope .dark-Timeline-vertical .dark-TimelineItem-axle .dark-TimelineItem-round--danger {
-  background: var(--Timeline--danger-bg);
+  background: #dc3545;
 }
 
 .amis-scope .dark-Timeline-vertical .dark-TimelineItem-axle .dark-TimelineItem-round--info {
-  background: var(--Timeline--info-bg);
+  background: #2296f3;
 }
 
 .amis-scope .dark-Timeline-vertical .dark-TimelineItem-axle .dark-TimelineItem-round--success {
-  background: var(--Timeline--success-bg);
+  background: #32d74b;
 }
 
 .amis-scope .dark-Timeline-vertical .dark-TimelineItem-axle .dark-TimelineItem-round--warning {
-  background: var(--Timeline--warning-bg);
+  background: #ff9f0b;
 }
 
 .amis-scope .dark-Timeline-vertical .dark-TimelineItem-axle .dark-TimelineItem-icon {
   position: absolute;
-  width: var(--TimelineItem--icon-width);
-  height: var(--TimelineItem--icon-height);
-  left: var(--TimelineItem--icon-left);
-  border-radius: var(--TimelineItem--icon-radius);
+  width: 1rem;
+  height: 1rem;
+  left: 0.375rem;
+  border-radius: 50%;
 }
 
 .amis-scope .dark-Timeline-vertical .dark-TimelineItem-content {
-  padding-bottom: var(--TimelineItem--content-padding-bottom);
-  margin-left: var(--TimelineItem--content-margin-left);
+  padding-bottom: 1rem;
+  margin-left: 0.75rem;
 }
 
 .amis-scope .dark-Timeline-vertical .dark-TimelineItem-content .dark-TimelineItem-time {
-  color: var(--TimelineItem--text-secondary-color);
+  color: #83868c;
   font-size: var(--Timeline--font-size);
-  margin-bottom: var(--TimelineItem--content-time-margin-bottom);
+  margin-bottom: 0.25rem;
 }
 
 .amis-scope .dark-Timeline-vertical .dark-TimelineItem-content .dark-TimelineItem-title {
-  color: var(--TimelineItem--text-primary-color);
+  color: #f3f1f1;
   font-size: var(--Timeline--font-size);
-  margin-bottom: var(--TimelineItem--content-title-margin-bottom);
+  margin-bottom: 0.25rem;
 }
 
 .amis-scope .dark-Timeline-vertical .dark-TimelineItem-content .dark-TimelineItem-detail .dark-TimelineItem-detail-button {
@@ -40060,13 +40419,13 @@ readers do not read off random characters that represent icons */
   cursor: pointer;
   align-items: center;
   font-size: var(--Timeline--font-size);
-  color: var(--TimelineItem--detail-button-color);
-  margin-bottom: var(--TimelineItem--detail-button-margin-bottom);
+  color: #0983ff;
+  margin-bottom: 0.75rem;
 }
 
 .amis-scope .dark-Timeline-vertical .dark-TimelineItem-content .dark-TimelineItem-detail .dark-TimelineItem-detail-arrow {
-  width: var(--TimelineItem-detail-arrow-width);
-  height: var(--TimelineItem-detail-arrow-width);
+  width: 1rem;
+  height: 1rem;
 }
 
 .amis-scope .dark-Timeline-vertical .dark-TimelineItem-content .dark-TimelineItem-detail .dark-TimelineItem-detail-arrow-top {
@@ -40075,10 +40434,11 @@ readers do not read off random characters that represent icons */
 
 .amis-scope .dark-Timeline-vertical .dark-TimelineItem-content .dark-TimelineItem-detail .dark-TimelineItem-detail-visible {
   display: block;
-  max-width: var(--TimelineItem-detail-visible-max-width);
+  max-width: 18.75rem;
   font-size: var(--Timeline--font-size);
-  padding: var(--TimelineItem-detail-visible-padding);
-  box-shadow: var(--TimelineItem-detail-visible-shadow);
+  padding: 0.625rem;
+  box-shadow: 0 0.0625rem 0.625rem 0
+    rgba(0 0 0 / 10%);
 }
 
 .amis-scope .dark-Timeline-vertical .dark-TimelineItem-content .dark-TimelineItem-detail .dark-TimelineItem-detail-invisible {
@@ -40095,8 +40455,8 @@ readers do not read off random characters that represent icons */
 }
 
 .amis-scope .dark-Timeline-vertical.dark-Timeline-alternate .dark-TimelineItem:nth-child(even) {
-  margin-left: calc(50% - var(--Timeline-alternate-margin-left));
-  max-width: calc(50% + var(--Timeline-alternate-margin-left));
+  margin-left: calc(50% - 1.5rem);
+  max-width: calc(50% + 1.5rem);
 }
 
 .amis-scope .dark-Timeline-horizontal {
@@ -40118,57 +40478,62 @@ readers do not read off random characters that represent icons */
 
 .amis-scope .dark-Timeline-horizontal .dark-TimelineItem-axle {
   position: relative;
-  flex: var(--TimelineItem--axle-flex);
+  flex: 0 0 1.5rem;
 }
 
 .amis-scope .dark-Timeline-horizontal .dark-TimelineItem-axle .dark-TimelineItem-line {
   position: absolute;
-  height: var(--TimelineItem--left-line-width);
-  width: calc(100% - var(--TimelineItem--left-line-left));
-  left: var(--TimelineItem--left-line-top);
-  top: var(--TimelineItem--left-line-left);
-  background-color: var(--TimelineItem--line-bg);
+  height: 0.125rem;
+  width: calc(100% - 0.8125rem);
+  left: 1.25rem;
+  top: 0.8125rem;
+  background-color: #e6e6e8;
 }
 
 .amis-scope .dark-Timeline-horizontal .dark-TimelineItem-axle .dark-TimelineItem-round {
   position: absolute;
-  width: var(--TimelineItem--round-width);
-  height: var(--TimelineItem--round-height);
-  left: var(--TimelineItem--round-top);
-  top: var(--TimelineItem--round-left);
-  background: var(--TimelineItem-round-bg);
-  border-radius: var(--TimelineItem--round-radius);
+  width: 0.5rem;
+  height: 0.5rem;
+  left: 0.5rem;
+  top: 0.625rem;
+  background: #dadbdd;
+  border-radius: 50%;
 }
 
 .amis-scope .dark-Timeline-horizontal .dark-TimelineItem-axle .dark-TimelineItem-round--danger {
-  background: var(--Timeline--danger-bg);
+  background: #dc3545;
 }
 
 .amis-scope .dark-Timeline-horizontal .dark-TimelineItem-axle .dark-TimelineItem-round--info {
-  background: var(--Timeline--info-bg);
+  background: #2296f3;
 }
 
 .amis-scope .dark-Timeline-horizontal .dark-TimelineItem-axle .dark-TimelineItem-round--success {
-  background: var(--Timeline--success-bg);
+  background: #32d74b;
 }
 
 .amis-scope .dark-Timeline-horizontal .dark-TimelineItem-axle .dark-TimelineItem-round--warning {
-  background: var(--Timeline--warning-bg);
+  background: #ff9f0b;
 }
 
 .amis-scope .dark-Timeline-horizontal .dark-TimelineItem-axle .dark-TimelineItem-icon {
   position: absolute;
-  width: var(--TimelineItem--icon-width);
-  height: var(--TimelineItem--icon-height);
-  left: var(--TimelineItem--icon-left);
-  border-radius: var(--TimelineItem--icon-radius);
+  width: 1rem;
+  height: 1rem;
+  left: 0.375rem;
+  border-radius: 50%;
+}
+
+.amis-scope .dark-BarCode > svg {
+  display: block;
+  margin: 0 auto;
 }
 
 /**
  * Debug 模块的 UI，由于没法使用任何主题，所以这里使用独立配色风格
  */
 
-.amis-scope .AMISDebug {
+.AMISDebug {
   position: fixed;
   z-index: 4000;
   top: 0;
@@ -40177,37 +40542,37 @@ readers do not read off random characters that represent icons */
   width: 24px;
 }
 
-.amis-scope .AMISDebug h3 {
+.AMISDebug h3 {
   color: inherit;
 }
 
-.amis-scope .AMISDebug .primary {
+.AMISDebug .primary {
   color: #009fff;
 }
 
-.amis-scope .AMISDebug-header {
+.AMISDebug-header {
   padding: 0.75rem;
   background: #333538;
   border-bottom: 0.0625rem solid #dfe2e6;
 }
 
-.amis-scope .AMISDebug-hoverBox {
+.AMISDebug-hoverBox {
   pointer-events: none;
   position: absolute;
   outline: 1px dashed #1c76c4;
 }
 
-.amis-scope .AMISDebug-activeBox {
+.AMISDebug-activeBox {
   pointer-events: none;
   position: absolute;
   outline: 1px #1c76c4;
 }
 
-.amis-scope .AMISDebug-tab {
+.AMISDebug-tab {
   overflow: hidden;
 }
 
-.amis-scope .AMISDebug-tab > button {
+.AMISDebug-tab > button {
   color: inherit;
   background: inherit;
   float: left;
@@ -40219,16 +40584,16 @@ readers do not read off random characters that represent icons */
   border-bottom: 1px solid transparent;
 }
 
-.amis-scope .AMISDebug-tab > button:hover {
+.AMISDebug-tab > button:hover {
   color: #e7e7e7;
 }
 
-.amis-scope .AMISDebug-tab > button.active {
+.AMISDebug-tab > button.active {
   color: #e7e7e7;
   border-bottom-color: #e7e7e7;
 }
 
-.amis-scope .AMISDebug-toggle {
+.AMISDebug-toggle {
   background: #333538;
   position: fixed;
   top: 50%;
@@ -40243,19 +40608,19 @@ readers do not read off random characters that represent icons */
   cursor: pointer;
 }
 
-.amis-scope .AMISDebug-toggle i {
+.AMISDebug-toggle i {
   color: #f3f1f1;
 }
 
-.amis-scope .AMISDebug-toggle:hover i {
+.AMISDebug-toggle:hover i {
   color: #0983ff;
 }
 
-.amis-scope .AMISDebug-content {
+.AMISDebug-content {
   display: none;
 }
 
-.amis-scope .AMISDebug-resize {
+.AMISDebug-resize {
   position: absolute;
   width: 4px;
   top: 0;
@@ -40264,11 +40629,11 @@ readers do not read off random characters that represent icons */
   cursor: col-resize;
 }
 
-.amis-scope .AMISDebug-resize:hover {
+.AMISDebug-resize:hover {
   background: #75715e;
 }
 
-.amis-scope .AMISDebug-changePosition {
+.AMISDebug-changePosition {
   position: absolute;
   font-size: 18px;
   right: 40px;
@@ -40276,7 +40641,7 @@ readers do not read off random characters that represent icons */
   cursor: pointer;
 }
 
-.amis-scope .AMISDebug-close {
+.AMISDebug-close {
   position: absolute;
   font-size: 18px;
   right: 0.5rem;
@@ -40284,7 +40649,7 @@ readers do not read off random characters that represent icons */
   cursor: pointer;
 }
 
-.amis-scope .AMISDebug.is-expanded {
+.AMISDebug.is-expanded {
   width: 420px;
   overflow: auto;
   background: #272821;
@@ -40292,28 +40657,28 @@ readers do not read off random characters that represent icons */
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
-.amis-scope .AMISDebug.is-expanded .AMISDebug-toggle {
+.AMISDebug.is-expanded .AMISDebug-toggle {
   display: none;
 }
 
-.amis-scope .AMISDebug.is-expanded .AMISDebug-content {
+.AMISDebug.is-expanded .AMISDebug-content {
   display: block;
 }
 
-.amis-scope .AMISDebug.is-left {
+.AMISDebug.is-left {
   left: 0;
 }
 
-.amis-scope .AMISDebug.is-left .AMISDebug-resize {
+.AMISDebug.is-left .AMISDebug-resize {
   left: unset;
   right: 0;
 }
 
-.amis-scope .AMISDebug-log {
+.AMISDebug-log {
   padding: 0.5rem;
 }
 
-.amis-scope .AMISDebug-log button {
+.AMISDebug-log button {
   cursor: pointer;
   background: #0e639c;
   flex-grow: 1;
@@ -40329,11 +40694,11 @@ readers do not read off random characters that represent icons */
   border: none;
 }
 
-.amis-scope .AMISDebug-log button:hover {
+.AMISDebug-log button:hover {
   background: #1177bb;
 }
 
-.amis-scope .AMISDebug-inspect {
+.AMISDebug-inspect {
   padding: 0.5rem;
 }
 

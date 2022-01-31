@@ -9575,6 +9575,11 @@ readers do not read off random characters that represent icons */
   );
   --Form-input-placeholderColor: var(--text--muted-color);
   --Form-input-onDisabled-color: var(--text--muted-color);
+  --Form-input-clearBtn-size: var(--fontSizeMd);
+  --Form-input-clearBtn-padding: 0.1875rem;
+  --Form-input-clearBtn-color: #cecfd1;
+  --Form-input-clearBtn-color-onHover: #5e626a;
+  --Form-input-clearBtn-color-onActive: #2d323c;
   --Form-item-gap: var(--gap-base);
   --Form-label-paddingTop: calc(
     (
@@ -10249,6 +10254,46 @@ readers do not read off random characters that represent icons */
   --ColumnToggler-fontColor: #151a26;
   --ColumnToggler-item-backgroundColor: #f6f7f8;
   --ColumnToggler-item-backgroundColor-onHover: rgba(36, 104, 242, 0.1);
+  --InputFormula-header-bgColor: #fafafa;
+  --InputFormula-icon-size: 1.5rem;
+  --InputFormula-icon-color-onActive: var(--primary);
+  --InputFormula-code-bgColor: #f2f2f4;
+  --TimelineItem--axle-flex: 0 0 1.5rem;
+  --TimelineItem--left-line-width: 0.125rem;
+  --TimelineItem--left-line-left: 0.8125rem;
+  --TimelineItem--left-line-top: 1.25rem;
+  --TimelineItem--round-width: 0.5rem;
+  --TimelineItem--round-height: 0.5rem;
+  --TimelineItem--round-left: 0.625rem;
+  --TimelineItem--round-top: 0.5rem;
+  --TimelineItem--icon-width: 1rem;
+  --TimelineItem--icon-height: 1rem;
+  --TimelineItem--icon-left: 0.375rem;
+  --TimelineItem--content-padding-bottom: var(--gap-md);
+  --TimelineItem--content-margin-left: var(--gap-base);
+  --TimelineItem--content-time-margin-bottom: var(--gap-xs);
+  --TimelineItem--content-title-margin-bottom: var(--gap-xs);
+  --TimelineItem--detail-button-margin-bottom: var(--gap-base);
+  --TimelineItem-detail-arrow-width: 1rem;
+  --TimelineItem-detail-visible-padding: 0.625rem;
+  --TimelineItem-detail-visible-max-width: 18.75rem;
+  --Timeline-alternate-margin-left: var(--gap-xl);
+  --TimelineItem--icon-radius: 50%;
+  --TimelineItem--round-radius: 50%;
+  --TimelineItem--content-radius: px2rem(2px);
+  --TimelineItem-detail-visible-shadow: 0 0.0625rem 0.625rem 0
+    rgba(0 0 0 / 10%);
+  --TimelineItem--font-size: var(--fontSizeSm);
+  --TimelineItem--text-primary-color: #151a26;
+  --TimelineItem--text-secondary-color: #83868c;
+  --TimelineItem--detail-button-color: var(--primary);
+  --TimelineItem--line-bg: #e6e6e8;
+  --TimelineItem--content-bg: #f2f2f4;
+  --TimelineItem-round-bg: #dadbdd;
+  --Timeline--success-bg: var(--success);
+  --Timeline--info-bg: var(--info);
+  --Timeline--warning-bg: var(--warning);
+  --Timeline--danger-bg: var(--danger);
 }
 
 :root {
@@ -10354,42 +10399,6 @@ readers do not read off random characters that represent icons */
   --Table-onChecked-color: var(--Table-color);
   --Table-onChecked-borderColor: var(--Table-borderColor);
   --Switch-bgColor: #bfbfbf;
-  --TimelineItem--axle-flex: 0 0 1.5rem;
-  --TimelineItem--left-line-width: 0.125rem;
-  --TimelineItem--left-line-left: 0.8125rem;
-  --TimelineItem--left-line-top: 1.25rem;
-  --TimelineItem--round-width: 0.5rem;
-  --TimelineItem--round-height: 0.5rem;
-  --TimelineItem--round-left: 0.625rem;
-  --TimelineItem--round-top: 0.5rem;
-  --TimelineItem--icon-width: 1rem;
-  --TimelineItem--icon-height: 1rem;
-  --TimelineItem--icon-left: 0.375rem;
-  --TimelineItem--content-padding-bottom: 1rem;
-  --TimelineItem--content-margin-left: 0.5rem;
-  --TimelineItem--content-time-margin-bottom: 0.25rem;
-  --TimelineItem--content-title-margin-bottom: 0.25rem;
-  --TimelineItem--detail-button-margin-bottom: 0.5rem;
-  --TimelineItem-detail-arrow-width: 1rem;
-  --TimelineItem-detail-visible-padding: 0.625rem;
-  --TimelineItem-detail-visible-max-width: 18.75rem;
-  --Timeline-alternate-margin-left: 1.5rem;
-  --TimelineItem--icon-radius: 50%;
-  --TimelineItem--round-radius: 50%;
-  --TimelineItem--content-radius: 0.125rem;
-  --TimelineItem-detail-visible-shadow: 0 0.0625rem 0.625rem 0
-    rgba(0 0 0 / 10%);
-  --TimelineItem--font-size: 0.75rem;
-  --TimelineItem--text-primary-color: #151a26;
-  --TimelineItem--text-secondary-color: #83868c;
-  --TimelineItem--detail-button-color: var(--primary);
-  --TimelineItem--line-bg: #e6e6e8;
-  --TimelineItem--content-bg: #f2f2f4;
-  --TimelineItem-round-bg: #dadbdd;
-  --Timeline--success-bg: var(--success);
-  --Timeline--info-bg: var(--info);
-  --Timeline--warning-bg: var(--warning);
-  --Timeline--danger-bg: var(--danger);
 }
 
 /*!
@@ -10934,6 +10943,7 @@ readers do not read off random characters that represent icons */
   outline: none;
   /* Prevent dragging from highlighting the element */
   position: relative;
+  z-index: 0;
 }
 
 .amis-scope .CodeMirror-sizer {
@@ -19960,7 +19970,7 @@ readers do not read off random characters that represent icons */
   right: 0;
 }
 
-.amis-scope .video-react button {
+.amis-scope .video-react .video-react-button {
   background: none;
   border: none;
   color: inherit;
@@ -25274,7 +25284,7 @@ readers do not read off random characters that represent icons */
 .amis-scope .antd-Toast-wrap--topCenter {
   top: var(--gap-base);
   left: 50%;
-  margin-left: calc(var(--Toast-width) / -2);
+  transform: translate(-50%, 0);
 }
 
 .amis-scope .antd-Toast-wrap--topLeft {
@@ -25289,7 +25299,7 @@ readers do not read off random characters that represent icons */
 
 .amis-scope .antd-Toast-wrap--bottomCenter {
   left: 50%;
-  margin-left: calc(var(--Toast-width) / -2);
+  transform: translate(-50%, 0);
   bottom: var(--gap-base);
 }
 
@@ -27428,6 +27438,15 @@ readers do not read off random characters that represent icons */
   width: 100%;
 }
 
+.amis-scope .antd-ScheduleCalendar .rdt .rdtPicker td.rdtActive {
+  background: transparent;
+  color: var(--Calendar-color);
+}
+
+.amis-scope .antd-ScheduleCalendar .rdt .rdtPicker td.rdtActive:hover {
+  background: var(--Calendar-cell-onHover-bg);
+}
+
 .amis-scope .antd-ScheduleCalendar-large {
   width: 100%;
 }
@@ -27905,6 +27924,10 @@ readers do not read off random characters that represent icons */
   float: right;
 }
 
+.amis-scope .antd-CollapseGroup.icon-position-right .antd-Collapse-header .antd-Collapse-icon-tranform {
+  float: right;
+}
+
 .amis-scope .antd-ColorField {
   display: inline-block;
 }
@@ -27959,7 +27982,6 @@ readers do not read off random characters that represent icons */
   transition: opacity var(--animation-duration);
   display: flex;
   align-items: center;
-  margin-left: var(--gap-base);
 }
 
 .amis-scope .antd-CBGroup-toolbar .antd-CBGroup-toolbarConditionAdd .antd-CBDelete {
@@ -28051,6 +28073,10 @@ readers do not read off random characters that represent icons */
 
 .amis-scope .antd-CBGroup-placeholder.simple:after {
   display: none;
+}
+
+.amis-scope .antd-CBGroup-toolbarCondition {
+  margin-right: var(--gap-base);
 }
 
 .amis-scope .antd-CBDelete {
@@ -28160,6 +28186,10 @@ readers do not read off random characters that represent icons */
 
 .amis-scope .antd-CBGroupOrItem:last-child:after {
   display: none;
+}
+
+.amis-scope .antd-CBGroupOrItem-simple {
+  margin-bottom: var(--gap-sm);
 }
 
 .amis-scope .antd-CBInputSwitch {
@@ -32830,23 +32860,28 @@ readers do not read off random characters that represent icons */
 }
 
 .amis-scope .antd-InputBox-clear {
-  padding: 0.1875rem;
+  padding: var(--Form-input-clearBtn-padding);
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-left: auto;
+  text-decoration: none;
 }
 
 .amis-scope .antd-InputBox-clear svg {
-  fill: var(--Form-input-iconColor);
+  fill: var(--Form-input-clearBtn-color);
   top: 0;
-  width: 0.625rem;
-  height: 0.625rem;
+  width: var(--Form-input-clearBtn-size);
+  height: var(--Form-input-clearBtn-size);
 }
 
 .amis-scope .antd-InputBox-clear:hover svg {
-  fill: var(--Form-input-onHover-iconColor);
+  fill: var(--Form-input-clearBtn-color-onHover);
+}
+
+.amis-scope .antd-InputBox-clear:active svg {
+  fill: var(--Form-input-clearBtn-color-onActive);
 }
 
 .amis-scope .antd-InputBox > svg {
@@ -32949,36 +32984,28 @@ readers do not read off random characters that represent icons */
 }
 
 .amis-scope .antd-ResultBox-clear {
-  padding: 0.1875rem;
+  padding: var(--Form-input-clearBtn-padding);
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-left: auto;
-  width: 1.625rem;
-  height: 1.625rem;
-  margin: 0 -0.125rem;
-  margin-left: auto;
+  text-decoration: none;
 }
 
 .amis-scope .antd-ResultBox-clear svg {
-  fill: var(--Form-input-iconColor);
+  fill: var(--Form-input-clearBtn-color);
   top: 0;
-  width: 0.625rem;
-  height: 0.625rem;
+  width: var(--Form-input-clearBtn-size);
+  height: var(--Form-input-clearBtn-size);
 }
 
 .amis-scope .antd-ResultBox-clear:hover svg {
-  fill: var(--Form-input-onHover-iconColor);
+  fill: var(--Form-input-clearBtn-color-onHover);
 }
 
-.amis-scope .antd-ResultBox-clear:hover {
-  background: var(--ResultBox-value-bg);
-}
-
-.amis-scope .antd-ResultBox-clear > svg {
-  width: 0.75rem;
-  height: 0.75rem;
+.amis-scope .antd-ResultBox-clear:active svg {
+  fill: var(--Form-input-clearBtn-color-onActive);
 }
 
 .amis-scope .antd-ResultBox > svg {
@@ -34212,23 +34239,28 @@ readers do not read off random characters that represent icons */
 }
 
 .amis-scope .antd-TextControl-clear {
-  padding: 0.1875rem;
+  padding: var(--Form-input-clearBtn-padding);
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-left: auto;
+  text-decoration: none;
 }
 
 .amis-scope .antd-TextControl-clear svg {
-  fill: var(--Form-input-iconColor);
+  fill: var(--Form-input-clearBtn-color);
   top: 0;
-  width: 0.625rem;
-  height: 0.625rem;
+  width: var(--Form-input-clearBtn-size);
+  height: var(--Form-input-clearBtn-size);
 }
 
 .amis-scope .antd-TextControl-clear:hover svg {
-  fill: var(--Form-input-onHover-iconColor);
+  fill: var(--Form-input-clearBtn-color-onHover);
+}
+
+.amis-scope .antd-TextControl-clear:active svg {
+  fill: var(--Form-input-clearBtn-color-onActive);
 }
 
 @media (min-width: 576px) {
@@ -34324,13 +34356,13 @@ readers do not read off random characters that represent icons */
 }
 
 .amis-scope .antd-TextControl--withAddOn > .antd-TextControl-button:first-child .antd-Button {
-  border-top-left-radius: var(--InputGroup-button-borderRadius);
-  border-bottom-left-radius: var(--InputGroup-button-borderRadius);
+  border-top-left-radius: var(--InputGroup-addOn-borderRadius);
+  border-bottom-left-radius: var(--InputGroup-addOn-borderRadius);
 }
 
 .amis-scope .antd-TextControl--withAddOn > .antd-TextControl-button:last-child .antd-Button {
-  border-top-right-radius: var(--InputGroup-button-borderRadius);
-  border-bottom-right-radius: var(--InputGroup-button-borderRadius);
+  border-top-right-radius: var(--InputGroup-addOn-borderRadius);
+  border-bottom-right-radius: var(--InputGroup-addOn-borderRadius);
 }
 
 .amis-scope .antd-TextControl--withAddOn.is-focused > .antd-TextControl-button .antd-Button {
@@ -34478,6 +34510,7 @@ readers do not read off random characters that represent icons */
 }
 
 .amis-scope .antd-TextareaControl {
+  --Form-input-clearBtn-padding: 0.125rem;
   position: relative;
 }
 
@@ -34549,8 +34582,40 @@ readers do not read off random characters that represent icons */
   background: rgba(0, 0, 0, 0.4);
 }
 
+.amis-scope .antd-TextareaControl-counter.is-clearable {
+  right: calc( var(--Form-input-paddingX) + var(--Form-input-clearBtn-size) + var(--Form-input-clearBtn-padding) * 2 + 0.3125rem );
+}
+
 .amis-scope .has-error--maxLength .antd-TextareaControl-counter {
   background: var(--danger);
+}
+
+.amis-scope .antd-TextareaControl-clear {
+  padding: var(--Form-input-clearBtn-padding);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  text-decoration: none;
+  position: absolute;
+  right: var(--Form-input-paddingX);
+  bottom: var(--Form-input-paddingY);
+}
+
+.amis-scope .antd-TextareaControl-clear svg {
+  fill: var(--Form-input-clearBtn-color);
+  top: 0;
+  width: var(--Form-input-clearBtn-size);
+  height: var(--Form-input-clearBtn-size);
+}
+
+.amis-scope .antd-TextareaControl-clear:hover svg {
+  fill: var(--Form-input-clearBtn-color-onHover);
+}
+
+.amis-scope .antd-TextareaControl-clear:active svg {
+  fill: var(--Form-input-clearBtn-color-onActive);
 }
 
 .amis-scope .antd-Checkbox {
@@ -36115,26 +36180,30 @@ readers do not read off random characters that represent icons */
 }
 
 .amis-scope .antd-LocationPicker-clear {
-  display: inline-block;
-  padding: 0.1875rem;
+  padding: var(--Form-input-clearBtn-padding);
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-left: auto;
+  text-decoration: none;
   line-height: 1;
   margin-right: var(--gap-xs);
 }
 
 .amis-scope .antd-LocationPicker-clear svg {
-  fill: var(--Form-input-iconColor);
+  fill: var(--Form-input-clearBtn-color);
   top: 0;
-  width: 0.625rem;
-  height: 0.625rem;
+  width: var(--Form-input-clearBtn-size);
+  height: var(--Form-input-clearBtn-size);
 }
 
 .amis-scope .antd-LocationPicker-clear:hover svg {
-  fill: var(--Form-input-onHover-iconColor);
+  fill: var(--Form-input-clearBtn-color-onHover);
+}
+
+.amis-scope .antd-LocationPicker-clear:active svg {
+  fill: var(--Form-input-clearBtn-color-onActive);
 }
 
 .amis-scope .antd-LocationControl {
@@ -36279,25 +36348,28 @@ readers do not read off random characters that represent icons */
 }
 
 .amis-scope .antd-ColorPicker-clear {
-  padding: 0.1875rem;
+  padding: var(--Form-input-clearBtn-padding);
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-left: auto;
-  display: inline-block;
-  line-height: 1;
+  text-decoration: none;
 }
 
 .amis-scope .antd-ColorPicker-clear svg {
-  fill: var(--Form-input-iconColor);
+  fill: var(--Form-input-clearBtn-color);
   top: 0;
-  width: 0.625rem;
-  height: 0.625rem;
+  width: var(--Form-input-clearBtn-size);
+  height: var(--Form-input-clearBtn-size);
 }
 
 .amis-scope .antd-ColorPicker-clear:hover svg {
-  fill: var(--Form-input-onHover-iconColor);
+  fill: var(--Form-input-clearBtn-color-onHover);
+}
+
+.amis-scope .antd-ColorPicker-clear:active svg {
+  fill: var(--Form-input-clearBtn-color-onActive);
 }
 
 .amis-scope .antd-ColorPicker-arrow {
@@ -36405,37 +36477,66 @@ readers do not read off random characters that represent icons */
 }
 
 .amis-scope .antd-DatePicker-toggler {
-  cursor: pointer;
-  color: var(--DatePicker-iconColor);
-  display: inline-flex;
-  align-items: center;
-}
-
-.amis-scope .antd-DatePicker-toggler:hover {
-  color: var(--DatePicker-onHover-iconColor);
-}
-
-.amis-scope .antd-DatePicker-clear {
-  display: inline-block;
-  padding: 0.1875rem;
+  padding: var(--Form-input-clearBtn-padding);
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-left: auto;
+  text-decoration: none;
+  line-height: 1;
+}
+
+.amis-scope .antd-DatePicker-toggler svg {
+  fill: var(--Form-input-clearBtn-color);
+  top: 0;
+  width: var(--Form-input-clearBtn-size);
+  height: var(--Form-input-clearBtn-size);
+}
+
+.amis-scope .antd-DatePicker-toggler:hover svg {
+  fill: var(--Form-input-clearBtn-color-onHover);
+}
+
+.amis-scope .antd-DatePicker-toggler:active svg {
+  fill: var(--Form-input-clearBtn-color-onActive);
+}
+
+.amis-scope .antd-DatePicker-toggler svg polyline,
+.amis-scope .antd-DatePicker-toggler svg circle {
+  stroke: var(--DatePicker-iconColor);
+}
+
+.amis-scope .antd-DatePicker-toggler:hover svg polyline,
+.amis-scope .antd-DatePicker-toggler:hover svg circle {
+  stroke: var(--DatePicker-onHover-iconColor);
+}
+
+.amis-scope .antd-DatePicker-clear {
+  padding: var(--Form-input-clearBtn-padding);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  text-decoration: none;
   line-height: 1;
   margin-right: var(--gap-xs);
 }
 
 .amis-scope .antd-DatePicker-clear svg {
-  fill: var(--Form-input-iconColor);
+  fill: var(--Form-input-clearBtn-color);
   top: 0;
-  width: 0.625rem;
-  height: 0.625rem;
+  width: var(--Form-input-clearBtn-size);
+  height: var(--Form-input-clearBtn-size);
 }
 
 .amis-scope .antd-DatePicker-clear:hover svg {
-  fill: var(--Form-input-onHover-iconColor);
+  fill: var(--Form-input-clearBtn-color-onHover);
+}
+
+.amis-scope .antd-DatePicker-clear:active svg {
+  fill: var(--Form-input-clearBtn-color-onActive);
 }
 
 .amis-scope .antd-DateControl:not(.is-inline) > .antd-DatePicker {
@@ -36972,37 +37073,66 @@ readers do not read off random characters that represent icons */
 }
 
 .amis-scope .antd-DateRangePicker-toggler {
-  cursor: pointer;
-  color: var(--DatePicker-iconColor);
-  display: inline-flex;
-  align-items: center;
-}
-
-.amis-scope .antd-DateRangePicker-toggler:hover {
-  color: var(--DatePicker-onHover-iconColor);
-}
-
-.amis-scope .antd-DateRangePicker-clear {
-  padding: 0.1875rem;
+  padding: var(--Form-input-clearBtn-padding);
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-left: auto;
-  display: inline-block;
+  text-decoration: none;
+  line-height: 1;
+}
+
+.amis-scope .antd-DateRangePicker-toggler svg {
+  fill: var(--Form-input-clearBtn-color);
+  top: 0;
+  width: var(--Form-input-clearBtn-size);
+  height: var(--Form-input-clearBtn-size);
+}
+
+.amis-scope .antd-DateRangePicker-toggler:hover svg {
+  fill: var(--Form-input-clearBtn-color-onHover);
+}
+
+.amis-scope .antd-DateRangePicker-toggler:active svg {
+  fill: var(--Form-input-clearBtn-color-onActive);
+}
+
+.amis-scope .antd-DateRangePicker-toggler svg polyline,
+.amis-scope .antd-DateRangePicker-toggler svg circle {
+  stroke: var(--DatePicker-iconColor);
+}
+
+.amis-scope .antd-DateRangePicker-toggler:hover svg polyline,
+.amis-scope .antd-DateRangePicker-toggler:hover svg circle {
+  stroke: var(--DatePicker-onHover-iconColor);
+}
+
+.amis-scope .antd-DateRangePicker-clear {
+  padding: var(--Form-input-clearBtn-padding);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  text-decoration: none;
   line-height: 1;
   margin-right: var(--gap-xs);
 }
 
 .amis-scope .antd-DateRangePicker-clear svg {
-  fill: var(--Form-input-iconColor);
+  fill: var(--Form-input-clearBtn-color);
   top: 0;
-  width: 0.625rem;
-  height: 0.625rem;
+  width: var(--Form-input-clearBtn-size);
+  height: var(--Form-input-clearBtn-size);
 }
 
 .amis-scope .antd-DateRangePicker-clear:hover svg {
-  fill: var(--Form-input-onHover-iconColor);
+  fill: var(--Form-input-clearBtn-color-onHover);
+}
+
+.amis-scope .antd-DateRangePicker-clear:active svg {
+  fill: var(--Form-input-clearBtn-color-onActive);
 }
 
 .amis-scope .antd-DateRangePicker-wrap {
@@ -38387,23 +38517,28 @@ readers do not read off random characters that represent icons */
 }
 
 .amis-scope .antd-TreeSelect-clear {
-  padding: 0.1875rem;
+  padding: var(--Form-input-clearBtn-padding);
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-left: auto;
+  text-decoration: none;
 }
 
 .amis-scope .antd-TreeSelect-clear svg {
-  fill: var(--Form-input-iconColor);
+  fill: var(--Form-input-clearBtn-color);
   top: 0;
-  width: 0.625rem;
-  height: 0.625rem;
+  width: var(--Form-input-clearBtn-size);
+  height: var(--Form-input-clearBtn-size);
 }
 
 .amis-scope .antd-TreeSelect-clear:hover svg {
-  fill: var(--Form-input-onHover-iconColor);
+  fill: var(--Form-input-clearBtn-color-onHover);
+}
+
+.amis-scope .antd-TreeSelect-clear:active svg {
+  fill: var(--Form-input-clearBtn-color-onActive);
 }
 
 @media (min-width: 576px) {
@@ -38980,23 +39115,28 @@ readers do not read off random characters that represent icons */
 }
 
 .amis-scope .antd-Picker-clear {
-  padding: 0.1875rem;
+  padding: var(--Form-input-clearBtn-padding);
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-left: auto;
+  text-decoration: none;
 }
 
 .amis-scope .antd-Picker-clear svg {
-  fill: var(--Form-input-iconColor);
+  fill: var(--Form-input-clearBtn-color);
   top: 0;
-  width: 0.625rem;
-  height: 0.625rem;
+  width: var(--Form-input-clearBtn-size);
+  height: var(--Form-input-clearBtn-size);
 }
 
 .amis-scope .antd-Picker-clear:hover svg {
-  fill: var(--Form-input-onHover-iconColor);
+  fill: var(--Form-input-clearBtn-color-onHover);
+}
+
+.amis-scope .antd-Picker-clear:active svg {
+  fill: var(--Form-input-clearBtn-color-onActive);
 }
 
 @media (min-width: 576px) {
@@ -39091,26 +39231,30 @@ readers do not read off random characters that represent icons */
 }
 
 .amis-scope .antd-Picker-clear {
-  display: inline-block;
-  padding: 0.1875rem;
+  padding: var(--Form-input-clearBtn-padding);
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-left: auto;
+  text-decoration: none;
   line-height: 1;
   margin-right: var(--gap-xs);
 }
 
 .amis-scope .antd-Picker-clear svg {
-  fill: var(--Form-input-iconColor);
+  fill: var(--Form-input-clearBtn-color);
   top: 0;
-  width: 0.625rem;
-  height: 0.625rem;
+  width: var(--Form-input-clearBtn-size);
+  height: var(--Form-input-clearBtn-size);
 }
 
 .amis-scope .antd-Picker-clear:hover svg {
-  fill: var(--Form-input-onHover-iconColor);
+  fill: var(--Form-input-clearBtn-color-onHover);
+}
+
+.amis-scope .antd-Picker-clear:active svg {
+  fill: var(--Form-input-clearBtn-color-onActive);
 }
 
 .amis-scope .antd-PickerControl.is-inline .antd-Picker {
@@ -39371,6 +39515,10 @@ readers do not read off random characters that represent icons */
   position: relative;
 }
 
+.amis-scope .antd-Transfer-select > .antd-Transfer-selection.antd-AssociatedSelection {
+  overflow: initial;
+}
+
 .amis-scope .antd-Transfer-search + .antd-Transfer-selection {
   border-top: 1px solid var(--borderColor);
 }
@@ -39545,6 +39693,7 @@ readers do not read off random characters that represent icons */
 
 .amis-scope .antd-TransferDropDown-content {
   min-height: 12.5rem;
+  min-width: 25rem;
   display: flex;
   flex-direction: column;
 }
@@ -39854,23 +40003,28 @@ readers do not read off random characters that represent icons */
 }
 
 .amis-scope .antd-IconPickerControl-clear {
-  padding: 0.1875rem;
+  padding: var(--Form-input-clearBtn-padding);
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-left: auto;
+  text-decoration: none;
 }
 
 .amis-scope .antd-IconPickerControl-clear svg {
-  fill: var(--Form-input-iconColor);
+  fill: var(--Form-input-clearBtn-color);
   top: 0;
-  width: 0.625rem;
-  height: 0.625rem;
+  width: var(--Form-input-clearBtn-size);
+  height: var(--Form-input-clearBtn-size);
 }
 
 .amis-scope .antd-IconPickerControl-clear:hover svg {
-  fill: var(--Form-input-onHover-iconColor);
+  fill: var(--Form-input-clearBtn-color-onHover);
+}
+
+.amis-scope .antd-IconPickerControl-clear:active svg {
+  fill: var(--Form-input-clearBtn-color-onActive);
 }
 
 @media (min-width: 576px) {
@@ -39894,6 +40048,8 @@ readers do not read off random characters that represent icons */
 }
 
 .amis-scope .antd-IconPickerControl-valueWrap {
+  display: flex;
+  justify-content: space-between;
   flex-grow: 1;
   line-height: 1;
   white-space: nowrap;
@@ -40392,6 +40548,7 @@ readers do not read off random characters that represent icons */
 }
 
 .amis-scope .antd-Form--column > .antd-Form-item {
+  flex-shrink: 0;
   flex-grow: 1;
   padding-left: calc(var(--Form-group-gutterWidth) / 2);
   padding-right: calc(var(--Form-group-gutterWidth) / 2);
@@ -40994,6 +41151,8 @@ readers do not read off random characters that represent icons */
   overflow: visible;
   max-width: 100%;
   box-sizing: content-box;
+  /* 变量列表 */
+  /* 函数列表 */
 }
 
 .amis-scope .antd-FormulaEditor-content {
@@ -41007,18 +41166,31 @@ readers do not read off random characters that represent icons */
   line-height: 1.875rem;
   padding: 0 0.625rem;
   box-sizing: border-box;
-  background: var(--Formula-header-bgColor);
+  background: var(--InputFormula-header-bgColor);
   border-radius: var(--borderRadius) var(--borderRadius) 0 0;
   border-bottom: var(--Form-input-borderWidth) solid var(--Form-input-borderColor);
   font-weight: 500;
 }
 
 .amis-scope .antd-FormulaEditor-editor {
-  min-height: 14.875rem;
-  max-height: 20rem;
-  height: auto;
-  padding: 0.625rem;
+  height: 12.5rem;
+  padding: 0.3125rem;
   padding-right: 0;
+}
+
+.amis-scope .antd-FormulaEditor-editor::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.amis-scope .antd-FormulaEditor-editor::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.amis-scope .antd-FormulaEditor-editor .CodeMirror {
+  width: 100%;
+  height: 100%;
 }
 
 .amis-scope .antd-FormulaEditor.is-error .antd-FormulaEditor-editor {
@@ -41031,37 +41203,256 @@ readers do not read off random characters that represent icons */
 
 .amis-scope .antd-FormulaEditor-settings {
   display: flex;
-  flex-direction: row;
+  flex-flow: row nowrap;
   align-items: stretch;
   justify-content: space-between;
-  max-height: 21.875rem;
-  margin: 0 -5px;
+  height: 15.625rem;
+  margin-top: 0.625rem;
 }
 
-.amis-scope .antd-FormulaEditor-settings > div {
-  flex: 1;
-  padding: 0 5px;
+.amis-scope .antd-FormulaEditor-panel {
   display: flex;
-  flex-direction: column;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: stretch;
+  height: 15.625rem;
+  width: 13.75rem;
+  border-radius: var(--borderRadius);
+  border: var(--Form-input-borderWidth) solid var(--Form-input-borderColor);
 }
 
-.amis-scope .antd-FormulaEditor-settings > div > h3 {
-  padding: 10px 0;
-  margin: 0;
-  flex-shrink: 0;
+.amis-scope .antd-FormulaEditor-panel:not(:last-child) {
+  margin-right: 0.625rem;
 }
 
-.amis-scope .antd-FormulaEditor-settings > div > div {
+.amis-scope .antd-FormulaEditor-panel:last-child {
   flex: 1;
-  min-height: 0;
+}
+
+.amis-scope .antd-FormulaEditor-panel-header {
+  width: 100%;
+  height: 1.875rem;
+  line-height: 1.875rem;
+  padding: 0 0.625rem;
+  box-sizing: border-box;
+  background: var(--InputFormula-header-bgColor);
+  border-radius: var(--borderRadius) var(--borderRadius) 0 0;
+  border-bottom: var(--Form-input-borderWidth) solid var(--Form-input-borderColor);
+  font-weight: 500;
+}
+
+.amis-scope .antd-FormulaEditor-panel-body {
+  flex: 1;
+  display: flex;
+  flex-flow: column nowrap;
+  max-height: 13.75rem;
+}
+
+.amis-scope .antd-FormulaEditor-VariableList-root {
+  max-height: 13.75rem;
+}
+
+.amis-scope .antd-FormulaEditor-VariableList-root.is-scrollable {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.amis-scope .antd-FormulaEditor-VariableList-root.is-scrollable::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.amis-scope .antd-FormulaEditor-VariableList-root.is-scrollable::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.amis-scope .antd-FormulaEditor-VariableList-base {
+  --Form-input-fontSize: var(--fontSizeSm);
+  max-width: inherit;
+  overflow: hidden;
+}
+
+.amis-scope .antd-FormulaEditor-VariableList-tabs {
+  --Tabs-linkFontSize: var(--fontSizeSm);
+  --Tabs--card-linkPadding: 0.3125rem;
+  max-height: 13.75rem;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+}
+
+.amis-scope .antd-FormulaEditor-VariableList-tabs > ul {
+  border-top: none;
+}
+
+.amis-scope .antd-FormulaEditor-VariableList-tabs > div {
+  overflow-x: hidden;
+  overflow-y: auto;
+  flex: 1;
+  border-radius: var(--borderRadius);
+}
+
+.amis-scope .antd-FormulaEditor-VariableList-tabs > div::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.amis-scope .antd-FormulaEditor-VariableList-tabs > div::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.amis-scope .antd-FormulaEditor-VariableList-tab {
+  padding: 0;
+}
+
+.amis-scope .antd-FormulaEditor-VariableList-item {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  white-space: nowrap;
+}
+
+.amis-scope .antd-FormulaEditor-VariableList-item > label {
+  white-space: nowrap;
+}
+
+.amis-scope .antd-FormulaEditor-VariableList-item-tag {
+  vertical-align: middle;
+  text-align: center;
+  padding: 0 0.5rem;
+  line-height: 17px;
+  border-radius: var(--borderRadius);
+  background: #f5f5f5;
+  color: var(--black);
+}
+
+.amis-scope .antd-FormulaEditor-FuncList {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: stretch;
+  flex: 1;
+}
+
+.amis-scope .antd-FormulaEditor-FuncList:not(:last-child) {
+  margin-right: 0.625rem;
+}
+
+.amis-scope .antd-FormulaEditor-FuncList-searchBox {
+  display: flex;
+  width: auto;
+  flex-shrink: 0;
+  padding: 0.5rem;
+}
+
+.amis-scope .antd-FormulaEditor-FuncList-searchBox > div {
+  flex: 1;
+  font-size: var(--fontSizeSm);
+  height: var(--gap-xl);
+}
+
+.amis-scope .antd-FormulaEditor-FuncList-body {
+  flex: 1;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.amis-scope .antd-FormulaEditor-FuncList-body::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.amis-scope .antd-FormulaEditor-FuncList-body::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.amis-scope .antd-FormulaEditor-FuncList-collapseGroup .antd-FormulaEditor-FuncList-collapse {
+  border: none;
+}
+
+.amis-scope .antd-FormulaEditor-FuncList-collapseGroup .antd-FormulaEditor-FuncList-collapse .antd-FormulaEditor-FuncList-expandIcon {
+  font-size: var(--fontSizeSm);
+  line-height: var(--fontSizeXl);
+  transform-origin: 0.4375rem 0.5625rem;
+  transition: transform 0.2s;
+}
+
+.amis-scope .antd-FormulaEditor-FuncList-groupTitle {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: unset;
+  padding: 0.3125rem 0.625rem;
+  background: transparent;
+  font-size: var(--fontSizeSm);
+  font-weight: bold;
+}
+
+.amis-scope .antd-FormulaEditor-FuncList-groupBody > div {
+  padding: 5px 0;
+}
+
+.amis-scope .antd-FormulaEditor-FuncList-item {
+  cursor: pointer;
+  padding: 0 var(--gap-lg);
+  height: var(--gap-xl);
+  line-height: var(--gap-xl);
+}
+
+.amis-scope .antd-FormulaEditor-FuncList-item.is-active {
+  background: var(--Tree-item-onHover-bg);
+}
+
+.amis-scope .antd-FormulaEditor-FuncList-doc {
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 0.625rem;
+  max-height: 12.5rem;
+}
+
+.amis-scope .antd-FormulaEditor-FuncList-doc pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  background: var(--InputFormula-code-bgColor);
+  padding: 0.3125rem 0.625rem;
+  border-radius: var(--borderRadius);
+  margin-top: 0;
+}
+
+.amis-scope .antd-FormulaEditor-FuncList-doc pre code {
+  color: #2468f2;
+}
+
+.amis-scope .antd-FormulaEditor-FuncList-doc-desc {
+  color: var(--text--loud-color);
+  overflow-x: hidden;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.amis-scope .antd-FormulaEditor-FuncList-doc-desc::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.amis-scope .antd-FormulaEditor-FuncList-doc-desc::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background: rgba(0, 0, 0, 0.3);
 }
 
 .amis-scope .antd-FormulaEditor .cm-field,
 .amis-scope .antd-FormulaEditor .cm-func {
-  border-radius: 2px;
+  border-radius: 3px;
   color: #fff;
   margin: 0 1px;
   padding: 0 2px;
+}
+
+.amis-scope .antd-FormulaEditor .cm-field {
+  padding: 3px 5px;
 }
 
 .amis-scope .antd-FormulaEditor .cm-field {
@@ -41069,73 +41460,41 @@ readers do not read off random characters that represent icons */
 }
 
 .amis-scope .antd-FormulaEditor .cm-func {
-  background: #17a2b8;
+  color: #ae4597;
+  font-weight: bold;
+  line-height: 14px;
 }
 
-.amis-scope .antd-FormulaFuncList {
+.amis-scope .antd-FormulaPicker {
   display: flex;
-  flex-direction: column;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.amis-scope .antd-FormulaFuncList > .antd-FormulaFuncList-searchBox {
-  display: flex;
-  width: auto;
-  flex-shrink: 0;
-  margin-bottom: 0.5rem;
-}
-
-.amis-scope .antd-FormulaFuncList-columns {
+.amis-scope .antd-FormulaPicker-input {
   flex: 1;
-  min-height: 0;
-  overflow: auto;
+  margin-right: 0.625rem;
+}
+
+.amis-scope .antd-FormulaPicker-action {
   display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-}
-
-.amis-scope .antd-FormulaFuncList-columns > div:first-child {
-  min-width: 200px;
-  flex-shrink: 0;
-}
-
-.amis-scope .antd-FormulaFuncList-funcItem {
-  padding: 0 10px;
-  cursor: pointer;
-}
-
-.amis-scope .antd-FormulaFuncList-funcItem.is-active {
-  background: var(--Formula-funcItem-bgColor-onActive);
-}
-
-.amis-scope .antd-FormulaFuncList-groupTitle {
-  padding: 5px 0;
-  background: transparent;
-}
-
-.amis-scope .antd-FormulaFuncList-groupBody > div {
-  padding: 5px 0;
-}
-
-.amis-scope .antd-FormulaFuncList-funcDetail {
-  padding: 10px 20px;
-}
-
-.amis-scope .antd-FormulaFuncList-funcDetail pre {
-  white-space: pre-wrap;
-  word-wrap: break-word;
-  background: var(--Formula-header-bgColor);
-  padding: 0.625rem;
-  border-radius: var(--borderRadius);
-  margin-top: 0;
-}
-
-.amis-scope .antd-FormulaFuncList-funcDetail div {
-  color: var(--text--loud-color);
+  justify-content: center;
+  align-items: center;
 }
 
 .amis-scope .antd-FormulaPicker-icon {
-  margin-left: auto;
-  margin-right: 0.3125rem;
+  top: 0 !important;
+  font-size: var(--InputFormula-icon-size);
+}
+
+.amis-scope .antd-FormulaPicker-icon:not(:last-child) {
+  margin-right: var(--fontSizeSm);
+}
+
+.amis-scope .antd-FormulaPicker-icon.is-filled {
+  fill: var(--InputFormula-icon-color-onActive);
+  color: var(--InputFormula-icon-color-onActive);
 }
 
 .amis-scope .antd-Timeline-vertical {
@@ -41327,11 +41686,16 @@ readers do not read off random characters that represent icons */
   border-radius: var(--TimelineItem--icon-radius);
 }
 
+.amis-scope .antd-BarCode > svg {
+  display: block;
+  margin: 0 auto;
+}
+
 /**
  * Debug 模块的 UI，由于没法使用任何主题，所以这里使用独立配色风格
  */
 
-.amis-scope .AMISDebug {
+.AMISDebug {
   position: fixed;
   z-index: 4000;
   top: 0;
@@ -41340,37 +41704,37 @@ readers do not read off random characters that represent icons */
   width: 24px;
 }
 
-.amis-scope .AMISDebug h3 {
+.AMISDebug h3 {
   color: inherit;
 }
 
-.amis-scope .AMISDebug .primary {
+.AMISDebug .primary {
   color: #009fff;
 }
 
-.amis-scope .AMISDebug-header {
+.AMISDebug-header {
   padding: var(--Drawer-header-padding);
   background: var(--Drawer-header-bg);
   border-bottom: var(--Drawer-content-borderWidth) solid var(--Drawer-header-borderColor);
 }
 
-.amis-scope .AMISDebug-hoverBox {
+.AMISDebug-hoverBox {
   pointer-events: none;
   position: absolute;
   outline: 1px dashed #1c76c4;
 }
 
-.amis-scope .AMISDebug-activeBox {
+.AMISDebug-activeBox {
   pointer-events: none;
   position: absolute;
   outline: 1px #1c76c4;
 }
 
-.amis-scope .AMISDebug-tab {
+.AMISDebug-tab {
   overflow: hidden;
 }
 
-.amis-scope .AMISDebug-tab > button {
+.AMISDebug-tab > button {
   color: inherit;
   background: inherit;
   float: left;
@@ -41382,16 +41746,16 @@ readers do not read off random characters that represent icons */
   border-bottom: 1px solid transparent;
 }
 
-.amis-scope .AMISDebug-tab > button:hover {
+.AMISDebug-tab > button:hover {
   color: #e7e7e7;
 }
 
-.amis-scope .AMISDebug-tab > button.active {
+.AMISDebug-tab > button.active {
   color: #e7e7e7;
   border-bottom-color: #e7e7e7;
 }
 
-.amis-scope .AMISDebug-toggle {
+.AMISDebug-toggle {
   background: var(--body-bg);
   position: fixed;
   top: 50%;
@@ -41406,19 +41770,19 @@ readers do not read off random characters that represent icons */
   cursor: pointer;
 }
 
-.amis-scope .AMISDebug-toggle i {
+.AMISDebug-toggle i {
   color: var(--text-color);
 }
 
-.amis-scope .AMISDebug-toggle:hover i {
+.AMISDebug-toggle:hover i {
   color: var(--primary);
 }
 
-.amis-scope .AMISDebug-content {
+.AMISDebug-content {
   display: none;
 }
 
-.amis-scope .AMISDebug-resize {
+.AMISDebug-resize {
   position: absolute;
   width: 4px;
   top: 0;
@@ -41427,11 +41791,11 @@ readers do not read off random characters that represent icons */
   cursor: col-resize;
 }
 
-.amis-scope .AMISDebug-resize:hover {
+.AMISDebug-resize:hover {
   background: #75715e;
 }
 
-.amis-scope .AMISDebug-changePosition {
+.AMISDebug-changePosition {
   position: absolute;
   font-size: 18px;
   right: 40px;
@@ -41439,7 +41803,7 @@ readers do not read off random characters that represent icons */
   cursor: pointer;
 }
 
-.amis-scope .AMISDebug-close {
+.AMISDebug-close {
   position: absolute;
   font-size: 18px;
   right: var(--gap-sm);
@@ -41447,7 +41811,7 @@ readers do not read off random characters that represent icons */
   cursor: pointer;
 }
 
-.amis-scope .AMISDebug.is-expanded {
+.AMISDebug.is-expanded {
   width: 420px;
   overflow: auto;
   background: #272821;
@@ -41455,28 +41819,28 @@ readers do not read off random characters that represent icons */
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
-.amis-scope .AMISDebug.is-expanded .AMISDebug-toggle {
+.AMISDebug.is-expanded .AMISDebug-toggle {
   display: none;
 }
 
-.amis-scope .AMISDebug.is-expanded .AMISDebug-content {
+.AMISDebug.is-expanded .AMISDebug-content {
   display: block;
 }
 
-.amis-scope .AMISDebug.is-left {
+.AMISDebug.is-left {
   left: 0;
 }
 
-.amis-scope .AMISDebug.is-left .AMISDebug-resize {
+.AMISDebug.is-left .AMISDebug-resize {
   left: unset;
   right: 0;
 }
 
-.amis-scope .AMISDebug-log {
+.AMISDebug-log {
   padding: var(--gap-sm);
 }
 
-.amis-scope .AMISDebug-log button {
+.AMISDebug-log button {
   cursor: pointer;
   background: #0e639c;
   flex-grow: 1;
@@ -41492,11 +41856,11 @@ readers do not read off random characters that represent icons */
   border: none;
 }
 
-.amis-scope .AMISDebug-log button:hover {
+.AMISDebug-log button:hover {
   background: #1177bb;
 }
 
-.amis-scope .AMISDebug-inspect {
+.AMISDebug-inspect {
   padding: var(--gap-sm);
 }
 
