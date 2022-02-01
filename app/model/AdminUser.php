@@ -21,6 +21,7 @@ class AdminUser extends Model
         {
             return [];
         }
+        
         // 查询角色表
        $admin_role = AdminRole::where('id','in',$this->roles)->field('permissions')->select();
        $permissions_arr = [];

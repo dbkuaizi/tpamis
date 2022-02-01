@@ -39,7 +39,6 @@ class AdminUser extends BaseController
         // 验证
         if (!$validate->check($data))
         {
-            var_dump($data);
             return $this->error($validate->getError());
         }
         
@@ -66,5 +65,45 @@ class AdminUser extends BaseController
 
         return $this->success('保存成功');
 
+    }
+
+    /**
+     * 重置账号密码
+     *
+     * @param Request $request
+     * @return void
+     */
+    public function reset_pwd(Request $request)
+    {
+
+        // 获取传参
+        $data = $request->post();
+
+        if($data['new_pwd'] !== $data['repeat_pwd'])
+        {
+            return $this->error('两次新密码不一致');
+        }
+
+        // 验证密码规则
+        $rule['new_pwd|密码'] = 'length:8,30';
+        $validate = Validate::rule($rule);
+        if (!$validate->check($data))
+        {
+            return $this->error($validate->getError());
+        }
+
+        // 获取数据库中当前用户信息
+        $ModelAdminUser = ModelAdminUser::find($request->uid);
+
+        // 验证旧密码
+        if (!password_verify($data['old_pwd'],$ModelAdminUser->password))
+        {
+            return $this->error('旧密码不正确');
+        }
+
+        // 修改密码
+        $ModelAdminUser->password = password_hash($data['new_pwd'],PASSWORD_BCRYPT);
+        $ModelAdminUser->save();
+        return $this->success('修改成功,下次登陆请使用新密码');
     }
 }

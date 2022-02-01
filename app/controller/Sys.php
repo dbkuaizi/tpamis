@@ -110,7 +110,8 @@ class Sys extends BaseController
                         'id' => $menu_item['id'],
                         'parent_id' => $menu_item['parent_id'],
                         'label' => $menu_item['label'],
-                        'icon' => $menu_item['icon']
+                        'icon' => $menu_item['icon'],
+                        'visible' => ($menu_item['visible'] == 0) || ($menu_item['visible'] == 1 && $is_mobile) || (!$menu_item['visible'] == 2)
                     ];
                     break;
                 case 'link': // 外链

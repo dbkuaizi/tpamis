@@ -34,13 +34,13 @@ class Api extends BaseController
                 case 'find': // 单条数据
                     $ret_data = $this->getFindData($api_data);
                     break;
-                case 'curd': // 多条数据
+                case 'curd': // curd
                     $ret_data = $this->getCurdData($api_data,$api_config['curd']);
                     break;
-                case 'tree':
+                case 'tree': // 树形数据
                     $ret_data = $this->getTreeData($api_data,$api_config['tree']);
                     break;
-                case 'option': // 多条数据
+                case 'option': // 选项数据
                     $ret_data = $this->getOptionData($api_data);
                     break;
             }
