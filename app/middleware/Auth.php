@@ -43,7 +43,7 @@ class Auth
         }
 
         // 判断登录状态
-        if (!Session::has('admin_user'))
+        if (!Session::has('admin_uid'))
         {
             
             // 判断是页面请求还是接口请求，返回不同的登录状态
@@ -57,7 +57,7 @@ class Auth
         }
 
         // 获取登录用户 uid
-        $request->uid = Session::get('admin_user.id');
+        $request->uid = Session::get('admin_uid');
 
         // 获取页面不校验权限
         if((stripos($request_path,'/view') === 0))

@@ -5,7 +5,6 @@ namespace app\controller;
 
 use app\BaseController;
 use think\facade\Db;
-use think\facade\Session;
 use app\model\AdminUser;
 
 class Sys extends BaseController

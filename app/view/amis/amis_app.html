@@ -42,8 +42,8 @@
       brandName: '{$Think.config.amis.amis_name}',
       className: 'schema-wrapper',
       logo: '{$Think.config.amis.logo}',
-      header: {com:slot code="sys_header_pc"},
-      asideBefore: {com:slot code="sys_userinfo_mobile"},
+      header: {com:slot code="sys_header_pc" platform="pc"},
+      asideBefore: {com:slot code="sys_userinfo_mobile" platform="mobile"},
       api: '/sys/menu'
     };
 

@@ -106,4 +106,14 @@ class AdminUser extends BaseController
         $ModelAdminUser->save();
         return $this->success('修改成功,下次登陆请使用新密码');
     }
+
+    /**
+     * 保存个人信息修改
+     *
+     * @return void
+     */
+    public function edit()
+    {
+
+    }
 }

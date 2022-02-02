@@ -24,6 +24,20 @@ class Com extends TagLib
     {
         $code = $tag['code'];
         unset($tag['code']);
+
+        if(
+           // 如果传递了平台 并且
+            isset($tag['platform']) && ( 
+                // (只在pc平台显示 且当前请求是移动端）或
+                ($tag['platform'] == 'pc' && request()->isMobile()) ||
+                // (只在移动端显示，且当前请求是pc端)
+                ($tag['platform'] == 'mobile' && !request()->isMobile())
+            )
+           )
+        {
+            return '{}';
+        }
+
         $result = Db::table('sys_com')->where('code',$code)->find();
         // 如果查询为空 就使用不存在的 实例
         if (empty($result)) {
