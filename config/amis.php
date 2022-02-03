@@ -26,5 +26,5 @@ return [
         'bg'        => 'url("http://cn.bing.com/th?id=OHR.ChurchillBears_EN-US8757524982_1920x1080.jpg&rf=LaDigue_1920x1080.jpg&pid=hp")',
         // 登录表单宽度，仅pc有效
         'width'     => '400px'
-    ],
+    ]
 ];

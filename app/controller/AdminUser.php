@@ -112,8 +112,14 @@ class AdminUser extends BaseController
      *
      * @return void
      */
-    public function edit()
+    public function edit(Request $request)
     {
+        $ModelAdminUser = ModelAdminUser::find($request->uid);
+        $ModelAdminUser->phone = $request->post('phone');
+        $ModelAdminUser->email = $request->post('email');
+        $ModelAdminUser->avatar = $request->post('avatar');
+        $ModelAdminUser->save();
+        return $this->success('修改成功');
 
     }
 }

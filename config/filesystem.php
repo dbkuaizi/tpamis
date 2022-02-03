@@ -2,13 +2,9 @@
 
 return [
     // 默认磁盘
-    'default' => env('filesystem.driver', 'local'),
+    'default' => env('filesystem.driver', 'public'),
     // 磁盘列表
     'disks'   => [
-        'local'  => [
-            'type' => 'local',
-            'root' => app()->getRuntimePath() . 'storage',
-        ],
         'public' => [
             // 磁盘类型
             'type'       => 'local',

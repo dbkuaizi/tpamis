@@ -107,7 +107,7 @@ class Api extends BaseController
     }
 
     // 通用删除接口
-    public function del($code,$id = '')
+    public function del($code,$id)
     {
         $com_data = Db::table('sys_com')->where('code',$code)->field('tables,pri_field')->find();
         // 如果组件不存在
@@ -115,11 +115,13 @@ class Api extends BaseController
         if (empty($com_data['tables'])) return $this->error('组件数据表不能为空');
 
         // 判断是否存在软删除字段
-       $table_fields = array_column(DB::query("DESC ".$com_data['tables']),'Field');
-       $pri_key = $com_data['pri_field'] ?: 'id';
-       // 如果存在软删除字段，就走软删除
+        $table_fields = array_column(DB::query("DESC ".$com_data['tables']),'Field');
+        $pri_key = $com_data['pri_field'] ?: 'id';
+        
+        // 构建删除条件
         $del_where[$pri_key] = $id;
-
+        
+        // 如果存在软删除字段，就走软删除
         if (in_array('delete_time',$table_fields)) {
            $del_where['delete_time'] = NULL;
            $ret = Db::table($com_data['tables'])->where($del_where)->update(['delete_time' => date('Y-m-d H:i:s')]);
