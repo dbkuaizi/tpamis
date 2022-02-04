@@ -264,7 +264,7 @@ class Api extends BaseController
         foreach($get_data as $field => $val)
         {
             // 如果本次循环参数没有在查询条件中就跳过
-            if(!array_key_exists($field,$search_arr)) continue;
+            if(!array_key_exists($field,$search_arr) || $val === '' ) continue;
 
             // 根据不同的类型 拼接不同的传参
             switch ($search_arr[$field]) {
@@ -273,6 +273,7 @@ class Api extends BaseController
                     break;
                 case 'in': // in查询
                     $in_str = str_replace(',','',$val);
+                    // 判断是数值还是字符串
                     if(is_numeric($in_str))
                     {
                         $where_str .= " AND `{$field}` IN ({$val})";
@@ -281,13 +282,25 @@ class Api extends BaseController
                         $where_str .= " AND `{$field}` IN ('{$in_arr}')";
                     }
                     break;
+                case 'between': // 范围查询
+                    $bet_arr = explode(',',$val);
+                    // 判断是数值还是字符串
+                    if(is_numeric($bet_arr[0]))
+                    {
+                        $where_str .= " AND `{$field}` BETWEEN {$bet_arr[0]} AND {$bet_arr[1]}";
+                    } else {
+                        $where_str .= " AND `{$field}` BETWEEN '{$bet_arr[0]}' AND '{$bet_arr[1]}'";
+                    }
+
+                    
+                    break;
                 default: // 如无需特殊处理 走默认即可
                     $where_str .= " AND `{$field}` {$search_arr[$field]} " . (is_numeric($val) ? $val : "'".$val."'");
                     break;
             }
         }
 
-        $where_str = '('.$where_str.') AND ';
+        $where_str = '('.$where_str.')';
 
         // 查找占位符,如果存在就替换
         if(strpos($sql,'[curd_where]'))
@@ -298,10 +311,18 @@ class Api extends BaseController
         }
 
         // 没找到替换字段就找最后一个 where
-        $where_index = strripos($sql,'where');
-        $start_sql = substr($sql,0, $where_index);
-        $end_sql = substr($sql,$where_index + 6);
-        $sql = $start_sql .'WHERE '. $where_str . $end_sql;
+        if (strripos($sql,'where') !== false) {
+            $where_index = strripos($sql,'where');
+            $start_sql = substr($sql,0, $where_index);
+            $end_sql = substr($sql,$where_index + 6);
+            $sql = $start_sql .'WHERE '. $where_str .' AND '. $end_sql;
+            return;
+        } 
+
+        // 如果还是没有找到 就直接拼接后面
+        $sql .= 'WHERE ' . $where_str;
+
+
     }
 
 
