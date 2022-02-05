@@ -27,17 +27,17 @@ class Auth
         ];
 
         // 获取请求路径
-        $request_path = $request->baseUrl();
+        $request->path = $request->baseUrl();
 
         // 如果是 delete 请求就替换 id
         if($request->isDelete())
         {
-            $request_path = substr_replace($request_path,'/*',strrpos($request_path,'/'));
+            $request->path = substr_replace($request->path,'/*',strrpos($request->path,'/'));
         }
 
 
         // 如果是白名单 就直接放行
-        if(in_array($request_path,$auth_white))
+        if(in_array($request->path,$auth_white))
         {
             return $next($request);
         }
@@ -60,7 +60,7 @@ class Auth
         $request->uid = Session::get('admin_uid');
 
         // 获取页面不校验权限
-        if((stripos($request_path,'/view') === 0))
+        if((stripos($request->path,'/view') === 0))
         {
             return $next($request);
         }
@@ -78,13 +78,13 @@ class Auth
         $permissions_arr = $admin_user->getPermissions();
         $admin_menu = AdminMenu::where(function($query) use($permissions_arr) {
             $query->where('id','in',$permissions_arr)->whereOr('verify',0);
-        })->where('path','=',$request_path)->findOrEmpty();
+        })->where('path','=',$request->path)->findOrEmpty();
         
         // 如果没有权限
         if($admin_menu->isEmpty())
         {
             // 如果是组件权限不足
-            if((stripos($request_path,'/com/get') === 0))
+            if((stripos($request->path,'/com/get') === 0))
             {
                 $result = \think\facade\Db::table('sys_com')->where('code','sys_page_not_permission')->find();
                 $body = \think\facade\View::display($result['body'],$result);
@@ -92,7 +92,7 @@ class Auth
             }
 
             // 如果是接口权限不足
-            return json(['status'=> 403,'msg' => '"'. $request_path . '" 权限不足，请联系管理员']);
+            return json(['status'=> 403,'msg' => '"'. $request->path . '" 权限不足，请联系管理员']);
         }
 
         // 校验通过 执行下面的逻辑

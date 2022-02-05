@@ -4,6 +4,7 @@ namespace app\controller;
 use app\Request;
 use think\facade\Config;
 use app\BaseController;
+use app\model\AdminLog;
 use think\facade\Db;
 use think\facade\View;
 use Tree;
@@ -102,6 +103,7 @@ class Api extends BaseController
         if ($res) {
             $ret_data = ['status' => 0 ,'msg' => $res_msg];
         }
+        AdminLog::write();
         return $ret_data;
 
     }
