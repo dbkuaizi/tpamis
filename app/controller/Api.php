@@ -59,7 +59,6 @@ class Api extends BaseController
     public function save(Request $request,$code)
     {
         $ret_data = ['status' => 1 ,'msg' => '保存失败'];
-
         $com_data = Db::table('sys_com')->where('code',$code)->field('tables,pri_field')->find();
 
         // 获取主键字段名
@@ -103,7 +102,7 @@ class Api extends BaseController
         if ($res) {
             $ret_data = ['status' => 0 ,'msg' => $res_msg];
         }
-        AdminLog::write();
+        
         return $ret_data;
 
     }

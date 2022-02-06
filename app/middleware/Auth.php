@@ -3,6 +3,7 @@ declare (strict_types = 1);
 
 namespace app\middleware;
 
+use app\model\AdminLog;
 use app\model\AdminMenu;
 use app\model\AdminUser;
 use think\facade\Session;
@@ -11,7 +12,7 @@ use think\facade\Session;
 class Auth
 {
     /**
-     * 处理请求
+     * 前置中间件
      *
      * @param \think\Request $request
      * @param \Closure       $next
@@ -21,7 +22,7 @@ class Auth
     {
         // 白名单,不校验登录状态
         $auth_white = [
-            '',                 // 根目录
+            '/',                 // 根目录
             '/login',           // 登录页
             '/login/verify',    // 登录验证码
         ];
@@ -65,23 +66,29 @@ class Auth
             return $next($request);
         }
         
-        // 判断权限
-        $admin_user = AdminUser::find($request->uid);
-
-        // 如果是超级管理员则不判断权限
-        if(isset($admin_user->super_admin) && $admin_user->super_admin === 1)
+        // 查询请求的接口
+        $admin_menu = AdminMenu::where('path','=',$request->path)->findOrEmpty();
+        
+        // 权限不存在
+        if($admin_menu->isEmpty())
         {
-            return $next($request);
+            return json(['status'=> 403,'msg' => '"'. $request->path . '" 权限不存在,请检查请求地址']);
         }
+
+        // 设置菜单标题，用于写日志
+        $request->menu_title = $admin_menu->label;
+
+        // 日志开关，如果是行为 且开启了日志
+        $request->log_switch = ($admin_menu->type == 'action' && $admin_menu->log);
+
+        // 获取登录用户信息
+        $admin_user = AdminUser::find($request->uid);
 
         // 获取该用户的授权
         $permissions_arr = $admin_user->getPermissions();
-        $admin_menu = AdminMenu::where(function($query) use($permissions_arr) {
-            $query->where('id','in',$permissions_arr)->whereOr('verify',0);
-        })->where('path','=',$request->path)->findOrEmpty();
         
-        // 如果没有权限
-        if($admin_menu->isEmpty())
+        // 权限校验, 不是超级管理员 AND URL校验权限 AND 没有授权
+        if((!$admin_user->super_admin) && (!$admin_menu->verify) && in_array($admin_menu->id,$permissions_arr))
         {
             // 如果是组件权限不足
             if((stripos($request->path,'/com/get') === 0))
@@ -97,5 +104,16 @@ class Auth
 
         // 校验通过 执行下面的逻辑
         return $next($request);
+    }
+
+    // 后置行文
+    public function end(\think\Response $response)
+    {
+       
+       if(request()->log_switch)
+       {
+            AdminLog::write();
+       }
+       return $response;
     }
 }
