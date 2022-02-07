@@ -109,7 +109,6 @@ class Auth
     // 后置行文
     public function end(\think\Response $response)
     {
-       
        if(request()->log_switch)
        {
             AdminLog::write();

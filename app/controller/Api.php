@@ -78,7 +78,7 @@ class Api extends BaseController
 
         // 获取操作表字段
         $table_fields = array_column(DB::query("DESC ".$com_data['tables']),'Field');
-
+        try {
         // 如果id不为空 则表示修改数据, 如果不存在就表示新增数据
         if (!empty($id)){
 
@@ -87,8 +87,7 @@ class Api extends BaseController
                 $data['update_time'] =  date('Y-m-d H:i:s');
             }
             
-            $res = Db::table($table_name)->where([$pri_key => $id])->update($data);
-            $res_msg = '编辑成功';
+            Db::table($table_name)->where([$pri_key => $id])->update($data);
         } else {
 
             // 是否需要补上新增时间
@@ -96,13 +95,16 @@ class Api extends BaseController
                 $data['create_time'] =  date('Y-m-d H:i:s');
                 $data['update_time'] =  date('Y-m-d H:i:s');
             }
-            $res_msg = '添加成功';
-            $res = Db::table($table_name)->insert($data);
+            Db::table($table_name)->insert($data);
         }
-        if ($res) {
-            $ret_data = ['status' => 0 ,'msg' => $res_msg];
+            Db::commit();
+            $ret_data = ['status' => 0 ,'msg' => '保存成功'];
+        }catch (\Exception $e) {
+            // 回滚事务
+            $ret_data['msg'] .= ' ' .$e->getMessage(); 
+            Db::rollback();
         }
-        
+    
         return $ret_data;
 
     }
@@ -178,6 +180,12 @@ class Api extends BaseController
         }
         $total_sql = View::display($total_sql);
 
+        // 判断是否需要排序
+        if(!empty(request()->get('orderBy')))
+        {
+            $sql .= ' ORDER BY `' .request()->get('orderBy'). '` '.request()->get('orderDir') ; ;
+        }
+
         // 如果有传递分页 就拼接
         if ($this->request->has('page','get'))
         {
@@ -246,7 +254,7 @@ class Api extends BaseController
                 // 如果转换失败
                 if(in_array($key,$json_to))
                 {
-                    $val = json_decode($val,true)?: [];
+                    $val = json_decode($val,true)?: '';
                 }
                 
             }

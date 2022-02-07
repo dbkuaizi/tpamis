@@ -23,6 +23,7 @@ class AdminLog extends Model
         $create_log['datetime'] = date('Y-m-d H:i:s');
         $create_log['desc'] = request()->log_desc ?? '';
         $create_log['param']= json_encode(request()->param(),JSON_UNESCAPED_UNICODE);
+        $create_log['function'] = request()->controller().'/'.request()->action();
         self::create($create_log);
     }
 
