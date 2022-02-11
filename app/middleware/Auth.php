@@ -88,7 +88,7 @@ class Auth
         $permissions_arr = $admin_user->getPermissions();
         
         // 权限校验, 不是超级管理员 AND URL校验权限 AND 没有授权
-        if((!$admin_user->super_admin) && (!$admin_menu->verify) && in_array($admin_menu->id,$permissions_arr))
+        if((!$admin_user->super_admin) && $admin_menu->verify && !in_array($admin_menu->id,$permissions_arr))
         {
             // 如果是组件权限不足
             if((stripos($request->path,'/com/get') === 0))
@@ -106,9 +106,10 @@ class Auth
         return $next($request);
     }
 
-    // 后置行文
+    // 后置行为
     public function end(\think\Response $response)
     {
+        // 如果日志开启 就记录
        if(request()->log_switch)
        {
             AdminLog::write();

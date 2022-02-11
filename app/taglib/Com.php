@@ -4,6 +4,8 @@ namespace app\taglib;
 use think\facade\Db;
 use think\facade\View;
 use think\template\TagLib;
+use app\model\AdminUser;
+use app\model\AdminMenu;
 
 /**
  * Class Com 组件标签扩展
@@ -14,6 +16,9 @@ class Com extends TagLib
     protected $tags = [
         // 插槽功能
         'slot'      =>  ['attr' => 'code', 'close' => 0],
+        'page'      =>  ['attr' => '', 'close' => 0],
+        'pagesize'      =>  ['attr' => '', 'close' => 0],
+        'auth'      =>  ['attr' => 'path', 'close' => 0],
     ];
 
     /**
@@ -46,6 +51,46 @@ class Com extends TagLib
         }
         $view_param = array_merge($result,$tag);
         return View::display($result['body'],$view_param);
+    }
+
+    // 返回组件参数
+    public function tagPage($tag)
+    {
+        $where['map_code'] = 'SysComConfig';
+        $where['map_val'] = 'PageSizeDefault';
+        return Db::table('sys_map')->where($where)->value('map_val2');
+    }
+
+    // 返回组件参数
+    public function tagPageSize($tag)
+    {
+        $where['map_code'] = 'SysComConfig';
+        $where['map_val'] = 'PageSize';
+        return Db::table('sys_map')->where($where)->value('map_val2');
+    }
+
+    // 权限
+    public function tagAuth($tag)
+    {
+        $url = $tag['path'];
+        
+        // 获取登录用户信息
+        $admin_user = AdminUser::find(request()->uid);
+
+        // 超级管理员 返回true
+        if($admin_user->super_admin) return ' true';
+
+        $admin_menu = AdminMenu::where('path','=', $url)->find();
+
+        // 如果免校验
+        if(!$admin_menu->verify) return ' true';
+
+        // 获取该用户的授权
+        $permissions_arr = $admin_user->getPermissions();
+        if(in_array($admin_menu->id,$permissions_arr)) return ' true';
+
+        return ' false';
+
     }
 
 }
