@@ -50,12 +50,21 @@
 https://gitee.com/dbkuaizi/tpamis/wikis
 
 ## 截图
-![登录](./images/login.png)
-![首页](./images/index.png)
-![字典](./images/map.png)
-![菜单](./images/menu.png)
-![日志](./images/log.png)
-![个人中心](./images/userinfo.png)
+
+| 模块 | PC端 | 移动端 |
+| ---- | ---- | ---- |
+| 登录 | ![登录](./images/login.png) | ![登录](./images/m_login.png) |
+| 首页 | ![首页](./images/index.png) | ![首页](./images/m_index.png) |
+| 字典管理 | ![字典](./images/map.png) | ![字典](./images/m_map.png)  |
+| 接口管理 | ![接口](./images/api.png) | ![接口](./images/m_api.png)  |
+| 菜单管理 | ![菜单](./images/menu.png) | ![菜单](./images/m_menu.png) |
+| 角色管理 | ![角色](./images/role.png) | ![角色](./images/m_role.png) |
+| 日志管理 | ![日志](./images/log.png) | ![日志](./images/m_log.png)|
+| 个人中心 | ![个人中心](./images/userinfo.png) | ![个人中心](./images/m_userinfo.png) |
+
+## 作者
+- 作者：两双筷子
+- 博客：https://www.dbkuaizi.com/
 
 ## 版权
 Tpamis 使用了与 ThinkPHP 和 amis 一致的的版权协议 Apache2。
