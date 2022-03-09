@@ -15,7 +15,7 @@
     <img src="https://img.shields.io/badge/ThinkPHP-6.0.10-green.svg" alt="Build Status">
  </a>
  <a href="#">
-    <img src="https://img.shields.io/badge/AMIS-1.6.4-blue.svg" alt="Build Status">
+    <img src="https://img.shields.io/badge/AMIS-1.7.0-blue.svg" alt="Build Status">
  </a>
  <a href="#">
  <img src="https://img.shields.io/badge/license-Apache--2.0-red" alt="Build Status">
