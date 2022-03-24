@@ -12,7 +12,7 @@
     <img src="https://img.shields.io/badge/MySQL-5.7%2B-orange" alt="Build Status">
  </a>
  <a href="#">
-    <img src="https://img.shields.io/badge/ThinkPHP-6.0.10-green.svg" alt="Build Status">
+    <img src="https://img.shields.io/badge/ThinkPHP-6.0.12-green.svg" alt="Build Status">
  </a>
  <a href="#">
     <img src="https://img.shields.io/badge/AMIS-1.7.0-blue.svg" alt="Build Status">
@@ -48,6 +48,8 @@
 
 ## 文档（完善中）
 https://gitee.com/dbkuaizi/tpamis/wikis
+
+最近几个月比较忙，没太多的时间将数据库SQL整理放出来，但我会尽快开源数据库SQL的。（2022-03-24）
 
 ## 截图
 
