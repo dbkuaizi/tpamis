@@ -1,9 +1,9 @@
   <h1 align="center">
     <img src="./images/tpamis_logo.png" align="center">
   </h1>
-  <h4 align="center">
+  <p align="center" style="margin-top: 24px;margin-bottom: 16px;font-weight: 600;line-height: 1.25;font-size:1em;">
     基于 ThinkPHP6.0 与 amis 构建的低代码开发框架
-  </h4> 
+  </p> 
 <p align="center">
  <a href="#">
     <img src="https://img.shields.io/badge/PHP-7.2%2B-blue" alt="Build Status">
