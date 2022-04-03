@@ -26,10 +26,10 @@
 严格来说依然属于 MVC 架构，并非前后端分离。
 
 ## 特点
-- 无需专业前端，纯 JSON 构建页面，支持 amis 120+ 的前端组件
+- 无需专业前端，纯 JSON 构建页面，支持 amis 120+ 的前端组件。
 - 移动端兼容，amis 提供了良好的移动端设备兼容，无需额外开发移动端页面。
-- 常用后台功能，提供了完整的后台基础功能，开箱即用
-- Echarts 图表，支持 Echarts 所有功能
+- 常用后台功能，提供了完整的后台基础功能，开箱即用。
+- Echarts 图表，支持 Echarts 所有功能。
 
 ## 功能
 - [x] 组件管理，组件 JSON 管理，支持嵌套使用
@@ -49,8 +49,28 @@
 ## 文档（完善中）
 https://gitee.com/dbkuaizi/tpamis/wikis
 
-最近几个月比较忙，没太多的时间将数据库SQL整理放出来，但我会尽快开源数据库SQL的。（2022-03-24）
+## 部署
 
+要求：PHP 7.2+，MySQL 5.7+
+
+1. `git clone` 克隆项目
+2. `composer install` 初始化 `vender`
+3. 导入项目根目录 `tpamis.sql` SQL 文件，要求数据库版本不低于 MySQL 5.7 / MariaDB 10.1
+4. 配置 `.env` 数据库链接信息
+5. 配置本地php环境、虚拟主机之类 （每个人用的环境不同，就是加一个站点）
+6. 访问登录页面，账号：`admin` 密码：`admin123`
+
+有问题可以提 issues，看到就会回复，但不保证时效。
+
+## 开发
+
+如果你真的觉得这套东西还凑合，打算用来做一些项目的话，你可能需要了解一下这些：
+
+- ThinkPHP6 的使用方法。[参考文档](https://www.kancloud.cn/manual/thinkphp6_0)
+- Amis 的基础概念，实际开发的时候照着文档复制粘贴就行。[参考文档](https://aisuda.bce.baidu.com/amis/docs) 
+
+后期会出一篇文章聊一下我对 Tpamis 的认知定位，可以由此参考是否适合你的需求。
+ 
 ## 截图
 
 | 模块 | PC端 | 移动端 |
@@ -66,7 +86,7 @@ https://gitee.com/dbkuaizi/tpamis/wikis
 
 ## 作者
 - 作者：两双筷子
-- 博客：https://www.dbkuaizi.com/
+- 博客：https://www.dbkuaizi.com
 
 ## 版权
 Tpamis 使用了与 ThinkPHP 和 amis 一致的的版权协议 Apache2。
