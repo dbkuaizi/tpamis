@@ -3,5 +3,5 @@
 /vendor
 /runtime
 *.log
-.env
 /public/storage/*
+./composer.lock
