@@ -4,4 +4,4 @@
 /runtime
 *.log
 /public/storage/*
-./composer.lock
+/composer.lock

@@ -2,7 +2,7 @@
     <img src="./images/tpamis_logo.png" align="center">
   </h1>
   <p align="center">
-    <b>基于 ThinkPHP6.0 与 amis 构建的低代码开发框架</b>
+    <b>基于 ThinkPHP 6.0 与 amis 构建的低代码开发框架</b>
   </p> 
 <p align="center">
  <a href="#">
@@ -12,10 +12,10 @@
     <img src="https://img.shields.io/badge/MySQL-5.7%2B-orange" alt="Build Status">
  </a>
  <a href="#">
-    <img src="https://img.shields.io/badge/ThinkPHP-6.0.12-green.svg" alt="Build Status">
+    <img src="https://img.shields.io/badge/ThinkPHP-6.0.13-green.svg" alt="Build Status">
  </a>
  <a href="#">
-    <img src="https://img.shields.io/badge/AMIS-1.8.0-blue.svg" alt="Build Status">
+    <img src="https://img.shields.io/badge/AMIS-2.0.2-blue.svg" alt="Build Status">
  </a>
  <a href="#">
  <img src="https://img.shields.io/badge/license-Apache--2.0-red" alt="Build Status">
@@ -53,7 +53,7 @@ https://gitee.com/dbkuaizi/tpamis/wikis
 
 ## 部署
 
-要求：PHP 7.2+，MySQL 5.7+
+要求：PHP 7.2.5+，MySQL 5.7+
 
 1. `git clone` 克隆项目
 2. `composer install` 初始化 `vender`
