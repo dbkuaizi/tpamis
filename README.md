@@ -71,7 +71,7 @@ https://gitee.com/dbkuaizi/tpamis/wikis
 - ThinkPHP6 的使用方法。[参考文档](https://www.kancloud.cn/manual/thinkphp6_0)
 - Amis 的基础概念，实际开发的时候照着文档复制粘贴就行。[参考文档](https://aisuda.bce.baidu.com/amis/docs) 
 
-后期会出一篇文章聊一下我对 Tpamis 的认知定位，可以由此参考是否适合你的需求。
+可以通过我的这篇文章：[《基于 amis 的一些尝试》](https://www.dbkuaizi.com/archives/amis.html)，参考是否适合你的需求。
  
 ## 截图
 
@@ -91,5 +91,5 @@ https://gitee.com/dbkuaizi/tpamis/wikis
 - 博客：https://www.dbkuaizi.com
 
 ## 版权
-Tpamis 使用了与 ThinkPHP 和 amis 一致的的版权协议 Apache2。
+Tpamis 使用了与 ThinkPHP 和 amis 一致的版权协议 Apache2。
 本项目可以免费商用但必须在代码中标注。
