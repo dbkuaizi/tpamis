@@ -1,5 +1,5 @@
   <h1 align="center">
-    <img src="./images/tpamis_logo.png" align="center">
+    <img src="./images/logo.svg" align="center">
   </h1>
   <p align="center">
     <b>基于 ThinkPHP 6.0 与 amis 构建的低代码开发框架</b>
