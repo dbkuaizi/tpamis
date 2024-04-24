@@ -89,7 +89,8 @@ class Api extends BaseController
             
             Db::table($table_name)->where([$pri_key => $id])->update($data);
         } else {
-
+            // 移除id字段，修复保存时id为0的bug
+            unset($data[$pri_key]);
             // 是否需要补上新增时间
             if (in_array('create_time',$table_fields)) {
                 $data['create_time'] =  date('Y-m-d H:i:s');
