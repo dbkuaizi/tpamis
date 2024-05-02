@@ -23,7 +23,7 @@ return [
         // 登录窗口版权
         'footer'    => "TpAmis 低代码后台开发框架 © 2022",
         // 登录窗口背景图
-        'bg'        => 'url("http://cn.bing.com/th?id=OHR.ChurchillBears_EN-US8757524982_1920x1080.jpg&rf=LaDigue_1920x1080.jpg&pid=hp")',
+        'bg'        => 'url("./static/background.jpg")',
         // 登录表单宽度，仅pc有效
         'width'     => '400px'
     ]
