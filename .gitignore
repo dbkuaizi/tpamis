@@ -5,3 +5,5 @@
 *.log
 /public/storage/*
 /composer.lock
+/public/.htaccess
+/public/nginx.htaccess
