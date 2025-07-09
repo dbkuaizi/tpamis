@@ -2,17 +2,17 @@
     <img src="./images/logo.svg" align="center">
   </h1>
   <p align="center">
-    <b>基于 ThinkPHP 6.0 与 amis 构建的低代码开发框架</b>
+    <b>基于 ThinkPHP 8.0 与 amis 构建的低代码开发框架</b>
   </p> 
 <p align="center">
  <a href="#">
-    <img src="https://img.shields.io/badge/PHP-7.2%2B-blue" alt="Build Status">
+    <img src="https://img.shields.io/badge/PHP-8.2%2B-blue" alt="Build Status">
  </a>
  <a href="#">
     <img src="https://img.shields.io/badge/MySQL-5.7%2B-orange" alt="Build Status">
  </a>
  <a href="#">
-    <img src="https://img.shields.io/badge/ThinkPHP-6.0.13-green.svg" alt="Build Status">
+    <img src="https://img.shields.io/badge/ThinkPHP-8.1.2-green.svg" alt="Build Status">
  </a>
  <a href="#">
     <img src="https://img.shields.io/badge/AMIS-2.0.2-blue.svg" alt="Build Status">
