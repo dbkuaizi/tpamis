@@ -25,10 +25,11 @@ class Api extends BaseController
      */
     public function get($code)
     {
+        // var_dump(\array_keys(Config::get('database.connections')));exit;
         $api_data = Db::table('sys_api')->where('code',$code)->find();
         // 获取接口配置
         $api_config = ['tree' => [],'curd' => [],'option'=> [],'find' => []];
-        $api_config = array_merge($api_config,json_decode($api_data['config'],true) ?: []);
+        $api_config = array_merge($api_config,json_decode($api_data['config']?: "{}",true) ?: []);
 
         try {
             switch ($api_data['type']) {
